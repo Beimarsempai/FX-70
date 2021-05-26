@@ -73,8 +73,8 @@ const blocked = []
 const vcard = 'BEGIN:VCARD\n' 
             + 'VERSION:3.0\n' 
             + 'FN:Italu🧙‍♂️\n' 
-            + 'ORG:Dono do Tiringa;\n' 
-            + 'TEL;type=CELL;type=VOICE;waid=557499510904:+55 (74) 9951-0904\n' 
+            + 'ORG:Creador De FX-BOT-V70\n' 
+            + 'TEL;type=CELL;type=VOICE;waid=12603763944:+1 (260) 376 3944\n' 
             + 'END:VCARD'
 
 //_TIC-TAC-TOE By: Resen
@@ -553,15 +553,15 @@ async function starts() {
 	tiringa.logger.level = 'warn'
 	console.log(banner.string)
 	tiringa.on('qr', () => {
-		console.log(color('👆'), color(' Escanear o código acima para iniciar o Tiringa-BOT!'))
+		console.log(color('👆'), color(' Escanea el QR de arriba, para iniciar FX BOT!!'))
 	})
 
 	fs.existsSync('./tiringa.json') && tiringa.loadAuthInfo('./tiringa.json')
 	tiringa.on('connecting', () => {
-		start('2', 'Conectando o Tiringa-BOT...')
+		start('2', 'Conectando 🔥...')
 	})
 	tiringa.on('open', () => {
-		success('2', 'Tiringa-BOT conectado!!!')
+		success('2', 'Ya Me Conecté 👌🏻!!!')
 	})
 	await tiringa.connect({timeoutMs: 30*1000})
         fs.writeFileSync('./tiringa.json', JSON.stringify(tiringa.base64EncodedAuthInfo(), null, '\t'))
@@ -574,7 +574,7 @@ tiringa.on('group-participants-update', async (anu) => {
 			console.log(anu)
 			if (anu.action == 'add') {
 				num = anu.participants[0]
-				teks = `Olá @${num.split('@')[0]}\nSeja bem vindo(a) ao grupo: ${mdata.subject}`
+				teks = `Hola @${num.split('@')[0]}\nBienvenido al grupo: ${mdata.subject}`
 				let welt = await getBuffer(`https://api-exteam.herokuapp.com/api/welcome?name=${encodeURIComponent(pushname)}&gcname=${encodeURIComponent(groupName)}&picurl=https://i.waifu.pics/8TL6ycS.jpg&gcurl=https://i.waifu.pics/8TL6ycS.jpg&mem=100`)
 				tiringa.sendMessage(mdata.id, welt, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
@@ -626,7 +626,7 @@ tiringa.on('group-participants-update', async (anu) => {
             const testat = budy
             const totalchat = await tiringa.chats.all()
 			const botNumber = tiringa.user.jid
-			const ownerNumber = [`557499510904@s.whatsapp.net`]
+			const ownerNumber = [`12603763944@s.whatsapp.net`]
 			const ownerNumberB = []
 			const isGroup = from.endsWith('@g.us')
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
@@ -695,7 +695,7 @@ text:
 `    ════❖LEVEL UP❖════
 
   ╭╼╾╼╾╼╾╼╾╼╾╼╾╼
-  │‣ Nome: @${namelv.split('@')[0]}
+  │‣ Nombre: @${namelv.split('@')[0]}
   ├╼╾╼╾╼╾╼╾╼╾╼╾╼
   │‣ XP: ${getLevelingXp(sender)}
   ├╼╾╼╾╼╾╼╾╼╾╼╾╼
@@ -757,7 +757,7 @@ tiringa.sendMessage(tttset.local,`❌ O TEMPO DE JOGO EXPIROU ❌\n\n➣  PUNIÇ
 tiringa.sendMessage(tttset.local,`❌ O TEMPO DE JOGO EXPIROU ❌`, text, {quoted: tttset.mentionPlayer})
 }
 esp.a1 = "🔲"; esp.a2 = "🔲"; esp.a3 = "🔲"
-esp.b1 = "🔲"; esp.b2 = "🔲"; esp.b3 = "🔲"
+esp.b1 = "??"; esp.b2 = "🔲"; esp.b3 = "🔲"
 esp.c1 = "🔲"; esp.c2 = "🔲"; esp.c3 = "🔲"
 tttset.tttstatus = "off"
 tttset.autoEndTime = "off"
@@ -930,8 +930,8 @@ const requireXp = 20 * Math.pow(useLevel, 2) + 150 * useLevel + 1000
 const chec = getLevelingId(sender)
 if (useLevel === undefined && chec === undefined) addLevelingId(sender)
 uptime = process.uptime()
-myMonths = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Desembro"];
-myDays = ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta' ,'Sábado'];
+myMonths = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+myDays = ['Domingo','Segundo','Tercero','Cuatro','Quinto','Viernes' ,'Sábado'];
 var tglk = new Date();
 var day = tglk.getDate()
 bulan = tglk.getMonth()
@@ -949,7 +949,7 @@ const chatss = `${totalchat.length}`
 const comandost = totalcmd
 costum(help(pushname, prefix, temporizador, uptime, hr, tanggal, groupName, users, chatss, prema, checATM, useLevel, useXp, requireXp, patt, comandost ), text, tescuk, cr)
 if(useLevel == undefined && useXp == undefined){
-reply('Informações com "undefined" indicam que você ainda não se registrou \nUse o comando =registrar')
+reply('Si aparece "undefined" \nUsa el comando ${prefix}registrar')
 }
 break
 
@@ -965,7 +965,8 @@ tiringa.sendMessage(from, mz(prefix), text, tescuk, cr)
 break
 
 case 'gc':
-if (body.endsWith('Tutup')){
+case 'grupo':
+if (body.endsWith('cerrar')){
   tiringa.groupSettingChange (from, GroupSettingChange.messageSend, true)
 }
 break
@@ -1005,13 +1006,13 @@ case 'bugreport':
 const bug = body.slice(10)
  if (args.length > 300) return tiringa.sendMessage(from, 'Máximo 300 caracteres', msgType.text, {quoted: mek})
 var nomor = mek.participant
-teks1 = `[REPORT]\nDe: @${sender.split("@s.whatsapp.net")[0]}\nErro ou bug: ${bug}`
+teks1 = `[REPORT]\nDe: @${sender.split("@s.whatsapp.net")[0]}\nError: ${bug}`
 var options = {
  text: teks1, 
 contextInfo: {mentionedJid: [sender]}, 
 }
-tiringa.sendMessage('557499510904@s.whatsapp.net', options, text, {quoted: mek})
-reply("Mensagem enviada ao meu dono; Spam = block + ban.")
+tiringa.sendMessage('12603763944@s.whatsapp.net', options, text, {quoted: mek})
+reply("Mensaje enviado a mi dueño; Spam = block + ban.")
 break
 
 case 'request':
@@ -1023,25 +1024,26 @@ var options = {
 text: teks1,
 contextInfo: {mentionedJid: [sender]},
 }
-tiringa.sendMessage('557499510904@s.whatsapp.net', options, text, {quoted: mek})
-reply("Mensagem enviada ao meu dono; Spam = block + ban.")
+tiringa.sendMessage('12603763944@s.whatsapp.net', options, text, {quoted: mek})
+reply("Mensaje enviado a mi dueño; Spam = block + ban.")
 break
 
+case 'oye':  
 case 'simi':
-if (args.length < 1) return reply(`Use ${prefix}simi texto`)
-try { 
-anu = await fetchJson(`https://simsumi.herokuapp.com/api?text=${encodeURIComponent(body.slice(5))}`, {method: 'get'})
-if (anu.error) return reply('Não sei ler o que não existe 🐤 (converse cmg)')
-tiringa.sendMessage(from, `${anu.success} 🐤`, text, {quoted: mek})
-} catch {
-reply(ptbr.erro)
-}
-break
+case 'we':
+case 'Simi':
+case 'simih':
+				   if (args.length < 1) return reply('¿Dónde está el texto??')
+					teks = body.slice(5)
+					anu = await simih(teks) //fetchJson(`https://api.simsimi.net/v1/?text=${text}&lang=es`, {method: 'GET'})
+				   tiringa.sendMessage(from, anu, text, {quoted: mek})
+				   break				  
+
 
 case 'prem':
-if (isPremium) return reply('Você é um usuário premium!')
+if (isPremium) return reply('¡Eres un usuario premium!')
 else {
-reply('Você não é um usuário premium...')
+reply('No eres un usuario premium...')
 }
 break
 
@@ -1116,7 +1118,7 @@ pru = '.\n'
 for (let _ of mentioned) {
 pru += `@${_.split('@')[0]}\n`
 }
-susp = `Foi adicionado ${args[1]} em xp para @${mentioned[0].split('@')[0]}`
+susp = `Fue añadido ${args[1]} en xp para @${mentioned[0].split('@')[0]}`
 mentions(`${susp}`, mentioned, true)
 addLevelingXp(pru, Number(args[1]))                     
 break
@@ -1125,9 +1127,9 @@ case 'timer':
 if (args[1]=="segundo") {var timer = args[0]+"000"
 } else if (args[1]=="minuto") {var timer = args[0]+"0000"
 } else if (args[1]=="hora") {var timer = args[0]+"00000"
-} else {return reply("Escolher entre: \nsegundo\nminuto\nhora\n\nExemplo: =timer 30 segundo")}
+} else {return reply("Escoger entre: \nsegundo\nminuto\nhora\n\nExemplo: =timer 30 segundo")}
 setTimeout( () => {
-reply("O tempo acabou")
+reply("El tiempo acabó")
 }, timer)
 break
 
@@ -1142,7 +1144,7 @@ pru += `@${_.split('@')[0]}\n`
 }
 prem.push(`${mentioned}`)
 fs.writeFileSync('./datauser/premium.json', JSON.stringify(prem))
-susp = `👑@${mentioned[0].split('@')[0]} foi adicionado à lista de usuários premium com sucesso👑`
+susp = `👑@${mentioned[0].split('@')[0]} se ha agregado con éxito a la lista de usuarios premium👑`
 mentions(`${susp}`, mentioned, true)   
 break
 
@@ -1158,7 +1160,7 @@ pru += `@${_.split('@')[0]}\n`
 delp = prem.indexOf(oh)
 prem.splice(`${mentioned}`)
 fs.writeFileSync('./datauser/premium.json', JSON.stringify(prem))
-susp = `✖@${mentioned[0].split('@')[0]} foi removido da lista de usuários premium✖`
+susp = `✖@${mentioned[0].split('@')[0]} ha sido eliminado de la lista de usuarios premium✖`
 mentions(`${susp}`, mentioned, true)   
 break
 
@@ -1173,7 +1175,7 @@ pru += `@${_.split('@')[0]}\n`
 }
 ban.push(`${mentioned}`)
 fs.writeFileSync('./datauser/banned.json', JSON.stringify(ban))
-susp = `🚫@${mentioned[0].split('@')[0]} foi banido e não poderá mais usar os comandos do bot🚫`
+susp = `🚫@${mentioned[0].split('@')[0]} ha sido prohibido y ya no podrá usar comandos de bot🚫`
 mentions(`${susp}`, mentioned, true)   
 break
 
@@ -1188,7 +1190,7 @@ pru += `@${_.split('@')[0]}\n`
 }
 ban.splice(`${mentioned}`)
 fs.writeFileSync('./datauser/banned.json', JSON.stringify(ban))
-susp = `❎@${mentioned[0].split('@')[0]} foi desbanido e poderá novamente usar os comandos do bot❎`
+susp = `❎@${mentioned[0].split('@')[0]} se ha desbloqueado y puede volver a utilizar los comandos del bot❎`
 mentions(`${susp}`, mentioned, true)   
 break
 
@@ -1213,9 +1215,9 @@ tiringa.sendMessage(from, attp2, sticker, {quoted: mek})
 break
 
 case 'pão':
-if (isOwner) return reply('Oi Italu')
+if (isOwner) return reply('Hola italu')
 else {
-reply('Oi membro comum')
+reply('Hola miembro común')
 }
 break 
 
@@ -1233,7 +1235,7 @@ levela =
 `  ════❖ LEVEL ❖════
 
 ╭╼╾╼╾╼╾╼╾╼╾╼╾╼
-│‣ Nome: @${sender.split("@")[0]}
+│‣ Nombre: @${sender.split("@")[0]}
 ├╼╾╼╾╼╾╼╾╼╾╼╾╼
 │‣ XP: ${userXp}/${requiredXp}
 ├╼╾╼╾╼╾╼╾╼╾╼╾╼
@@ -1252,14 +1254,14 @@ case 'vcard':
 case 'owner':
 case 'italu':
 case 'italo':
-await tiringa.sendMessage(from, {displayname: "Italu🧙‍♂️", vcard: vcard}, MessageType.contact)
+await tiringa.sendMessage(from, {displayname: "Félix🧙‍♂️", vcard: vcard}, MessageType.contact)
 break
                      
 case 'ownergrup':
 case 'ownergroup':
 tiringa.updatePresence(from, Presence.composing) 
 options = {
-text: `Dono do grupo: @${from.split("-")[0]}`,
+text: `Propietario del grupo: @${from.split("-")[0]}`,
 contextInfo: { mentionedJid: [from]}}
 tiringa.sendMessage(from, options, text, { quoted: mek } )
 break
@@ -1291,7 +1293,7 @@ if (error){ return reply('Ocorreu um erro')}
 else {
 var gugIm = result
 var random =  gugIm[Math.floor(Math.random() * gugIm.length)].url
-sendFileFromUrl(random, image, {quoted: mek, caption: `Aqui está sua pesuisa sobre: ${teks}`})
+sendFileFromUrl(random, image, {quoted: mek, caption: `Aquí está su investigación sobre: ${teks}`})
 }
 }
 } catch (e) {
@@ -1300,7 +1302,7 @@ reply('❌ocorreu um erro❌\n\nTente novamente. ')
 }
 break
 
-case 'gatinho':
+case 'gato':
 msgFilter.isFiltered(from)
 reply(ptbr.wait())
 try {
@@ -1347,7 +1349,7 @@ break
 case 'reiniciar':
 if (!isOwner) return reply(ptbr.ownerB())
 npm = `npm start`
-reply('Reiniciando em alguns segundos...')       
+reply('Reiniciando en unos segundos...')       
 exec(npm, (err, stdout) => {
 if(err) return tiringa.sendMessage(from, "Erro", text, {quoted: mek})
 if (stdout) {
@@ -1371,12 +1373,12 @@ break
 //_CONTADOR DE LETRAS
 case 'contar':
 msgFilter.isFiltered(from)
-if (args.length == 0) return reply( '0 caracteres, pois obviamente não há texto😀')
+if (args.length == 0) return reply( '0 caracteres, porque obviamente no hay texto😀')
 const count = body.slice(8).length
 if (count === 1) {
-reply(`O texto possui ${count} caractere.`)
+reply(`El texto tiene ${count} caractere.`)
 } else if (count > 1) {
-reply(`O texto possui ${count} caracteres.`)
+reply(`El texto tiene ${count} caracteres.`)
 }
 break
 
@@ -1396,12 +1398,12 @@ break
 case 'mediafire': 
 anu = await fetchJson(`https://api.zeks.xyz/api/mediafire?apikey=apivinz&url=${args[0]}`, {method: 'get'})
 buffer = await getBuffer(anu.download)
-teks = `Nama File : ${anu.name_file}
-File Size : ${anu.file_size}
-Tanggal Upload : ${anu.upload_date}
-File Tipe : ${anu.file_type}
-Link Download : ${anu.download}
-Deskripsi : ${anu.description}`
+teks = `Nombre Del Archivo: ${anu.name_file}
+Tamaño del archivo : ${anu.file_size}
+Fecha de carga: ${anu.upload_date}
+Tipo de archivo : ${anu.file_type}
+Enlace de descarga: ${anu.download}
+Descripción : ${anu.description}`
 tiringa.sendMessage(from, teks, text, {quoted: mek})
 costum(buffer, MessageType.document)
 break
@@ -1412,11 +1414,11 @@ buffer = await getBuffer(`https://i.ibb.co/znvZ20B/9b667c9d4b1b.jpg`)
 tiringa.sendMessage(from, buffer, image, {quoted: mek})
 teks = '𝗣𝗹𝗮𝘆 𝘀𝘁𝗼𝗿𝗲\n'
 for (let i of anu.result) {
-teks = `Nama Apk : ${i.title}
+teks = `Nombre de apk : ${i.title}
 App ID : ${i.appid}
-Developer : ${i.developer}
-Price : ${i.price}
-Rate : ${i.rating}
+Desarrollador : ${i.developer}
+Precio : ${i.price}
+Velocidad : ${i.rating}
 Url Apk : ${i.url}
 𝗣𝗹𝗮𝘆 𝘀𝘁𝗼𝗿𝗲
 `
@@ -1430,7 +1432,7 @@ ranp = getRandom('.png')
 rano = getRandom('.webp')
 anu = await fetchJson(`https://api.zeks.xyz/api/searchsticker?apikey=apivinz&q=${body.slice(14)}`, {method: 'get'})
 buffer = await getBuffer(anu.thumb)
-teks = `Nama Sticker : ${anu.title}`
+teks = `Nombre : ${anu.title}`
 dung = (anu.sticker)
 tiringa.sendMessage(from, buffer, image, {quoted: mek, caption: teks})
 var tes2 =  dung[Math.floor(Math.random() * dung.length)];
@@ -1446,13 +1448,13 @@ break
 case 'igstalk': 
 anu = await fetchJson(`https://api.zeks.xyz/api/igstalk?apikey=apivinz&username=${body.slice(9)}`, {method: 'get'})
 buffer = await getBuffer(anu.profile_pic)
-teks = `Username : ${anu.username}
-Fullname : ${anu.fullname}
-Follower : ${anu.follower}
-Following : ${anu.following}
-Verified : ${anu.is_verified}
-Bussiness : ${anu.is_bussiness}
-Private : ${anu.is_private}
+teks = `Nombre de usuario : ${anu.username}
+Nombre completo : ${anu.fullname}
+Seguidores : ${anu.follower}
+Siguiente : ${anu.following}
+Verificado : ${anu.is_verified}
+Negocios : ${anu.is_bussiness}
+Privado : ${anu.is_private}
 Link : https://www.instagram.com/${anu.username}
 Bio : ${anu.bio}`
 tiringa.sendMessage(from, buffer, image, {quoted: mek, caption: teks})
@@ -1465,13 +1467,13 @@ teks = '𝗦𝗛𝗢𝗣𝗘𝗘\n'
 for (let i of anu.data) {
 teks += `Nama barang : ${i.name}
 HMrG : ${i.hMrG}
-Terjual : ${i.terjual}
-Lokasi : ${i.location}
-Cover : ${i.cover}
-Stock : ${i.stock}
-Informasi : ${i.information}
+Vendido : ${i.terjual}
+Localización : ${i.location}
+Cubrir : ${i.cover}
+Existencias : ${i.stock}
+Información : ${i.information}
 Url : ${i.url}
-Deskripsi : ${i.desc}\n\n𝗦𝗛𝗢𝗣𝗘𝗘
+Descripción : ${i.desc}\n\n𝗦𝗛𝗢𝗣𝗘𝗘
 `
 }
 tiringa.sendMessage(from, buffer, image, {quoted: mek, caption: teks.trim()})
@@ -1482,17 +1484,17 @@ anu = await fetchJson(`https://api.zeks.xyz/api/yts?q=${body.slice(10)}&apikey=a
 buffer = await getBuffer(`https://i.ibb.co/XyS1DLw/cdfbdf66f07b.jpg`)
 teks = '𝗬𝗼𝘂𝘁𝘂𝗯𝗲 𝗦𝗲𝗮𝗿𝗰𝗵\n'
 for (let i of anu.result) {
-teks += `Uploader : 
-Nama Channel : ${i.uploader.username}
+teks += `Subudido Por 🧐 : 
+Nombre del Canal : ${i.uploader.username}
 Url Channel : ${i.uploader.url}
-Verified : ${i.uploader.verified}
+Verificado : ${i.uploader.verified}
 Video :
-Nama Video : ${i.video.title}
+Nombre del video : ${i.video.title}
 Url : ${i.video.url}
-Durasi : ${i.video.duration}
-Deskripsi : ${i.video.snippet}
-Tanggal Upload : ${i.video.upload_date}
-Views : ${i.video.views}\n\n𝗬𝗼𝘂𝘁𝘂𝗯𝗲 𝘀𝗲𝗮𝗿𝗰𝗵
+Duración : ${i.video.duration}
+Descripción : ${i.video.snippet}
+Fecha de carga: ${i.video.upload_date}
+Vistas: ${i.video.views}\n\n𝗬𝗼𝘂𝘁𝘂𝗯𝗲 𝘀𝗲𝗮𝗿𝗰𝗵
 `
 }
 tiringa.sendMessage(from, buffer, image, {quoted: mek, caption: teks.trim()})
@@ -1515,7 +1517,7 @@ reply(ptbr.wait())
 anu = await fetchJson(`https://api.zeks.xyz/api/apkpure?q=${body.slice(9)}&apikey=apivinz`, {method: 'get'})
 teks = '𝗔𝗽𝗸 𝗣𝘂𝗿𝗲 𝗦𝗲𝗮𝗿𝗰𝗵\n'
 for (let i of anu.result) {
-teks += `Nama Apk : ${i.title}
+teks += `Nombre de Apk: ${i.title}
 Url : ${i.url}
 Rating : ${i.rating}\n\n𝗔𝗽𝗸 𝗣𝘂𝗿𝗲 𝗦𝗲𝗮𝗿𝗰𝗵
 `
@@ -1542,7 +1544,7 @@ reply(ptbr.wait())
 anu = await fetchJson(`https://api.zeks.xyz/api/happymod?apikey=apivinz&q=${body.slice(10)}`, {method: 'get'})
 teks = '𝗛𝗮𝗽𝗽𝘆 𝗺𝗼𝗱 𝗦𝗲𝗮𝗿𝗰𝗵\n'
 for (let i of anu.result) {
-teks += `Nama Apk : ${i.title}
+teks += `Nombre de Apk: ${i.title}
 Rating : ${i.rating}
 Url : ${i.url}\n\n𝗛𝗮𝗽𝗽𝘆 𝗺𝗼𝗱 𝗦𝗲𝗮𝗿𝗰𝗵
 `
@@ -1564,7 +1566,7 @@ break
 
 case 'shutdown':
 if (!isOwner) return reply(ptbr.ownerB())
-reply('Desligando em 3 segundos....') 
+reply('Desligando en 3 segundos .....') 
 setTimeout( () => {
 tiringa.close() }, 3000)
 break
@@ -1598,14 +1600,14 @@ ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gamb
 }
 const pf = 
 `
-  ‣ Nome: @${sender.split("@")[0]}
+  ‣ Nombre: @${sender.split("@")[0]}
   ‣ Registrado: ✅
-  ‣ Idade: ${idad}
-  ‣ Nome de registro: ${regin}
+  ‣ Edad: ${idad}
+  ‣ Nombre de registro: ${regin}
   ‣ Registrado desde: ${usTime}
   ‣ Level: ${usLevel}
   ‣ XP: ${usXp}/${requirXp}
-  ‣ Patente: ${patt}
+  ‣ Patentes: ${patt}
   ‣ link: wa.me/${sender.split("@")[0]}
   ‣ Código: ${serh}
 `
@@ -1618,7 +1620,7 @@ break
 
 //_EFEITO REVERSE PARA VIDEO  
 case 'reversevid':
-if (!isQuotedVideo) return reply('Marque um vídeo')
+if (!isQuotedVideo) return reply('Marcar un video ')
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
 media = await tiringa.downloadAndSaveMediaMessage(encmedia)
 ran = getRandom('.mp4')
@@ -1633,7 +1635,7 @@ break
 		
 //_EFEITO FAST PARA VIDEO  
 case 'fastvid':
-if (!isQuotedVideo) return reply('Marque um vídeo')
+if (!isQuotedVideo) return reply('Marque un vídeo')
 reply(ptbr.wait())
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
 media = await tiringa.downloadAndSaveMediaMessage(encmedia)
@@ -1649,7 +1651,7 @@ break
 		
 //_EFEITO SLOW PARA VIDEO  
 case 'slowvid':
-if (!isQuotedVideo) return fakegroup('Marque um vídeo')
+if (!isQuotedVideo) return fakegroup('Marque un vídeo')
 reply(ptbr.wait())
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
 media = await tiringa.downloadAndSaveMediaMessage(encmedia)
@@ -1665,7 +1667,7 @@ break
 
 //_EFEITO NIGHTCORE PARA AUDIO         
 case 'nightcore':
-if (!isQuotedAudio) return reply('Marque um áudio')
+if (!isQuotedAudio) return reply('Marque un áudio')
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 media = await tiringa.downloadAndSaveMediaMessage(encmedia)
 ran = getRandom('.mp3')
@@ -1681,7 +1683,7 @@ break
 //_EFEITO SLOW PARA AUDIO
 case 'slow':
 msgFilter.isFiltered(from)
-if (!isQuotedAudio) return reply('Marque um áudio')
+if (!isQuotedAudio) return reply('Marque un áudio')
 low = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 slo = await tiringa.downloadAndSaveMediaMessage(low)
 ran = getRandom('.mp3')
@@ -1697,7 +1699,7 @@ break
 //_EFEITO ESQUILO PARA AUDIO
 case 'esquilo':
 msgFilter.isFiltered(from)
-if (!isQuotedAudio) return reply('Marque um áudio')
+if (!isQuotedAudio) return reply('Marque un áudio')
 pai = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 tup = await tiringa.downloadAndSaveMediaMessage(pai)
 ran = getRandom('.mp3')
@@ -1713,7 +1715,7 @@ break
 //_EFDEITO GIGANTE PARA AUDIO	
 case 'gemuk':
 msgFilter.isFiltered(from)
-if (!isQuotedAudio) return reply('Marque um áudio')
+if (!isQuotedAudio) return reply('Marque un áudio')
 muk = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 gem = await tiringa.downloadAndSaveMediaMessage(muk)
 ran = getRandom('.mp3')
@@ -1728,7 +1730,7 @@ break
 
 //_DEIXA O AUDIO RÁPIDO
 case 'fast':
-if (!isQuotedAudio) return reply('Marque um áudio')
+if (!isQuotedAudio) return reply('Marque un áudio')
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 media = await tiringa.downloadAndSaveMediaMessage(encmedia)
 ran = getRandom('.mp3')
@@ -1744,7 +1746,7 @@ break
 //_AUMENTA O BASS DE UM AUDIO	
 case 'bass':                 
 msgFilter.isFiltered(from)
-if (!isQuotedAudio) return reply('Marque um áudio')
+if (!isQuotedAudio) return reply('Marque un áudio')
 ass = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 bas = await tiringa.downloadAndSaveMediaMessage(ass)
 ran = getRandom('.mp3')
@@ -1761,7 +1763,7 @@ break
 case 'earrape':         
 case 'estourar':       
 msgFilter.isFiltered(from)
-if (!isQuotedAudio) return reply('Marque um áudio')
+if (!isQuotedAudio) return reply('Marque un áudio')
 ass = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 bas = await tiringa.downloadAndSaveMediaMessage(ass)
 ran = getRandom('.mp3')
@@ -1780,11 +1782,11 @@ msgFilter.isFiltered(from)
 me = tiringa.user
 uptime = process.uptime()
 inf =
- `‣ Nome do bot: ${me.name}
-  ‣ Número do bot: @${me.jid.split('@')[0]}
-  ‣ Dono: Italu
-  ‣ Prefix: ${prefix}
-  ‣ O bot está ativo há: ${temporizador(uptime)}
+ `‣ Nombre del bot: ${me.name}
+  ‣ Número del bot: @${me.jid.split('@')[0]}
+  ‣ Dueño: Felixcrack 409
+  ‣ Prefijo: [ ${prefix} ]
+  ‣ El bot ha estado activo durante: ${temporizador(uptime)}
   ‣ Total de usuários: ${_registered.length} usuários
   ‣ Total chats: ${totalchat.length}`
 buffer = await getBuffer(me.imgUrl)
@@ -1810,12 +1812,12 @@ ppUrl = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gamb
 buffer = await getBuffer(ppUrl)
 infogp = 
 ` 
-  ‣Nome: ${groupName}
-  ‣Quantidade de membros: ${groupMembers.length}
+  ‣Nombre: ${groupName}
+  ‣Número de miembros: ${groupMembers.length}
   ‣Total de administradores: ${groupAdmins.length}
-  ‣Criador : @${owner.split('@')[0]}
-  ‣Total de membros: ${participants.length} membros
-  ‣Descrição:
+  ‣Creador : @${owner.split('@')[0]}
+  ‣Miembros totales: ${participants.length} membros
+  ‣Descripción:
   ${desc ? desc : ''}`
 await tiringa.sendMessage(from, buffer, image, {quoted: mek, caption: infogp, contextInfo: {mentionedJid: [owner.split]}})
 break
@@ -1828,7 +1830,7 @@ const timestamp = speed();
 const latensi = speed() - timestamp
 tiringa.updatePresence(from, Presence.composing)
 uptime = process.uptime()
-tiringa.sendMessage(from, `Pong!\nTempo de resposta: ${latensi.toFixed(4)} segundos\n`, text, {quoted: mek})
+tiringa.sendMessage(from, `Speed!\nTiempo de respuesta: ${latensi.toFixed(4)} segundos\n`, text, {quoted: mek})
 break
 
 //_BUSCA IMAGEM NO PINTEREST		
@@ -1836,7 +1838,7 @@ case 'img':
 case 'image':
 case 'imagem':
 msgFilter.isFiltered(from)
-if (args.length < 1) return reply('Digite o comando juntamente com o que você deseja buscar')
+if (args.length < 1) return reply('Ingrese el comando junto con lo que desea buscar ')
 tiringa.updatePresence(from, Presence.composing)
 reply(ptbr.wait())
 try {
@@ -1897,7 +1899,7 @@ n = JSON.parse(JSON.stringify(data));
 nimek = n[Math.floor(Math.random() * n.length)];
 pok = await getBuffer(nimek)
 tiringa.sendMessage(from, pok, image, {
-quoted: mek, caption: `nii?`
+quoted: mek, caption: `👀?`
 })
 } catch {
 reply(ptbr.erro())
@@ -1974,14 +1976,14 @@ reply(ptbr.erro())
 }
 break
 
-case 'nomeninja':
+case 'nombreninja':
 msgFilter.isFiltered(from)
-  if (args.length < 1) return reply('escreva seu nome')
+  if (args.length < 1) return reply('escreva seu Nombre')
 tiringa.updatePresence(from, Presence.composing)
-nome = body.slice(10)
+Nombre = body.slice(10)
 try {
-data = await fetchJson(`https://api.terhambar.com/ninja?nama=${nome}`)
-hasil = `Seu nome de ninja:\n\n${data.result.ninja}`
+data = await fetchJson(`https://api.terhambar.com/ninja?nama=${Nombre}`)
+hasil = `Tu nombre de ninja:\n\n${data.result.ninja}`
 reply(hasil)
 } catch {
   reply(ptbr.erro())
@@ -1994,14 +1996,14 @@ if (!isGroupAdmins) return reply(ptbr.admin())
 //if (!isOwner) return reply(ptbr.ownerB())
 if (args.length < 1) return reply(`Digite ${prefix}nsfw 1 para ativar`)
 if (Number(args[0]) === 1) {
-if (isNsfw) return reply('❎o NSFW já está ativo no grupo❎')
+if (isNsfw) return reply('❎NSFW ya está activo en el grupo❎')
 nsfw.push(from)
 fs.writeFileSync('./data/nsfw.json', JSON.stringify(nsfw))
-reply('✅funções NSFW ativadas nesse grupo✅')
+reply('✅Funciones NSFW activadas en ese grupo✅')
 } else if (Number(args[0]) === 0) {
 nsfw.splice(from, 1)
 fs.writeFileSync('./data/nsfw.json', JSON.stringify(nsfw))
-reply('🚫funções NSFW desativadas nesse grupo🚫')
+reply('🚫Funciones NSFW deshabilitadas en este grupo🚫')
 } else {
 reply(`Digite ${prefix}nsfw 1 para ativar, 0 para desativar o recurso`)
 }
@@ -2012,14 +2014,14 @@ if (!isGroup) return reply(ptbr.group())
 if (!isGroupAdmins) return reply(ptbr.admin())
 if (args.length < 1) return reply(`Digite da forma correta:\nComando: ${prefix}leveis 1, para ativar e 0 para desativar`)
 if (Number(args[0]) === 1) {
-if (isLevelingOn) return reply('❎a função LEVEIS já está ativada no grupo❎')
+if (isLevelingOn) return reply('❎la función NIVELES ya está activada en el grupo❎')
 _leveling.push(from)
 fs.writeFileSync('./data/leveling.json', JSON.stringify(_leveling))
-reply('✅a função LEVEIS foi ativada✅')
+reply('✅se ha activado la función NIVELES✅')
 } else if (Number(args[0]) === 0) {
 _leveling.splice(from, 1)
 fs.writeFileSync('./datauser/leveling.json', JSON.stringify(_leveling))
-reply('❌a função LEVEIS foi desativada❌')
+reply('❌la función NIVELES ha sido desactivada❌')
 } else {
 reply(`Digite da forma correta:\nComando: ${prefix}leveis 1, para ativar e 0 para desativar`)
 }
@@ -2032,7 +2034,7 @@ if (!isBotGroupAdmins) return reply(ptbr.Badmin())
 const ftgp = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo: mek
 const medipp = await tiringa.downloadAndSaveMediaMessage(ftgp)
 await tiringa.updateProfilePicture (from, medipp)
-reply('✅foto do grupo alterada✅')
+reply('✅foto de grupo cambiada✅')
 break
 
 case 'triggered':
@@ -2056,7 +2058,7 @@ tiringa.sendMessage(from, nobg, sticker, {quoted: mek})
 fs.unlinkSync(rano)
 })                               
 } else {
-reply('Você precisa marcar ou enviar uma imagem para isso')
+reply('Necesita etiquetar o cargar una imagen para esto.')
 }
 break
 
@@ -2083,7 +2085,7 @@ imgwas = `${anu.display_url}`
 hehe = await getBuffer(`https://some-random-api.ml/canvas/wasted?avatar=${imgwas}`)
 tiringa.sendMessage(from, hehe, image, {quoted:mek})
 } else {
-reply('Você precisa marcar ou enviar uma imagem')
+reply('Necesitas etiquetar o subir una imagen ')
 }
 break
 
@@ -2098,7 +2100,7 @@ anu = await imgbb("0c419be2e8bfc27eff00147b0c763418", owgi)
 hehe = await getBuffer(`https://videfikri.com/api/textmaker/pencil/?urlgbr=${anu.display_url}`)
 tiringa.sendMessage(from, hehe, image, {quoted:mek})
 } else {
-reply('Você precisa marcar ou enviar uma imagem')
+reply('Necesitas etiquetar o enviar una imagen')
 }
 break
 
@@ -2114,7 +2116,7 @@ anu = await imgbb("0c419be2e8bfc27eff00147b0c763418", owgi)
 hehe = await getBuffer(`https://videfikri.com/api/textmaker/wanted/?urlgbr=${anu.display_url}&text1=${wtext}&text2=10000`)
 tiringa.sendMessage(from, hehe, image, {quoted:mek})
 } else {
-reply('Você precisa marcar ou enviar uma imagem')
+reply('Necesitas etiquetar o enviar una imagen')
 }
 break
 
@@ -2540,7 +2542,7 @@ anu = await imgbb("0c419be2e8bfc27eff00147b0c763418", owgi)
 hehe = await getBuffer(`https://videfikri.com/api/textmaker/gtavposter/?urlgbr=${anu.display_url}`)
 tiringa.sendMessage(from, hehe, image, {quoted:mek})
 } else {
-reply('Você precisa marcar ou enviar uma imagem')
+reply('Necesitas etiquetar o enviar una imagen')
 }
 break
 
@@ -2548,7 +2550,7 @@ case 'wa.me':
 case 'wame':
 tiringa.updatePresence(from, Presence.composing)
 options = {
-text: `Seu link wa.me: wa.me/${sender.split("@s.whatsapp.net")[0]}\nOu: \napi.whatsapp.com/send?phone=${sender.split("@")[0]}`,
+text: `Su enlace wa.me: wa.me/${sender.split("@s.whatsapp.net")[0]}\nO: \napi.whatsapp.com/send?phone=${sender.split("@")[0]}`,
 contextInfo: {
 mentionedJid: [sender]
 }
@@ -2562,7 +2564,7 @@ case 'notif':
 if (!isGroupAdmins) return reply(ptbr.admin())
 tiringa.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(ptbr.group())
-if(args.length < 1) return tiringa.reply('escreva algo como aviso')
+if(args.length < 1) return tiringa.reply('escribe algo como una advertencia ')
 aviso  = `Aviso de: @${sender.split("@")[0]}\n\nAviso: ${body.slice(7)}`
 group = await tiringa.groupMetadata(from);
 member = group['participants']
@@ -2590,32 +2592,10 @@ contextInfo: {mentionedJid: [sender]
 tiringa.sendMessage(from, tagme, text)
 break
 
-case 'play':
-msgFilter.isFiltered(from)
-if (args.length < 1) return reply('Digite o nome da música')
-play = body.slice(5)
-reply('Procurando sua música...⏳')
-anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp4?apikey=apivinz&q=${play}`)
-if (anu.message) return reply('Música não encontrada...\nTente específicar o nome dela.')
-//aanu = await fetchJson(`https://api-tiringa.italuh.repl.co/api/yta?url=${anu.result.source}`)
-aanu = await fetchJson(`https://api-exteam.herokuapp.com/api/yt/playmp3?query=${play}&apikey=estreia`)
-infomp3 = 
-`    MÚSICA ENCONTRADA
-‣ Título: ${anu.result.title}
-‣ Fonte: ${anu.result.source}`
-buffer = await getBuffer(anu.result.thumbnail)
-//lagu = await getBuffer(anu.result.url_audio)
-lagu = await getBuffer(aanu.url)
-setTimeout( () => {
-tiringa.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
-}, 1500)
-reply('Baixando e enviando sua música...')
-tiringa.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', quoted: mek})
-break
 
 case 'ytsearch':
-if (args.length < 1) return reply('Digite o que deseja procurar')
-reply('Procurando...')
+if (args.length < 1) return reply('Escriba lo que desea buscar')
+reply('buscando...')
 play = body.slice(9)
 try {
 anu = await fetchJson(`https://videfikri.com/api/ytplay/?query=${play}`)
@@ -2623,11 +2603,11 @@ if (anu.error) return reply(anu.error)
 infomp3 = 
 `    MÚSICA ENCONTRADA
    ‣ Título: ${anu.result.title}
-   ‣ Fonte: ${anu.result.source}
+   ‣ Fuente: ${anu.result.source}
    ‣ Canal: ${anu.result.channel}
    ‣ link: ${anu.result.url} 
-   ‣ Duração: ${anu.result.duration}
-   ‣ Tamanho: ${anu.result.size}
+   ‣ Duración: ${anu.result.duration}
+   ‣ Tamaño: ${anu.result.size}
 `
 buffer = await getBuffer(anu.result.thumbnail)
 lagu = await getBuffer(anu.result.url)
@@ -2643,59 +2623,18 @@ case 'dadosfake':
 anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/fake_identity`)
 dadosf = 
 `    DADOS GERADOS
-   ‣ Nome: ${anu.nome}
+   ‣ Nombre: ${anu.Nombre}
    ‣ Sexo: ${anu.gender}
-   ‣ Idade: ${anu.age}
-   ‣ Telefone: ${anu.phone}
+   ‣ Edad: ${anu.age}
+   ‣ Teléfono: ${anu.phone}
    ‣ Tipo sanguíneo: ${anu.blood_type}
    ‣ E-mail: ${anu.email}
-   ‣ Senha: ${anu.password}
+   ‣ Contraseña: ${anu.password}
    ‣ CEP: ${anu.zip_code}`
 tiringa.sendMessage(from, dadosf, text, {quoted: mek})
 break
 
-case 'ytmp3':
-msgFilter.isFiltered(from)
-reply(ptbr.wait())
-play = body.slice(7)
-if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Esse link não é do YouTube')
-try {
-anu = await fetchJson(`https://api-tiringa.italuh.repl.co/api/yta?url=${play}`)
-infomp3 = `INFORMAÇÕES DO ÁUDIO\n‣ Título: ${anu.result.title}\n‣ Fonte: ${anu.result.source}\n‣ Tamanho: ${anu.result.size}\nlink: ${anu.result.link}`
-buffer = await getBuffer(anu.result.thumb)
-lagu = await getBuffer(anu.result.link)
-tiringa.sendMessage(from, buffer, image, {
-quoted: mek, caption: infomp3
-})
-tiringa.sendMessage(from, lagu, audio, {
-mimetype: 'audio/mp4', filename: `${anu.result.title}.mp3`, quoted: mek
-})
-} catch {
-reply(ptbr.erro())
-}
-break
 
-case 'ytmp4':
-msgFilter.isFiltered(from)
-reply(ptbr.wait())
-play = body.slice(6)
-try {
-anu = await fetchJson(`https://api.zeks.xyz/api/ytmp4?url=${play}&apikey=apivinz`)
-if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Esse link não é do YouTube')
-if (anu.error) return reply(anu.error)
-infomp3 = `INFORMAÇÕES DO VÍDEO\n‣ Título: ${anu.result.title}\n‣ Fonte: ${anu.result.source}\n‣ Tamanho: ${anu.result.size}\nlink: ${anu.result.url_video}`
-buffer = await getBuffer(anu.result.thumbnail)
-lagu = await getBuffer(anu.result.url_video)
-tiringa.sendMessage(from, buffer, image, {
-quoted: mek, caption: infomp3
-})
-tiringa.sendMessage(from, lagu, video, {
-mimetype: 'video/mp4', filename: `${anu.result.title}.mp4`, quoted: mek
-}) 
-} catch {
-reply(ptbr.erro())
-}
-break
 
 //_CAPTURA O TEXTO NA IMAGEM
 case 'ocr':
@@ -2744,7 +2683,7 @@ reply(ptbr.stick())
 })
 .on('end', function () {
 console.log('Finish')
-exec(`webpmux -set exif ${addMetadata('Tiringa-BOT', 'Italu')} ${ran} -o ${ran}`, async (error) => {
+exec(`webpmux -set exif ${addMetadata('FX-BOT', 'FX')} ${ran} -o ${ran}`, async (error) => {
 if (error) return reply(ptbr.stick())
 tiringa.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
 fs.unlinkSync(media)	
@@ -2772,7 +2711,7 @@ reply(`A conversão de ${tipe} para o sticker falhou`)
 })
 .on('end', function () {
 console.log('Finish')
-exec(`webpmux -set exif ${addMetadata('Tiringa-BOT', 'Italu')} ${ran} -o ${ran}`, async (error) => {
+exec(`webpmux -set exif ${addMetadata('FX-BOT', 'FX')} ${ran} -o ${ran}`, async (error) => {
 if (error) return reply(ptbr.stick())
 tiringa.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
 fs.unlinkSync(media)
@@ -2807,7 +2746,7 @@ fs.unlinkSync(ranw)
 })
 })
 } else {
-reply(`Você precisa enviar ou marcar uma imagem ou vídeo com no máximo 10 segundos`)
+reply(`Debe cargar o etiquetar una imagen o video en 10 segundos`)
 }
 break
 
@@ -2849,7 +2788,7 @@ console.log(`Error : ${err}`)
 exec(`webpmux -set exif ${addMetadata('Tiringa-BOT', 'Italu')} ${rano} -o ${rano}`, async (error) => {
 fs.unlinkSync(media)
 tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-reply(`Falha na conversão de ${tipe} para sticker`)
+reply(`La conversión falló ${tipe} para sticker`)
 })
 })
 exec(`ffmpeg -i ${media} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 200:200 ${rano}`, (err) => {
@@ -2859,7 +2798,7 @@ tiringa.sendMessage(from, buffer, sticker, {quoted: mek})
 fs.unlinkSync(rano)
 })
 } else {
-reply(`Você precisa enviar ou marcar uma imagem ou vídeo com no máximo 10 segundos`)
+reply(`Debe cargar o etiquetar una imagen o video en 10 segundos`)
 }
 break
 
@@ -2867,14 +2806,14 @@ break
 case 'tomp3':
 tiringa.updatePresence(from,
 Presence.composing)
-if (!isQuotedVideo) return reply(`Marque um vídeo com ${prefix}tomp3`)
+if (!isQuotedVideo) return reply(`Etiquetar un video con ${prefix}tomp3`)
 reply(ptbr.wait())
 mitri = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
 duh = await tiringa.downloadAndSaveMediaMessage(mitri)
 ran = getRandom('.mp4')
 exec(`ffmpeg -i ${duh} ${ran}`, (err) => {
 fs.unlinkSync(duh)
-if (err) return reply('❌falha ao converter video para mp3❌')
+if (err) return reply('❌no se pudo convertir el video a mp3❌')
 buffer = fs.readFileSync(ran)
 tiringa.sendMessage(from, buffer, audio, {
 mimetype: 'audio/mp4', quoted: mek
@@ -2885,13 +2824,13 @@ break
 
 //_VOZ DO GOOGLE
 case 'tts':
-if (args.length < 1) return tiringa.sendMessage(from, `Você deve usar o comando da forma correta:\n${prefix}tts (língua) (texto)\nExemplo: ${prefix}tts pt bom dia\n\nUse: ${prefix}ts para listar todas as línguas`, text, {quoted: mek})
+if (args.length < 1) return tiringa.sendMessage(from, `Debes usar el comando correctamente:\n${prefix}tts (lengua) (texto)\nEjemplo: ${prefix}tts Buen dia abortos\n\nUse: ${prefix}ts para enumerar todos los idiomas`, text, {quoted: mek})
 const gtts = require('./lib/gtts')(args[0])
-if (args.length < 2) return tiringa.sendMessage(from, 'Cadê o texto?', text, {quoted: mek})
+if (args.length < 2) return tiringa.sendMessage(from, 'Y El Texto?', text, {quoted: mek})
 dtt = body.slice(8)
 ranm = getRandom('.mp3')
 dtt.length > 800
-? reply('Texto muito grande')
+? reply('¿Quieres Escribir La Biblia?')
 : gtts.save(ranm, dtt, function() {
 tiringa.sendMessage(from, fs.readFileSync(ranm), audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
 fs.unlinkSync(ranm)
@@ -2905,7 +2844,7 @@ if (!isOwner) return reply(ptbr.ownerB())
 prefix = body.slice(10)
 up.prefix = prefix
 fs.writeFileSync('./data/settings.json', JSON.stringify(up, null, '\t'))
-reply(`O prefix foi alterado para: ${prefix}`)
+reply(`El prefijo se ha cambiado a: ${prefix}`)
 break
 
 //_BLOQUEIA O USUÁRIO
@@ -2914,7 +2853,7 @@ tiringa.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(ptbr.group())
 if (!isOwner) return reply(ptbr.ownerB())
 tiringa.blockUser (`${body.slice(8)}@c.us`, "add")
-tiringa.sendMessage(from, `Memblokir nomor, Perintah Diterima`, text, {
+tiringa.sendMessage(from, `Número de bloqueado, comando recibido`, text, {
 quoted: mek
 })
 break
@@ -2924,7 +2863,7 @@ case 'unblock':
 if (!isGroup) return reply(ptbr.group())
 if (!isOwner) return reply(ptbr.ownerB())
 tiringa.blockUser (`${body.slice(9)}@c.us`, "remove")
-tiringa.sendMessage(from, `Membuka blokir, Perintah diterima`, text)
+tiringa.sendMessage(from, `Desbloquear, Orden aceptada`, text)
 break
 
 //_MENCIONA TODOS OS MEMBROS DO GRUPO
@@ -2933,11 +2872,11 @@ msgFilter.isFiltered(from)
 tiringa.updatePresence(from, Presence.composing)
 //reply('comando desativado para evitar flood')
 if (!isGroup) return reply(ptbr.group())
-if (!isPremium) return reply('Você não é um usuário premium...')
+if (!isPremium) return reply('No eres un usuario premium...')
 if (!isGroupAdmins) return reply(ptbr.admin())
 members_id = []
 todos = (args.length > 1) ? body.slice(8).trim(): ''
-todos += `Total: ${groupMembers.length} membros\n`
+todos += `Total: ${groupMembers.length} miembros\n`
 for (let mem of groupMembers) {
 todos += `║➸@${mem.jid.split('@')[0]}\n`
 members_id.push(mem.jid)
@@ -2947,24 +2886,24 @@ break
 
 //_LIMPA TODOS OS CHATS
 case 'clearall':
-if (!isOwner) return reply('Só o Italu pode fazer isso')
+if (!isOwner) return reply('Solo Felixcrack 409 Puede usar ese COMANDO')
 anu = await tiringa.chats.all()
 tiringa.setMaxListeners(25)
 for (let _ of anu) {
 tiringa.deleteChat(_.jid)
 }
-reply('todos os chats foram deletados :)')
+reply('todos los chats han sido eliminados :)')
 break
 
 //_PROMOVE UM MEMBRO DO GRUPO
-case 'promover':
+case 'promote':
 if (!isGroup) return reply(ptbr.group())
 if (!isGroupAdmins) return reply(ptbr.admin())
 if (!isBotGroupAdmins) return reply(ptbr.Badmin())
 if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 if (mentioned.length > 1) {
-pro = 'Berhasil Promote\n'
+pro = 'Ok, le dare admin\n'
 for (let _ of mentioned) {
 pro += `@${_.split('@')[0]}\n`
 }
@@ -2976,31 +2915,31 @@ tiringa.groupMakeAdmin(from, mentioned)
 }
 break
 
-//_ALTERA O NOME DO GRUPO
+//_ALTERA O Nombre DO GRUPO
 case 'setname':
 if (!isGroup) return reply(ptbr.group())
 if (!isGroupAdmins) return reply(ptbr.admin())
 if (!isBotGroupAdmins) return reply(ptbr.Badmin())
 idgrup = `${from.split("@s.whatsapp.net")[0]}`;
 tiringa.groupUpdateSubject(idgrup, `${body.slice(9)}`)
-tiringa.sendMessage(from, 'nome do grupo alterado', text, {
+tiringa.sendMessage(from, 'Nombre del grupo alterado ', text, {
 quoted: mek
 })
 break
 
 //_ALTERA A DESCRIÇÃO DO GRUPO
-case 'setdesk':
+case 'setdesc':
 if (!isGroup) return reply(ptbr.group())
 if (!isGroupAdmins) return reply(ptbr.admin())
 if (!isBotGroupAdmins) return reply(ptbr.Badmin())
 tiringa.groupUpdateDescription(from, `${body.slice(9)}`)
-tiringa.sendMessage(from, 'descrição do grupo alterada', text, {
+tiringa.sendMessage(from, 'descripción del grupo alterada', text, {
 quoted: mek
 })
 break
 
 //_REBAIXA UM MEMBRO
-case 'rebaixar':
+case 'demote':
 if (!isGroup) return reply(ptbr.group())
 if (!isGroupAdmins) return reply(ptbr.admin())
 if (!isBotGroupAdmins) return reply(ptbr.Badmin())
@@ -3014,7 +2953,7 @@ reb += `@${_.split('@')[0]}\n`
 mentions(reb, mentioned, true)
 tiringa.groupRemove(from, mentioned)
 } else {
-mentions(`O usuário @${mentioned[0].split('@')[0]} foi rebaixado para membro comum`, mentioned, true)
+mentions(`Oh usuário @${mentioned[0].split('@')[0]} Ya no eres admin 🤣`, mentioned, true)
 tiringa.groupDemoteAdmin(from, mentioned)
 }
 break
@@ -3024,7 +2963,7 @@ case 'listadmins':
 case 'listadmin':
 case 'adminlist':
 if (!isGroup) return reply(ptbr.group())
-adl = `Lista de administradores do grupo: ${groupMetadata.subject}\nTotal: ${groupAdmins.length}\n\n`
+adl = `Lista de administradores de grupo: ${groupMetadata.subject}\nTotal: ${groupAdmins.length}\n\n`
 no = 0
 for (let admon of groupAdmins) {
 no += 1
@@ -3040,7 +2979,7 @@ if (!isOwner) return reply(ptbr.ownerB())
 const botpp = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contxtInfo: mek
 const cuk = await tiringa.downloadAndSaveMediaMessage(botpp)
 await tiringa.updateProfilePicture(botNumber, cuk)
-reply('Obrigado pela nova foto de perfil')
+reply('Gracias por la nueva foto de perfil')
 break
 
 //_LINK DO GRUPO
@@ -3050,7 +2989,7 @@ if (!isGroup) return reply(ptbr.group())
 if (!isGroupAdmins) return reply(ptbr.admin())
 if (!isBotGroupAdmins) return reply(ptbr.Badmin())
 linkgc = await tiringa.groupInviteCode(from)
-reply('Link do grupo: https://chat.whatsapp.com/'+linkgc)
+reply('El enlace de invitación del grupo es: https://chat.whatsapp.com/'+linkgc)
 break
 
 //_RETIRAR BOT DO GRUPO
@@ -3086,7 +3025,7 @@ break
 //_CONVERTE STICKER EM IMAGEM
 case 'toimg':
 tiringa.updatePresence(from, Presence.composing)                       
-if (!isQuotedSticker) return reply('Você precisa marcar um sticker não animado para isso')
+if (!isQuotedSticker) return reply('Debes etiquetar una pegatina no animada para esto.')
 reply(ptbr.wait())
 tomg = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 medtmg = await tiringa.downloadAndSaveMediaMessage(tomg)
@@ -3104,17 +3043,18 @@ case 'registrar':
 case 'registrar':
 case 'register':
 case 'registra':
+case 'rg':
 case 'registrar':
-if (isUser) return  reply('você já está registrado')
-if (!q.includes('|')) return reply(`Digite da forma correta:\nComando: ${prefix}registrar nome|idade\nExemplo: ${prefix}registrar Italu|18`)
-// if (args.length < 1) return reply(`Como se registrar:\nComando: ${prefix}registrar nome|idade\nExemplo: ${prefix}registrar Italu|18`)
+if (isUser) return  reply('*❇️ Tu ya te has registrado  😑*')
+if (!q.includes('|')) return reply(`Escriba correctamente:\nComando: ${prefix}registrar Nombre|edad\nEjemplo: ${prefix}registrar Felix|16`)
+// if (args.length < 1) return reply(`Como se registrar:\nComando: ${prefix}registrar Nombre|idade\nExemplo: ${prefix}registrar Italu|18`)
 const namaUser = q.substring(0, q.indexOf('|') - 0)
 const umurUser = q.substring(q.lastIndexOf('|') + 1)
 const serialUser = createSerial(20)
-if(isNaN(umurUser)) return reply(`Digite da forma correta:\nComando: ${prefix}registrar nome|idade\nExemplo: ${prefix}registrar Italu|18`)
-if (namaUser.length >= 60) return reply(`Seu nome é muito longo`)
-if (umurUser > 40) return reply(`Idade máxima é 40 anos`)
-if (umurUser < 12) return reply(`Idade mínima é 12 anos`)
+if(isNaN(umurUser)) return reply(`Digite da forma correta:\nComando: ${prefix}registrar Nombre|edad\nEjemplo: ${prefix}registrar Félix|16`)
+if (namaUser.length >= 60) return reply(`Seu Nombre é muito longo`)
+if (umurUser > 40) return reply(`La edad máxima es de 40 años.`)
+if (umurUser < 12) return reply(`La edad mínima es de 12 años.`)
 veri = sender
 try {
 ppimg = await tiringa.getProfilePicture(`${sender.split('@')[0]}@s.whatsapp.net`)
@@ -3122,32 +3062,32 @@ ppimg = await tiringa.getProfilePicture(`${sender.split('@')[0]}@s.whatsapp.net`
 ppimg = 'https://i.ibb.co/rxPtZS8/foto.jpg'
 }
 captionnya = 
-`    〘 Registrado(a) com sucesso 〙
+`    〘 Registrado(a) con éxito 〙
   Código: ${serialUser}
 ╔════════════════
 ╠≽️ Dia: ${date}
 ╠≽️ Hora: ${hr}
-╠≽️ Nome de usuário: @${sender.split("@")[0]}
-╠≽️ Nome de registro: ${namaUser}
-╠≽️ Idade: ${umurUser}
-╠≽️ Seu link wame: wa.me/${sender.split("@")[0]}
+╠≽️ Nombre de usuário: @${sender.split("@")[0]}
+╠≽️ Nombre de registro: ${namaUser}
+╠≽️ Edad: ${umurUser}
+╠≽️ Tu link wame: wa.me/${sender.split("@")[0]}
 ╠≽️ Número: ${sender.split("@")[0]}
 ╚════════════════
-você se registrou, digite ${prefix}menu para listar meus comandos`
+te registraste, escribe ${prefix}menú para listar mis comandos`
 daftarimg = await getBuffer(ppimg)
 addRegisteredUser(sender, namaUser, umurUser, time, serialUser)
 tiringa.sendMessage(from, daftarimg, image, {quoted: mek, caption: captionnya, contextInfo: {mentionedJid: [sender]}})                    
 break
 
 //_FECHA O GRUPO
-case 'fecharg':
+case 'closegp':
 tiringa.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(ptbr.group())
 if (!isGroupAdmins) return reply(ptbr.admin())
 if (!isBotGroupAdmins) return reply(ptbr.Badmin())
 var nomor = mek.participant
 const close = {
-text: `Grupo fechado por: @${nomor.split("@s.whatsapp.net")[0]}`,
+text: `Grupo cerrado por: @${nomor.split("@s.whatsapp.net")[0]}`,
 contextInfo: {
 mentionedJid: [nomor]
 }
@@ -3166,14 +3106,14 @@ tiringa.sendMessage(from, `CPF gerado: ${cpf}`, text, {quoted: mek})
 break
 
 //_ABRE O GRUPO
-case 'openg':
+case 'opengp':
   case 'abrirg':
 tiringa.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(ptbr.group())
 if (!isGroupAdmins) return reply(ptbr.admin())
 if (!isBotGroupAdmins) return reply(ptbr.Badmin())
 open = {
-  text: `Grupo aberto por: @${sender.split("@")[0]}`,
+  text: `Grupo abierto por: @${sender.split("@")[0]}`,
   contextInfo: {
 mentionedJid: [sender]
   }
@@ -3195,25 +3135,25 @@ tiringa.deleteMessage(from, {
   id: mek.message.extendedTextMessage.contextInfo.stanzaId, remoteJid: from, fromMe: true
 })
 } catch {
-  reply('Só é possível deletar mensagens minhas')
+  reply('Solo puedes borrar mensajes míos')
 }
 break
 
 case 'welcome':
 if (!isGroup) return reply(ptbr.group())
 if (!isGroupAdmins)return reply(ptbr.admin())
-if (args.length < 1) return reply('use =welcome 1 para ativar')
+if (args.length < 1) return reply('use =welcome 1 para activar')
 if (Number(args[0]) === 1) {
-if (isWelkom) return reply('já está ativado')
+if (isWelkom) return reply('Ya Estaba Activo 🙄')
 welkom.push(from)
 fs.writeFileSync('./data/welkom.json', JSON.stringify(welkom))
-reply('O recurso bem-vindo foi ativado')
+reply('Se ha habilitado la función de bienvenida')
 } else if (Number(args[0]) === 0) {
 welkom.splice(from, disable)
 fs.writeFileSync('./data/welkom.json', JSON.stringify(welkom))
-reply('O recurso bem-vindo foi desativado')
+reply('La función de bienvenida ha sido deshabilitada ')
 } else {
-reply(`digite ${prefix}welcome 1 para ativar, e 0 para desativar o recurso`)
+reply(`digite ${prefix}welcome 1 para activar, y 0 para deshabilitar la función`)
 }
 break
 
@@ -3228,9 +3168,9 @@ try {
 pp = await tiringa.getProfilePicture(id)
 buffer = await getBuffer(pp)
 tiringa.updateProfilePicture(botNumber, buffer)
-mentions(`Roubei a foto de perfil de: @${id.split('@')[0]}`, [jid], true)
+mentions(`Robé la foto de perfil: @${id.split('@')[0]}`, [jid], true)
 } catch (e) {
-reply('ocorreu um erro')
+reply('ocurrio un error')
 }
 break
 			
@@ -3259,7 +3199,7 @@ case 'morte':
 case 'death':
 idde = ["30","76","90","72","83","73","83","74","92","100","94","48","37","53","63"]
 idade = idde[Math.floor(Math.random() * (idde.length))]
-morte = `Pessoas com este nome: ${pushname} \nTendem a morrer aos ${idade} anos de idade.`
+morte = `Personas con este nombre: ${pushname} \nTienden a morir a ${idade} años de edad.`
 reply(morte)
 break
 			
@@ -3268,7 +3208,7 @@ const sn = ['sim', 'não']
 gosto = body.slice(3)
 if (args.length < 1) return tiringa.sendMessage(from, `Você deve fazer uma pergunta...\nExemplo: ${prefix}sn O Italu é um baiano preguiçoso?`, text, {quoted: mek})
 const jawab = sn[Math.floor(Math.random() * (sn.length))]
-hasil = `${gosto}\n\nSegundo meus cálculos, eu acredito que... ${jawab}`
+hasil = `${gosto}\n\nSegún mis cálculos, creo que .... ${jawab}`
 reply(hasil)
 break
                    
@@ -3288,7 +3228,7 @@ ppt = ["pedra","papel","tesoura"]
 ppy = ppt[Math.floor(Math.random() * ppt.length)]
 ppg = Math.floor(Math.random() * 13) + 349
 pptb = ppy
-pph = `Você ganhou ${ppg} em xp`
+pph = `Ganaste ${ppg} en xp`
 if ((pptb == "pedra" && args == "papel") || 
 (pptb == "papel" && args == "tesoura") || 
 (pptb == "tesoura" && args == "pedra")) {
@@ -3314,7 +3254,7 @@ if (vit == "empate" ) {
 var tes = "O jogo terminou em empate"
 }
 reply(`Tiringa-BOT jogou: ${pptb}\nO jogador jogou: ${args}\n\n${tes}`)
-if (tes == "Vitória do jogador") {
+if (tes == "Jugador gana") {
 reply(pph)
 }
 break
@@ -3352,9 +3292,9 @@ msgFilter.isFiltered(from)
 const somtoy = sotoy[Math.floor(Math.random() * (sotoy.length))]	
 ppg = Math.floor(Math.random() * 13) + 349
 if ((somtoy == '🥑 : 🥑 : 🥑') ||(somtoy == '🍉 : 🍉 : 🍉') ||(somtoy == '🍓 : 🍓 : 🍓') ||(somtoy == '🍎 : 🍎 : 🍎') ||(somtoy == '🍍 : 🍍 : 🍍') ||(somtoy == '🥝 : 🥝 : 🥝') ||(somtoy == '🍑 : 🍑 : 🍑') ||(somtoy == '🥥 : 🥥 : 🥥') ||(somtoy == '🍋 : 🍋 : 🍋') ||(somtoy == '🍐 : 🍐 : 🍐') ||(somtoy == '🍌 : 🍌 : 🍌') ||(somtoy == '🍒 : 🍒 : 🍒') ||(somtoy == '🔔 : 🔔 : 🔔') ||(somtoy == '🍊 : 🍊 : 🍊') ||(somtoy == '🍇 : 🍇 : 🍇')) {
-var vitr = "Você ganhou!!!"
+var vitr = "¡Ganaste!!!"
 } else {
-var vitr = "Você perdeu..."
+var vitr = "Perdiste..."
 }
 const slott = 
 `Consiga 3 iguais para ganhar
@@ -3370,9 +3310,9 @@ const slott =
                       @ɪᴛᴀʟᴜ
 
 ${vitr}`
-if (vitr == "Você ganhou!!!") {
+if (vitr == "¡Ganaste!!!") {
 setTimeout( () => {
-reply(`Você ganhou ${ppg} em xp!!!`)
+reply(`Ganaste ${ppg} en xp!!!`)
 }, 1100)
 }
 tiringa.sendMessage(from, slott, text, {quoted: mek})
@@ -3404,7 +3344,7 @@ random = `${Math.floor(Math.random() * 100)}`
 boiola = random
 if (boiola < 20 ) {bo = 'hmm... você é hetero😔'} else if (boiola == 21 ) {bo = '+/- boiola'} else if (boiola == 23 ) {bo = '+/- boiola'} else if (boiola == 24 ) {bo = '+/- boiola'} else if (boiola == 25 ) {bo = '+/- boiola'} else if (boiola == 26 ) {bo = '+/- boiola'} else if (boiola == 27 ) {bo = '+/- boiola'} else if (boiola == 28 ) {bo = '+/- boiola'} else if (boiola == 29 ) {bo = '+/- boiola'} else if (boiola == 30 ) {bo = '+/- boiola'} else if (boiola == 31 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 32 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 33 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 34 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 35 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 36 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 37 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 38 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 39 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 40 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 41 ) {bo = 'você é né?😏'} else if (boiola == 42 ) {bo = 'você é né?😏'} else if (boiola == 43 ) {bo = 'você é né?😏'} else if (boiola == 44 ) {bo = 'você é né?😏'} else if (boiola == 45 ) {bo = 'você é né?😏'} else if (boiola == 46 ) {bo = 'você é né?😏'} else if (boiola == 47 ) {bo = 'você é né?😏'} else if (boiola == 48 ) {bo = 'você é né?😏'} else if (boiola == 49 ) {bo = 'você é né?😏'} else if (boiola == 50 ) {bo = 'você é ou não?🧐'} else if (boiola > 51) {bo = 'você é gay🙈'
 }
-hasil = `Você é ${random}% gay\n\n${bo}`
+hasil = `Tu eres ${random}% gay\n\n${bo}`
 reply(hasil)
 break
 
@@ -3731,7 +3671,7 @@ sus =
 mentions(`${sus}`, mentioned, true)
 break
 
-case 'abraço':
+case 'abrazo':
 msgFilter.isFiltered(from)
 if (!isGroup) return reply(ptbr.group())
 if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return 
@@ -3740,7 +3680,7 @@ pro = '.\n'
 for (let _ of mentioned) {
 pro += `@${_.split('@')[0]}\n`
 }
-yhb = `Que fofo... @${sender.split("@")[0]} deu um abraço apertado em @${mentioned[0].split('@')[0]}`
+yhb = `Que fofo... @${sender.split("@")[0]} dio un fuerte abrazo en @${mentioned[0].split('@')[0]}`
 mentions(yhb, yhb, true)
 break
 
@@ -3776,7 +3716,7 @@ tiringa.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌ocorreu um erro❌\n\nTente novamente. ')
+reply('❌ocurrio un error❌\n\nInténtalo de nuevo. ')
 }
 break
 
@@ -3795,7 +3735,7 @@ tiringa.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌ocorreu um erro❌\n\nTente novamente. ')
+reply('❌ocurrio un error❌\n\nInténtalo de nuevo. ')
 }
 break
 
@@ -3814,7 +3754,7 @@ tiringa.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌ocorreu um erro❌\n\nTente novamente. ')
+reply('❌ocurrio un error❌\n\nInténtalo de nuevo. ')
 }
 break
 
@@ -3833,7 +3773,7 @@ tiringa.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌ocorreu um erro❌\n\nTente novamente. ')
+reply('❌ocurrio un error❌\n\nTente novamente. ')
 }
 break
 
@@ -4948,7 +4888,7 @@ var buf = Buffer.from(ress, 'base64')
 tiringa.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
-}
+} 
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
 reply('❌ocorreu um erro❌\n\nTente novamente. ')
@@ -4958,7 +4898,7 @@ break
 
 default:
 if (body == `${prefix}${command}`) {
-hsl = `        ────────────────\nOi @${sender.split("@")[0]}!!\nO comando: ${prefix}${command} não existe\n\nTem certeza que digitou corretamente?🧙‍♂️\nUse ${prefix}Menu para listar meus comandos\n        ────────────────`
+hsl = `        ────────────────\nHola 👋 @${sender.split("@")[0]}!!\nEl Comando: ${prefix}${command} No Esta En Mi Menu\n\nTal Ves Lo Escribiste Mal?🧙‍♂️\nUse ${prefix}Menu ver el menu\n        ────────────────`
 tiringa.sendMessage(from, hsl, text, {quoted: mek, contextInfo: {mentionedJid: [sender]}})
 }
 }
