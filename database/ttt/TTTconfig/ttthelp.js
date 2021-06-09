@@ -1,44 +1,44 @@
 const ttthelp = (prefix) => {
     return `
 「 \u{1F4AE} Tic Tac Toe \u{1F4AE} 」
-By: Resen
-◪ BETA, EVITE USAR
+By: ${xd}
+◪ VERSIÓN BETA
 
-◪ APENAS PARA GRUPOS
+◪ SOLO PARA GRUPOS
 
 ◪ INICIAR
   │
   ├─ ❏ Para iniciar digite:
   │     └「 ${prefix}ttt [ DIFICULDADE ] 」
-  └─ ❏ Apenas uma pessoa por vez
+  └─ ❏ solo una persona a la vez
 
 ◪ DIFICULDADE
   │
-  ├─ ❏ easy : totalmente aleatório
-  │     (Só azarado pra perder nessa)
-  ├─ ❏ normal : 66% de chance 
-  │     de bloqueio e vitória
-  ├─ ❏ hard : 100% de chance 
-  │     de bloqueio e vitória 
-  └─ ❏ impossible : Só Kuuhaku
-           pra vencer isso
+  ├─ ❏ easy : totalmente al azar
+  │     (Solo tuvo la mala suerte de perder en esto)
+  ├─ ❏ normal : 66% de casualidad
+  │ bloquear y ganar
+  ├─ ❏ hard : 100% de casualidad
+  │ bloquear y ganar 
+  └─ ❏ impossible : solo Kuuhaku
+           puede vencer esto
 
 ◪ TEMPORIZADOR
   │
-  ├─ ❏ Uma nova partida só poderá
-  │     ser iniciada após um intervalo
-  │     de 4 minutos apartir do início
-  │     da partida anterior
+  ├─ ❏ Un nuevo partido solo puede
+  │ comenzar después de un descanso
+  │ 4 minutos desde el inicio
+  │ del juego anterior
   │
-  └─ ❏ A partida terminará 
-           automaticamente após 4 minutos
-
+  └─ ❏ El partido terminará
+           automáticamente después de 4 minutos
+           
 ◪ COMANDOS
   │
   ├─ ❏ Para marcar digite:
   │     └「 ${prefix}coord [ COORDENADA ] 」
   │
-  └─ ❏ Exemplo:
+  └─ ❏ Ejemplo:
 	        └「   ${prefix}coord a1 
 	               ----------------------
 	               🌀1️⃣2️⃣3️⃣
@@ -46,7 +46,7 @@ By: Resen
 	               🅱️🔲🔲🔲
 	               ©️🔲🔲🔲  」
 
-◪ SEU STATUS
+◪ TU ESTADO
   │
   └─ ❏ Para ver seu status digite:
           └「 ${prefix}tttme 」
@@ -54,25 +54,25 @@ By: Resen
 ◪ RECOMPENSAS
   │
   ├─ ❏ EASY
-  │     ├ Vitória : +「 25 / 50 」
+  │     ├ Victoria : +「 25 / 50 」
   │     └ Derrota : -「 200 / 200 」
   │
   ├─ ❏ NORMAL
-  │     ├ Vitória : +「 75 / 150 」
+  │     ├ Victoria : +「 75 / 150 」
   │     └ Derrota : -「 75 / 150 」
   │
   ├─ ❏ HARD
-  │     ├ Vitória : +「 200 / 400 」
+  │     ├ Victoria : +「 200 / 400 」
   │     └ Derrota : -「 25 / 50 」
   │
   ├─ ❏ IMPOSSIBLE
-  │     ├ Vitória : +「 1000 / 2000 」
+  │     ├ Victoria : +「 1000 / 2000 」
   │     └ Derrota : -「 0 / 0 」
   │
   ├─ ❏ EMPATE
   │     └「 0 / 0 」
   │ 
-  └─ ❏ PARTIDA NÃO FINALIZADA
+  └─ ❏ PARTIDA NO ACABADA
           └ -「 75 / 150 」
 `
 }
