@@ -1,71 +1,48 @@
-const help = (pushname, prefix, temporizador, uptime, hr, tanggal, groupName, users, chatss, prema, checATM, useLevel, useXp, requireXp, patt, comandost ) => {
+const help = (pushname, prefix, temporizader, uptime, hr, tanggal, groupName, users, chatss, prema, checATM, useLevel, useXp, requireXp, patt, comandest ) => {
     return `
      ༻▬࣭ ▭࣭ ▬ ▭࣭ ★ ▬࣭ ▭࣭ ▬ ▭࣭༺
-      Olá ${pushname}🧙‍♂️
+      Hola UwU Como Estás ${pushname}🌚
      ༻▬࣭ ▭࣭ ▬ ▭࣭ ★ ▭࣭ ▬ ▭࣭ ▬࣭༺
 
-🧙‍♂️ BOT 🧙‍♂️
-≫ Prefix:「 ${prefix} 」
-≫ Nome: Tiringa-BOT
-≫ Versão 13.0
-≫ Tempo online: ${temporizador(uptime)}
-≫ Status: ON✅
+🌚 Yo Soy ${xd}
+≫ Mi Prefijo Es:「 ${prefix} 
+≫ Versión: 70.0
+≫ Mi tiempo viva: ${temporizader(uptime)}
+≫ Estade: ON✅
 ≫ Horário: ${hr}
 ≫ Data: ${tanggal}
 ≫ Grupo:  ${groupName}
 ≫ Total de usuários: ${users} usuários
 ≫ Total de chats: ${chatss} chats
-≫ Total de comandos: 152
-≫ Total de comandos usados: ${comandost}
-≫  API: https://api-exteam.herokuapp.com/
+≫ Total de comandos: 1502
+≫ Total de comandos utilizades: ${comandest}
 ═══════════════
 
-👨‍💻USUÁRIO👨‍💻
-≫ Nome: ${pushname}
-≫ Tipo de usuário: ${prema}
-≫ Dinheiro: ${checATM}
-≫ Level: ${useLevel}
-≫ XP: ${useXp}/${requireXp}
-≫ Patente: ${patt}
+👨‍💻USUÁRIO >///<👨‍💻
+≫ 🌚 Tu Nombre Es: ${pushname}
+≫ 🧐 Tu tipo de usuário es: ${prema}
+≫ 💰 Dinero ${checATM}
+≫ ⬆️ Nivel: ${useLevel}
+≫ ✨ XP: ${useXp}/${requireXp}
 ═══════════════
- ♻️NOVIDADES:
-
-❧ menu +18 use =m18
-═══════════════
-✅  COMANDOS NOVOS:
-
-❧ simi
-❧ bugreport
-❧ request
-═══════════════
-✔ REMOVIDOS:     
-
-❧ nekonime
-═══════════════
-⚠️AVISO:
-
-❧ v13 no github em breve...
-═══════════════
-
-═══════════════
-════ 🧙‍♂️ INFORMAÇÕES 🧙‍♂️
+════ 🥰 INFORMACIÓN 🥰
 ╭╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 │•  ${prefix}info
-│[  Informações do bot  ]
-│•  ${prefix}criador
-│[  Número do meu criador  ]
+│[  Información del bot  ]
+│•  ${prefix}creador
+│[  Mi número de creader  ]
 │•  ${prefix}ping
-│[  Mostra meu tempo de resposta  ]
+│[  Muestra mi tiempo de respuesta  ]
 │•  ${prefix}infome
-│[  Mostra algumas informações suas  ]
+│[  Muestra algo de información sobre ti.  ]
 │•  ${prefix}infogp
-│[  Mostra algumas informações do grupo  ]
+│[  Muestra información del grupo.  ]
 │•  ${prefix}ts
-│[  Lista os códigos de linguagem  ]
+│[  Muestra los códigos de idioma  ]
 │•  ${prefix}bugreport
-│[  Avise ao dono sobre algum bug  ]
+│[  Notifique al propietario de cualquier error  ]
 │•  ${prefix}request
-│[  Peça algo para ser adicionado ao bot  ]
+│[  Pide que se agregue algo al bot  ]
 ╰╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 ═════ ≪ •❈• ≫ ═════╝
 
@@ -80,51 +57,55 @@ const help = (pushname, prefix, temporizador, uptime, hr, tanggal, groupName, us
 ════ 👥 GRUPO 👥
 ╭╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 │•  ${prefix}listadmin
-│[  Lista todos os administradores do grupo  ]
+│[  Muestra una lista de todes los administraderes del grupo.  ]
 │•  ${prefix}online
-│[  Lista todos os membros online  ]
-│•  ${prefix}fecharg
-│[  Fecha o grupo  ]
-│•  ${prefix}abrirg
+│[  Lista de todes los miembros en línea  ]
+│•  ${prefix}closegp
+│[  Cierra el grupo  ]
+│•  ${prefix}add
+│[  Añade a alguien ]
+│•  ${prefix}kick
+│[  Elimina a alguien    ]
+│•  ${prefix}abrirgp
 │[  Abre o grupo  ]
-│•  ${prefix}promover
-│[  Promove o alvo ao cargo de administrador  ]
-│•  ${prefix}rebaixar
-│[  Rabaixa o alvo a membro comum  ]
+│•  ${prefix} promote
+│[  Asciende al objetivo al puesto de administrader  ]
+│•  ${prefix}demote
+│[  Reducir el objetivo al miembro común  ]
 │•  ${prefix}setname
-│[  Altera o nome do grupo  ]
-│•  ${prefix}setdesk
-│[  Altera a descrição do grupo  ]
+│[  Cambiar el nombre del grupo  ]
+│•  ${prefix}setdesc
+│[  Cambia la descripción del grupo.  ]
 │•  ${prefix}tagall
-│[  Menciona todos os membros  ]
+│[  Mencione a todes los miembros  ]
 │•  ${prefix}linkgc
-│[  link do grupo  ]
+│[  enlace de grupo  ]
 │•  ${prefix}leave
-│[  O bot sai do grupo  ]
+│[  El bot abandena el grupo  ]
 │•  ${prefix}notif
-│[  Notifica todos os membros  ]
+│[  Notificar a todes los miembros  ]
 │•  ${prefix}welcome
 │[  On/off welcome  ]
-│•  ${prefix}delete (marque a mensagem)
-│[  Apaga uma mensagem enviada pelo bot  ]
+│•  ${prefix}delete (marcar el mensaje)
+│[  Eliminar un mensaje enviade por el bot  ]
 ╰╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 ═════ ≪ •❈• ≫ ═════╝
 
 ═══════════════
 ════ 🎥  MÍDIA 🎥
 ╭╼╾╼╾╼╾╼╾╼╾╼╾╼╾
-│•  ${prefix}esquilo (marque um áudio)
+│•  ${prefix}esquilo (Marca Un Audio)
 │[  Efeito de áudio esquilo  ]
-│•  ${prefix}slow (marque um áudio)
+│•  ${prefix}slow (Marca Un Audio)
 │[  Efeito de áudio lento  ]
-│•  ${prefix}gemuk (marque um áudio)
+│•  ${prefix}gemuk (Marca Un Audio)
 │[  Efeito de áudio gigante  ]
-│•  ${prefix}bass (marque um áudio)
-│[  Aumenta o bass de uma música  ]
+│•  ${prefix}bass (Marca Un Audio)
+│[  Aumenta el bajo de una canción.  ]
 │•  ${prefix}earrape
-│[  Deixa o áudio estourado  ]
+│[  Deixa o áudio estourade  ]
 │•  ${prefix}fast
-│[  Deixa o áudio rápido  ]
+│[  Deixa o áudio rápide  ]
 ╰╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 ═════ ≪ •❈• ≫ ═════╝
 
@@ -132,131 +113,131 @@ const help = (pushname, prefix, temporizador, uptime, hr, tanggal, groupName, us
 ════ 🏖 IMAGEM 🏖
 ╭╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 │•  ${prefix}gtav (Foto)
-│[  Cria um banner do GTA V  ]
+│[  Cria um banner de GTA V  ]
 │•  ${prefix}wanted (Foto)
 │[  Cria um banner estilo "WANTED"  ]
 │•  ${prefix}drawing (Foto)
-│[  Cria uma imagem estilo desenho  ]
+│[  Crea una imagem estilo desenho  ]
 │•  ${prefix}8bit (Texto)
-│[  Cria uma imagem no estilo 8bit  ]
+│[  Crea una imagem con efecto 8bit  ]
 │•  ${prefix}lovepaper (Texto)
-│[  Cria uma imagem no estilo lovepaper  ]
+│[  Crea una imagem con efecto lovepaper  ]
 │•  ${prefix}narutobanner (Texto)
 │[  Cria um banner de Naruto  ]
 │•  ${prefix}romancetext (Texto)
-│[  Cria uma imagem no estilo romancetext  ]
-│•  ${prefix}shadowtext (Texto)
-│[  Cria uma imagem no estilo shadowtext  ]
+│[  Crea una imagem con efecto romancetext  ]
+│•  ${prefix}shadewtext (Texto)
+│[  Crea una imagem con efecto shadewtext  ]
 │•  ${prefix}tiktokeffect (Texto)
-│[  Cria uma imagem no estilo Tik Tok  ]
+│[  Crea una imagem con efecto Tik Tok  ]
 │•  ${prefix}neon (Texto)
-│[  Cria uma imagem no estilo neon  ]
+│[  Crea una imagem con efecto neon  ]
 │•  ${prefix}hpotter (Texto)
-│[  Cria uma imagem no estilo Harry Potter  ]
+│[  Crea una imagem con efecto Harry Potter  ]
 │•  ${prefix}gaming (Texto)
-│[  Cria uma imagem no estilo gaming  ]
+│[  Crea una imagem con efecto gaming  ]
 │•  ${prefix}bneon (Texto)
-│[  Cria uma imagem no estilo neon  ]
+│[  Crea una imagem con efecto neon  ]
 │•  ${prefix}matrix (Texto)
-│[  Cria uma imagem no estilo Matrix  ]
+│[  Crea una imagem con efecto Matrix  ]
 │•  ${prefix}breakwall (Texto)
-│[  Cria uma imagem no estilo breakwall  ]
+│[  Crea una imagem con efecto breakwall  ]
 │•  ${prefix}dropwater (Texto)
-│[  Cria uma imagem no estilo dropwater  ]
+│[  Crea una imagem con efecto dropwater  ]
 │•  ${prefix}wolflogo (Texto)
-│[  Cria uma imagem no estilo wolflogo  ]
+│[  Crea una imagem con efecto wolflogo  ]
 │•  ${prefix}tfire (Texto)
-│[  Cria uma imagem no estilo tfire  ]
+│[  Crea una imagem con efecto tfire  ]
 │•  ${prefix}sandw (Texto)
-│[  Cria uma imagem no estilo sandw  ]
+│[  Crea una imagem con efecto sandw  ]
 │•  ${prefix}firofiro (Texto)
-│[  Cria uma imagem no estilo free fire  ]
+│[  Crea una imagem con efecto free fire  ]
 │•  ${prefix}text3d (Texto)
-│[  Cria uma imagem no estilo text3d  ]
+│[  Crea una imagem con efecto text3d  ]
 │•  ${prefix}text3d2 (Texto)
-│[  Cria uma imagem no estilo text3d2  ]
+│[  Crea una imagem con efecto text3d2  ]
 │•  ${prefix}phlogo (Texto)
-│[  Cria uma imagem no estilo PornHub  ]
+│[  Crea una imagem con efecto PornHub  ]
 │•  ${prefix}bpmek (Texto)
-│[  Cria uma imagem no estilo BlackPmek  ]
+│[  Crea una imagem con efecto BlackPmek  ]
 │•  ${prefix}folhas (Texto)
-│[  Cria uma imagem com texto entre folhas  ]
+│[  Crea una imagem com texto entre folhas  ]
 │•  ${prefix}tlight (Texto)
-│[  Cria uma imagem no estilo tlight  ]
+│[  Crea una imagem con efecto tlight  ]
 │•  ${prefix}sparkling (Texto)
-│[  Cria uma imagem no estilo sparkling  ]
+│[  Crea una imagem con efecto sparkling  ]
 │•  ${prefix}neve (Texto)
-│[  Cria uma imagem com texto na neve  ]
+│[  Crea una imagem com texto na neve  ]
 │•  ${prefix}crismes (Texto)
-│[  Cria uma imagem no estilo crismes  ]
+│[  Crea una imagem con efecto crismes  ]
 │•  ${prefix}retro (Texto)
-│[  Cria uma imagem no estilo retro  ]
+│[  Crea una imagem con efecto retro  ]
 │•  ${prefix}watercolor
-│[  Cria uma imagem no estilo watercolor  ]
+│[  Crea una imagem con efecto watercolor  ]
 │•  ${prefix}pubglogo (Texto)
-│[  Cria uma imagem no estilo pubg  ]
+│[  Crea una imagem con efecto pubg  ]
 │•  ${prefix}bf4 (Texto)
-│[  Cria uma imagem no estilo bf4  ]
+│[  Crea una imagem con efecto bf4  ]
 │•  ${prefix}cslogo (Texto)
-│[  Cria uma imagem no estilo CS  ]
+│[  Crea una imagem con efecto CS  ]
 │•  ${prefix}lithgtext (Texto)
-│[  Cria uma imagem no estilo lithgtext  ]
+│[  Crea una imagem con efecto lithgtext  ]
 │•  ${prefix}silktext (Texto)
-│[  Cria uma imagem no estilo silktext  ]
+│[  Crea una imagem con efecto silktext  ]
 │•  ${prefix}flametext (Texto)
-│[  Cria uma imagem no estilo flametext  ]
+│[  Crea una imagem con efecto flametext  ]
 │•  ${prefix}crosslogo (Texto)
-│[  Cria uma imagem no estilo crosslogo  ]
+│[  Crea una imagem con efecto crosslogo  ]
 │•  ${prefix}glowtext (Texto)
-│[  Cria uma imagem no estilo glowtext  ]
+│[  Crea una imagem con efecto glowtext  ]
 │•  ${prefix}triggered
-│[  Cria um sticker no estilo triggered  ]
+│[  Cria um sticker con efecto triggered  ]
 │•  ${prefix}wasted
-│[  Cria imagem no estilo wasted  ]
+│[  Cria imagem con efecto wasted  ]
 ╰╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 ═════ ≪ •❈• ≫ ═════╝
 
 ═══════════════
-════ 🎲 DIVERSÃO 🎲
+════ 🎲 DIVERSIÓN 🎲
 ╭╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 │•  ${prefix}simi
 │[  I.A  ]
 │•  ${prefix}shitpost
 │[  Imagem aleatória shitpost br  ]
 │•  ${prefix}nomeninja (texto)
-│[  Cria um nome ninja  ]
+│[  Crea un nombre de ninja  ]
 │•  ${prefix}tagme
 │[  Te menciona  ]
-│•  ${prefix}dado
-│[  Sticker de dado aleatório  ]
+│•  ${prefix}dade
+│[  Pegatina Dade aleatorio  ]
 │•  ${prefix}ppt (pedra, papel ou tesoura)
-│[  Jogue pedra, papel e tesoura com o bot  ]
+│[  Lanza piedra, papel y tijeras con el bot  ]
 │•  ${prefix}sn
-│[  Lhe diz sim ou não para uma pergunta  ]
-│•  ${prefix}gado
-│[  Lhe diz seu nível de gado  ]
+│[  Di sí o no a una pregunta  ]
+│•  ${prefix}gade
+│[  Te digo tu nivel de gade  ]
 │•  ${prefix}chance
-│[  Lhe diz a chance de algo  ]
+│[  Decirte la posibilidad de algo  ]
 │•  ${prefix}pau
-│[  Lhe diz o tamanho do seu brinquedo  ]
+│[  Decirte el tamaño de tu pito👀  ]
 │•  ${prefix}gay
-│[  Lhe diz o quanto gay você é  ]
+│[  Decirte lo gay que eres  ]
 │•  ${prefix}slot
-│[  Caça níqueis  ]
+│[  Casino virtual  ]
 │•  ${prefix}caracoroa
 │[  Caracoroa  ]
 │•  ${prefix}level
-│[  Mostra seu level atual  ]
+│[  Muestra tu nivel actual  ]
 │•  ${prefix}roleta
-│[  Roleta russa  ]
+│[  Ruleta rusa  ]
 │•  ${prefix}amongus
-│[  "Expulsa" alguém da nave  ]
+│[  "Expulsa" a alguien de ka nave  ]
 │•  ${prefix}ttt
-│[  Jogo da velha by: Resen  ]
+│[  Tic-tac-toe por: Felixcrack  ]
 │•  ${prefix}omais
-│[  Sorteia alguém para "o mais"  ]
+│[  Alguien afortunado por "o mais"  ]
 │•  ${prefix}top5
-│[  Menciona 5 membros do grupo  ]
+│[  Mencione 5 miembros del grupo  ]
 ╰╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 ═════ ≪ •❈• ≫ ═════╝
 
@@ -278,69 +259,69 @@ const help = (pushname, prefix, temporizador, uptime, hr, tanggal, groupName, us
 ════ 🔧 FERRAMENTAS 🔧
 ╭╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 │•  ${prefix}st 
-│[  Cria um sticker em 512x512  ]
+│[  Crea una pegatina en 512x512  ]
 │•  ${prefix}sticker
-│[  Cria um sticker  ]
+│[  Crea una calcomanía  ]
 │•  ${prefix}toimg
-│[  Converte sticker em imagem  ]
+│[  Convierte sticker en imagem  ]
 │•  ${prefix}tomp3
-│[  Converte vídeo em áudio  ]
+│[  Convierte video a audio  ]
 │•  ${prefix}Img (Texto)
-│[  Busca uma imagem relacionada  ]
+│[  Buscar imagen relacionada  ]
 │•  ${prefix}play (título)
-│[  Baixa o áudio de um vídeo no YouTube  ]
+│[  Descargar audio de un video en YouTube  ]
 │•  ${prefix}tts (língua) (texto)
-│[  Texto para áudio(voz do google)  ]
-│•  ${prefix}timer (tempo)
-│[  Um timer  ]
+│[  Texto a audio(voz de google)  ]
+│•  ${prefix}timer (tiempo)
+│[  Un temporizador  ]
 │•  ${prefix}wame
-│[  Mostra seu link wa.me  ]
+│[  Muestre su enlace wa.me  ]
 │•  ${prefix}ocr
-│[  Captura o texto de uma imagem  ]
+│[  Capture el texto en una imagen o ]
 │•  ${prefix}cep (cep)
-│[  Lista algumas informações do cep  ]
+│[  Enumere alguna información zip  ]
 │•  ${prefix}cartão 
-│[  Gera uma cartão de crédito fake  ]
+│[  Genera una tarjeta de crédito falsa  ]
 │•  ${prefix}contar
-│[  Conta a quantidade de caracteres  ]
+│[  Cuenta el número de caracteres  ]
 │•  ${prefix}clima
-│[  Mostra o clima atual  ]
+│[  Muestra el clima actual  ]
 │•  ${prefix}togif
-│[  Converte sticker em gif  ]
+│[  Convertir pegatina a gif  ]
 │•  ${prefix}gimage
-│[  Busca imagem no google  ]
+│[  Búsqueda de imágenes de Google  ]
 ╰╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 ═════ ≪ •❈• ≫ ═════╝
 
 ═══════════════
-════ 📲 DOWNLOADER 📲
+════ 📲 DESCARGAS 📲
 ╭╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 │•  ${prefix}ytmp3 (link)
-│[  Baixa audio do youtube  ]
+│[  Descargar audio de youtube  ]
 │•  ${prefix}ytmp4 (link)
-│[  Baixa video do youtube  ]
+│[  Descargar video de youtube  ]
 ╰╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 ═════ ≪ •❈• ≫ ═════╝
 
 ═══════════════
-════ 🕴 CRIADOR 🕴
+════ 🕴 CREADOR 🕴
 ╭╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 │•  ${prefix}clone
-│[  Copia a foto de perfil do alvo  ]
+│[  Copia la foto de perfil de alguien  ]
 │•  ${prefix}block
-│[  Bloqueia o alvo  ]
+│[  Bloquea a alguien  ]
 │•  ${prefix}unblock
-│[  Remove o block do alvo  ]
+│[  Bloquea a alguien  ]
 │•  ${prefix}blocklist
-│[  Lista dos usuários bloqueados  ]
+│[  Lista de usuarios bloqueados  ]
 │•  ${prefix}ban
-│[  Adciona um usuário a lista de banidos  ]
+│[  Agregar un usuario a la lista de prohibidos  ]
 │•  ${prefix}unban
-│[  Remove o usuário da lista de banidos  ]
+│[  Elimina al usuario de la lista de prohibiciones.  ]
 │•  ${prefix}addprem
-│[  Adciona um usuário a lista premium  ]
+│[  Agregar un usuario a la lista premium  ]
 │•  ${prefix}dellprem
-│[  Remove o usuário da lista premium  ]
+│[  Elimina al usuario de la lista premium.  ]
 ╰╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 ═════ ≪ •❈• ≫ ═════╝`
 }
@@ -349,14 +330,12 @@ exports.help = help
 const m18 = (pushname, prefix) => {
     return `    
      ༻▬࣭ ▭࣭ ▬ ▭࣭ ★ ▬࣭ ▭࣭ ▬ ▭࣭༺
-      Olá ${pushname}🧙‍♂️
+      Hola 👋 ${pushname}🧙‍♂️
      ༻▬࣭ ▭࣭ ▬ ▭࣭ ★ ▭࣭ ▬ ▭࣭ ▬࣭༺
 
 ☀️　　🌎　°　　🌓　•　　.°•　　　🚀　　
 　　　★　*　　🛸　　　°　🚀　　　　°·　
-.　　　•　°★　•
-Caso algum comando esteja errado avise o
-wa.me/+557499510904
+.　　　•　°★　•e o
 ▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
 ╔════ 🔞 +18 🔞
 ║╭╼╾╼╾╼╾╼╾╼╾╼╾╼╾
@@ -408,7 +387,7 @@ wa.me/+557499510904
 ║│
 ║│•  ${prefix}futanari
 ║│
-║│•  ${prefix}femdom
+║│•  ${prefix}femdem
 ║│
 ║│•  ${prefix}feed
 ║│
