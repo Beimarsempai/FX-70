@@ -5,7 +5,7 @@ const help = (pushname, prefix, temporizader, uptime, hr, tanggal, groupName, us
      ༻▬࣭ ▭࣭ ▬ ▭࣭ ★ ▭࣭ ▬ ▭࣭ ▬࣭༺
 
 🌚 Yo Soy ${xd}
-≫ Mi Prefijo Es:「 ${prefix} 
+≫ Mi Prefijo Es:「 ${prefix} 」
 ≫ Versión: 70.0
 ≫ Mi tiempo viva: ${temporizader(uptime)}
 ≫ Estade: ON✅
@@ -81,7 +81,7 @@ const help = (pushname, prefix, temporizader, uptime, hr, tanggal, groupName, us
 │•  ${prefix}linkgc
 │[  enlace de grupo  ]
 │•  ${prefix}leave
-│[  El bot abandena el grupo  ]
+│[  El bot abandona el grupo  ]
 │•  ${prefix}notif
 │[  Notificar a todes los miembros  ]
 │•  ${prefix}welcome
@@ -95,11 +95,11 @@ const help = (pushname, prefix, temporizader, uptime, hr, tanggal, groupName, us
 ════ 🎥  MÍDIA 🎥
 ╭╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 │•  ${prefix}esquilo (Marca Un Audio)
-│[  Efeito de áudio esquilo  ]
+│[  Efecto de áudio esquilo  ]
 │•  ${prefix}slow (Marca Un Audio)
-│[  Efeito de áudio lento  ]
+│[  Efecto de áudio lento  ]
 │•  ${prefix}gemuk (Marca Un Audio)
-│[  Efeito de áudio gigante  ]
+│[  Efecto de áudio gigante  ]
 │•  ${prefix}bass (Marca Un Audio)
 │[  Aumenta el bajo de una canción.  ]
 │•  ${prefix}earrape
@@ -113,9 +113,9 @@ const help = (pushname, prefix, temporizader, uptime, hr, tanggal, groupName, us
 ════ 🏖 IMAGEM 🏖
 ╭╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 │•  ${prefix}gtav (Foto)
-│[  Cria um banner de GTA V  ]
+│[  Crea um banner de GTA V  ]
 │•  ${prefix}wanted (Foto)
-│[  Cria um banner estilo "WANTED"  ]
+│[  Crea um banner estilo "WANTED"  ]
 │•  ${prefix}drawing (Foto)
 │[  Crea una imagem estilo desenho  ]
 │•  ${prefix}8bit (Texto)
@@ -123,7 +123,7 @@ const help = (pushname, prefix, temporizader, uptime, hr, tanggal, groupName, us
 │•  ${prefix}lovepaper (Texto)
 │[  Crea una imagem con efecto lovepaper  ]
 │•  ${prefix}narutobanner (Texto)
-│[  Cria um banner de Naruto  ]
+│[  Crea um banner de Naruto  ]
 │•  ${prefix}romancetext (Texto)
 │[  Crea una imagem con efecto romancetext  ]
 │•  ${prefix}shadewtext (Texto)
@@ -191,9 +191,9 @@ const help = (pushname, prefix, temporizader, uptime, hr, tanggal, groupName, us
 │•  ${prefix}glowtext (Texto)
 │[  Crea una imagem con efecto glowtext  ]
 │•  ${prefix}triggered
-│[  Cria um sticker con efecto triggered  ]
+│[  Crea um sticker con efecto triggered  ]
 │•  ${prefix}wasted
-│[  Cria imagem con efecto wasted  ]
+│[  Crea imagem con efecto wasted  ]
 ╰╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 ═════ ≪ •❈• ≫ ═════╝
 
@@ -234,7 +234,7 @@ const help = (pushname, prefix, temporizader, uptime, hr, tanggal, groupName, us
 │[  "Expulsa" a alguien de ka nave  ]
 │•  ${prefix}ttt
 │[  Tic-tac-toe por: Felixcrack  ]
-│•  ${prefix}omais
+│•  ${prefix}elmas
 │[  Alguien afortunado por "o mais"  ]
 │•  ${prefix}top5
 │[  Mencione 5 miembros del grupo  ]
