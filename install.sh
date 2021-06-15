@@ -78,6 +78,12 @@ sleep 5
 apt-get install imagemagick -y
 
 echo -e " ${NOCOLOR}"
+echo -e " ${PURPLE} Usando El Comando: apt-get install imagemagick"
+echo -e " ${GREEN}"
+sleep 5
+apt-get install jsdom -y
+
+echo -e " ${NOCOLOR}"
 echo -e " ${PURPLE} Usando El Comando: apt-get install tesseract"
 echo -e " ${GREEN}"
 sleep 5
