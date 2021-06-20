@@ -4970,9 +4970,9 @@ break
 //_ FIM DOS COMANDOS NSFW
 
 default:
-
-
-
+if (body == `${prefix}${command}`) {
+hsl = `        ────────────────\nHola @${sender.split("@")[0]}!!\nEse comando: ${prefix}${command} No esta en mi menu\nLos escribiste bien?🧙‍♂️\nUse ${prefix}Menu para ver mis comandos\n        ────────────────`
+tiringa.sendMessage(from, hsl, text, {quoted: mek, contextInfo: {mentionedJid: [sender]}})
 }
 }
 } catch (e) {
