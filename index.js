@@ -25,11 +25,9 @@ const crypto = require('crypto');
 const axios = require('axios').default;
 const imageToBase64 = require('image-to-base64');
 const googleImage = require('g-i-s');
-const { yta, ytv, igdl, upload } = require('./lib/ytdl')
-const { webp2mp4File} = require('./lib/webp2mp4')
-numbernye = '0'
+
 promote = '*Hola Bienvenido🥳*'
-xd = '👻 𝒟  |  𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 🐧'
+xd = '༊෴✿𝒞𝓇𝓎ℬ𝒶𝒷𝓎✿〄࿐'
 demote = '*Jajajajajajaa ya no eres admin🤣*'
 leave = '\`\`\`Pedazo De Aborto 🥺👍🏿 Nunca Te Quisimos👋\`\`\`'
 //_ARQUIVOS DA LIB
@@ -81,7 +79,7 @@ const vcard = 'BEGIN:VCARD\n'
             + 'VERSION:3.0\n' 
             + 'FN:Felix🧙‍♂️\n' 
             + 'ORG:Creador De FX-BOT-V70\n' 
-            + 'TEL;type=CELL;type=VOICE;waid=12603763944:+1 (260) 376-3944\n' 
+            + 'TEL;type=CELL;type=VOICE;waid=16303967746:+1 630-396-7746\n' 
             + 'END:VCARD'
 
 //_TIC-TAC-TOE By: Resen
@@ -556,43 +554,35 @@ const priorityC = () => {
 
 //_CONEXÃO WHATSAPP WEB 
 async function starts() {
-	const FxBot = new WAConnection()
-	FxBot.version = [2, 2119, 6]
-	FxBot.logger.level = 'warn'
-	console.log(banner.string)
-	console.log(color('[ BOT]','aqua'), color("BOT BY FELIXCRACK 409", "yellow"))
-	console.log('>', '[',color('INFO','blue'),']','Suscribete A Felixcrack 409...')
-	FxBot.on('qr', () => {
-	console.log(color('[','white'), color('!','red'), color(']','white'), color(' Escanea El Código QR De Arriba'))
+	const CryBaby = new WAConnection()
+	CryBaby.version = [2, 2119, 6]
+	CryBaby.logger.level = 'warn'
+    console.log(banner.string)
+	console.log(color('[ BOT]','aqua'), color("Escanee el código QR para conectarse...", "yellow"))
+	CryBaby.on('qr', () => {
+		console.log(color('👆'), color(' Escanea el QR de arriba, para iniciar FX BOT!!'))
 	})
 
-	fs.existsSync('./FxBot.json') && FxBot.loadAuthInfo('./FxBot.json')
-	FxBot.on('connecting', () => {
-	console.log(color('> [ INFO ]', 'white'), color('Conectando...'))
+	fs.existsSync('./CryBaby.json') && CryBaby.loadAuthInfo('./CryBaby.json')
+	CryBaby.on('connecting', () => {
+		start('2', 'Conectando 🔥...')
 	})
-	FxBot.on('open', () => {
-	console.log(color('> [ INFO ]', 'white'), color('Ya me conecte 👌🏻'))
+	CryBaby.on('open', () => {
+		success('2', 'Ya Me Conecté 👌🏻!!!')
 	})
-		await FxBot.connect({timeoutMs: 30*1000})
-  fs.writeFileSync('./FxBot.json', JSON.stringify(FxBot.base64EncodedAuthInfo(), null, '\t'))
-//Banned Call
-FxBot.on('CB:action,,call', async json => {
-    const callerId = json[2][0][1].from;
-    console.log("call dari "+ callerId)
-        FxBot.sendMessage(callerId, "Sistema De Bloqueo Automático, NO LLAMES POR FAVOR", MessageType.text)
-        await sleep(4000)
-        await FxBot.blockUser(callerId, "add")
-})
+	await CryBaby.connect({timeoutMs: 30*1000})
+        fs.writeFileSync('./CryBaby.json', JSON.stringify(CryBaby.base64EncodedAuthInfo(), null, '\t'))
+
 //_FUCTION DE BOAS-VINDAS
-FxBot.on('group-participants-update', async (anu) => {
+CryBaby.on('group-participants-update', async (anu) => {
 		if (!welkom.includes(anu.jid)) return
 		try {
-			const mdata = await FxBot.groupMetadata(anu.jid)
+			const mdata = await CryBaby.groupMetadata(anu.jid)
 			console.log(anu)
 			if (anu.action == 'add') {
 				num = anu.participants[0]
 				try {
-					ppimg = await FxBot.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)
+					ppimg = await CryBaby.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
@@ -601,7 +591,7 @@ FxBot.on('group-participants-update', async (anu) => {
 ┃@${num.split('@')[0]}👋
 ┃BIENVENIDO AL GRUPO 
 ┃*${mdata.subject}*
-┃Usa ${prefix}FxBot\n┃Para Poder Usar El Bot
+┃Usa ${prefix}CryBaby\n┃Para Poder Usar El Bot
 ┗━━━━━━━━━━━━━━━━━
 ┏━━━━━━━━━━━━━━━━━
 ┃   「 *_BIENVENIDO_* 」
@@ -611,7 +601,7 @@ FxBot.on('group-participants-update', async (anu) => {
 ┠⊷️*http://bit.ly/2ZUH2jP
 ┠⊷️ *Grupo Oficial*:
 ┠⊷️ *http://bit.ly/3hpkba4
-┠⊷️ *Escribe ${prefix}FxBot
+┠⊷️ *Escribe ${prefix}CryBaby
 ┃⊷️ *Para Poder Usar El Bot*
 ┗━━━━━━━━━━━━━━━━━
 ┏━━━━━━━━━━━━━━━━━
@@ -621,23 +611,23 @@ FxBot.on('group-participants-update', async (anu) => {
   ${mdata.desc}*
 ┗━━━━━━━━━━━━━━━━━`
 				let buff = await getBuffer(ppimg)
-				FxBot.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
+				CryBaby.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
 				num = anu.participants[0]
 				try {
-					ppimg = await FxBot.getProfilePicture(`${num.split('@')[0]}@c.us`)
+					ppimg = await CryBaby.getProfilePicture(`${num.split('@')[0]}@c.us`)
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
 				teks = `*Adiós : @${num.split('@')[0]}*
 ${leave}	`
 				let buff = await getBuffer(ppimg)
-				FxBot.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
+				CryBaby.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'promote') {
-			const mdata = await FxBot.groupMetadata(anu.jid)
+			const mdata = await CryBaby.groupMetadata(anu.jid)
 			num = anu.participants[0]
 			try {
-					ppimg = await FxBot.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)
+					ppimg = await CryBaby.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
@@ -654,13 +644,13 @@ ${leave}	`
 \`\`\`Grupo :\`\`\` ${mdata.subject}
 
 ${promote}`
-			FxBot.sendMessage(mdata.id, buff, MessageType.image, {caption : teks, contextInfo: {mentionedJid: [num]}, quoted: { "key": { "participant": `${numbernye}`, "remoteJid": `Kntl`, "fromMe": false, "id": "B391837A58338BA8186C47E51FFDFD4A" }, "message": { "documentMessage": { "jpegThumbnail": buff, "mimetype": "application/octet-stream", "title": `PROMOTE`, "fileLength": "36", "pageCount": 0, "fileName": `_Welcome_` }}, "messageTimestamp": "1614069378", "status": "PENDING"}})
+			CryBaby.sendMessage(mdata.id, buff, MessageType.image, {caption : teks, contextInfo: {mentionedJid: [num]}, quoted: { "key": { "participant": `${numbernye}`, "remoteJid": `Kntl`, "fromMe": false, "id": "B391837A58338BA8186C47E51FFDFD4A" }, "message": { "documentMessage": { "jpegThumbnail": buff, "mimetype": "application/octet-stream", "title": `PROMOTE`, "fileLength": "36", "pageCount": 0, "fileName": `_Welcome_` }}, "messageTimestamp": "1614069378", "status": "PENDING"}})
 		} else if (anu.action == 'demote') {
 			num = anu.participants[0]
-			const mdata = await FxBot.groupMetadata(anu.jid)
+			const mdata = await CryBaby.groupMetadata(anu.jid)
 			num = anu.participants[0]
 			try {
-					ppimg = await FxBot.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)
+					ppimg = await CryBaby.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
@@ -676,7 +666,7 @@ ${promote}`
 \`\`\`Grupo :\`\`\` ${mdata.subject}
 
 ${demote}`
-			FxBot.sendMessage(mdata.id, teks, MessageType.text, {contextInfo: {mentionedJid: [num]}, quoted: { "key": { "participant": `${numbernye}`, "remoteJid": `Ktl`, "fromMe": false, "id": "B391837A58338BA8186C47E51FFDFD4A" }, "message": { "documentMessage": { "jpegThumbnail": buff, "mimetype": "application/octet-stream", "title": `DEMOTE`, "fileLength": "36", "pageCount": 0, "fileName": `_Welcome_` }}, "messageTimestamp": "1614069378", "status": "PENDING"}})
+			CryBaby.sendMessage(mdata.id, teks, MessageType.text, {contextInfo: {mentionedJid: [num]}, quoted: { "key": { "participant": `${numbernye}`, "remoteJid": `Ktl`, "fromMe": false, "id": "B391837A58338BA8186C47E51FFDFD4A" }, "message": { "documentMessage": { "jpegThumbnail": buff, "mimetype": "application/octet-stream", "title": `DEMOTE`, "fileLength": "36", "pageCount": 0, "fileName": `_Welcome_` }}, "messageTimestamp": "1614069378", "status": "PENDING"}})
 		}
 		} catch (e) {
 			console.log('Error : %s', color(e, 'red'))
@@ -685,7 +675,7 @@ ${demote}`
 /* ===================================================[ Felixcrack ]==============================================================*/    
 /*=====================================================[ API VIDEFIKRI ]==============================================================*/                  	                 
 	        
-      FxBot.on('chat-update', async (mek) => {
+      CryBaby.on('chat-update', async (mek) => {
 		try {
             if (!mek.hasNewMessage) return
             mek = mek.messages.all()[0]
@@ -710,13 +700,13 @@ ${demote}`
 			const isCmd = body.startsWith(prefix)
             const anun = budy.slice(0).trim().split(/ +/).shift().toLowerCase()
             const testat = budy
-            const totalchat = await FxBot.chats.all()
-			const botNumber = FxBot.user.jid
+            const totalchat = await CryBaby.chats.all()
+			const botNumber = CryBaby.user.jid
 			const ownerNumber = [`12603763944@s.whatsapp.net`]
 			const ownerNumberB = []
 			const isGroup = from.endsWith('@g.us')
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
-			const groupMetadata = isGroup ? await FxBot.groupMetadata(from) : ''
+			const groupMetadata = isGroup ? await CryBaby.groupMetadata(from) : ''
 			const groupName = isGroup ? groupMetadata.subject : ''
 			const groupId = isGroup ? groupMetadata.jid : ''
 			const groupMembers = isGroup ? groupMetadata.participants : ''
@@ -734,63 +724,34 @@ ${demote}`
             const q = args.join(' ')
             const id = botNumber
             const tescuk = ["0@s.whatsapp.net"]
-			let pushname = FxBot.contacts[sender] != undefined ? FxBot.contacts[sender].vname || FxBot.contacts[sender].notify: undefined
+			let pushname = CryBaby.contacts[sender] != undefined ? CryBaby.contacts[sender].vname || CryBaby.contacts[sender].notify: undefined
     
 			const reply = (tej) => {
-				FxBot.sendMessage(from, tej, text, {quoted:mek})
+				CryBaby.sendMessage(from, tej, text, {quoted:mek})
 			}
 			const sendMess = (teks) => {
-				FxBot.sendMessage(from, teks, text)
+				CryBaby.sendMessage(from, teks, text)
 			}
             const sendImage = (tis) => {
-		        FxBot.sendMessage(from, tis, image, {quoted:mek})
+		        CryBaby.sendMessage(from, tis, image, {quoted:mek})
             }
 			const mentions = (ops, memberr, sender, id) => {
-				(id == null || id == undefined || id == false) ? FxBot.sendMessage(from, ops.trim(), extendedText, {contextInfo: {"mentionedJid": memberr}}) : FxBot.sendMessage(from, ops.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": memberr}})
+				(id == null || id == undefined || id == false) ? CryBaby.sendMessage(from, ops.trim(), extendedText, {contextInfo: {"mentionedJid": memberr}}) : CryBaby.sendMessage(from, ops.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": memberr}})
 			}
 			const costum = (pesan, tipe, target, target2) => {
-                 FxBot.sendMessage(from, pesan, tipe, {quoted: {key: {fromMe: false, participant: `${target}`, ...(from ? {remoteJid: from}: {})}, message: {conversation: `${target2}` }}})
+                 CryBaby.sendMessage(from, pesan, tipe, {quoted: {key: {fromMe: false, participant: `${target}`, ...(from ? {remoteJid: from}: {})}, message: {conversation: `${target2}` }}})
             }
              const sendPtt = (teks) => {
-                 FxBot.sendMessage(from, audio, mp3, {quoted: mek })
+                 CryBaby.sendMessage(from, audio, mp3, {quoted: mek })
             }
              
-            const sendMediaURL = async(to, url, text="", mids=[]) =>{
-                if(mids.length > 0){
-                    text = normalizeMention(to, text, mids)
-                }
-                const fn = Date.now() / 10000;
-                const filename = fn.toString()
-                let mime = ""
-                var download = function (uri, filename, callback) {
-                    request.head(uri, function (err, res, body) {
-                        mime = res.headers['content-type']
-                        request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
-                    });
-                };
-                download(url, filename, async function () {
-                    console.log('done');
-                    let media = fs.readFileSync(filename)
-                    let type = mime.split("/")[0]+"Message"
-                    if(mime === "image/gif"){
-                        type = MessageType.video
-                        mime = Mimetype.gif
-                    }
-                    if(mime.split("/")[0] === "audio"){
-                        mime = Mimetype.mp4Audio
-                    }
-                    FxBot.sendMessage(to, media, type, { quoted: mek, mimetype: mime, caption: text,contextInfo: {"mentionedJid": mids}})
-                    
-                    fs.unlinkSync(filename)
-                });
-            }   
 //_FUCTION PATENTE
 const nivelAtual = getLevelingLevel(sender)
 var patt = 'Bronze I🥉'
-if (nivelAtual === 1) {patt = 'Bronze  I🥉' } else if (nivelAtual === 2) {patt = 'Bronze II🥉'} else if (nivelAtual === 3) {patt = 'Bronze  III🥉'} else if (nivelAtual === 4) {patt = 'Bronze  IV🥉'} else if (nivelAtual === 5) {patt = 'Bronze  V🥉'} else if (nivelAtual === 6) {patt = 'Prata I🥈'} else if (nivelAtual === 7) {patt = 'Prata II🥈'} else if (nivelAtual === 8) {patt = 'Prata III🥈'} else if (nivelAtual === 9) {patt = 'Prata IV🥈'} else if (nivelAtual === 10) {patt = 'Prata V🥈'} else if (nivelAtual === 11) {patt = 'Ouro I🥇'} else if (nivelAtual === 12) {patt = 'Ouro II🥇'} else if (nivelAtual === 13) {patt = 'Ouro III🥇'} else if (nivelAtual === 14) {patt = 'Ouro IV🥇'} else if (nivelAtual === 15) {patt = 'Ouro V🥇'} else if (nivelAtual === 16) {patt = 'Campeón I🏆'} else if (nivelAtual === 17) {patt = 'Campeón II🏆'} else if (nivelAtual === 18) {patt = 'Campeón III🏆'} else if (nivelAtual === 19) {patt = 'Campeón IV🏆'} else if (nivelAtual === 20) {patt = 'Campeón V🏆'} else if (nivelAtual === 21) {patt = 'Diamante I 💎'} else if (nivelAtual === 22) {patt = 'Diamante II 💎'} else if (nivelAtual === 23) {patt = 'Diamante III 💎'} else if (nivelAtual === 24) {patt = 'Diamante IV 💎'} else if (nivelAtual === 25) {patt = 'Diamante V 💎'} else if (nivelAtual === 26) {patt = 'Mestre I 🐂'} else if (nivelAtual === 27) {patt = 'Mestre II 🐂'} else if (nivelAtual === 28) {patt = 'Mestre III 🐂'} else if (nivelAtual === 29) {patt = 'Mestre IV 🐂'} else if (nivelAtual === 30) {patt = 'Mestre V 🐂'} else if (nivelAtual === 31) {patt = 'Mítico I 🔮'} else if (nivelAtual === 32) {patt = 'Mítico II 🔮'} else if (nivelAtual === 33) {patt = 'Mítico III 🔮'} else if (nivelAtual === 34) {patt = 'Mítico IV 🔮'} else if (nivelAtual === 35) {patt = 'Mítico V 🔮'} else if (nivelAtual === 36) {patt = 'God I🕴'} else if (nivelAtual === 37) {patt = 'God II🕴'} else if (nivelAtual === 38) {patt = 'God III🕴'} else if (nivelAtual === 39) {patt = 'God IV🕴'} else if (nivelAtual === 40) {patt = 'God V🕴'} else if (nivelAtual > 41) {patt = '🛐Grande Mestre🛐'}
+if (nivelAtual === 1) {patt = 'Bronze  I🥉' } else if (nivelAtual === 2) {patt = 'Bronze II🥉'} else if (nivelAtual === 3) {patt = 'Bronze  III🥉'} else if (nivelAtual === 4) {patt = 'Bronze  IV🥉'} else if (nivelAtual === 5) {patt = 'Bronze  V🥉'} else if (nivelAtual === 6) {patt = 'Prata I🥈'} else if (nivelAtual === 7) {patt = 'Prata II🥈'} else if (nivelAtual === 8) {patt = 'Prata III🥈'} else if (nivelAtual === 9) {patt = 'Prata IV🥈'} else if (nivelAtual === 10) {patt = 'Prata V🥈'} else if (nivelAtual === 11) {patt = 'Ouro I🥇'} else if (nivelAtual === 12) {patt = 'Ouro II🥇'} else if (nivelAtual === 13) {patt = 'Ouro III🥇'} else if (nivelAtual === 14) {patt = 'Ouro IV🥇'} else if (nivelAtual === 15) {patt = 'Ouro V🥇'} else if (nivelAtual === 16) {patt = 'Campeão I🏆'} else if (nivelAtual === 17) {patt = 'Campeão II🏆'} else if (nivelAtual === 18) {patt = 'Campeão III🏆'} else if (nivelAtual === 19) {patt = 'Campeão IV🏆'} else if (nivelAtual === 20) {patt = 'Campeão V🏆'} else if (nivelAtual === 21) {patt = 'Diamante I 💎'} else if (nivelAtual === 22) {patt = 'Diamante II 💎'} else if (nivelAtual === 23) {patt = 'Diamante III 💎'} else if (nivelAtual === 24) {patt = 'Diamante IV 💎'} else if (nivelAtual === 25) {patt = 'Diamante V 💎'} else if (nivelAtual === 26) {patt = 'Mestre I 🐂'} else if (nivelAtual === 27) {patt = 'Mestre II 🐂'} else if (nivelAtual === 28) {patt = 'Mestre III 🐂'} else if (nivelAtual === 29) {patt = 'Mestre IV 🐂'} else if (nivelAtual === 30) {patt = 'Mestre V 🐂'} else if (nivelAtual === 31) {patt = 'Mítico I 🔮'} else if (nivelAtual === 32) {patt = 'Mítico II 🔮'} else if (nivelAtual === 33) {patt = 'Mítico III 🔮'} else if (nivelAtual === 34) {patt = 'Mítico IV 🔮'} else if (nivelAtual === 35) {patt = 'Mítico V 🔮'} else if (nivelAtual === 36) {patt = 'God I🕴'} else if (nivelAtual === 37) {patt = 'God II🕴'} else if (nivelAtual === 38) {patt = 'God III🕴'} else if (nivelAtual === 39) {patt = 'God IV🕴'} else if (nivelAtual === 40) {patt = 'God V🕴'} else if (nivelAtual > 41) {patt = '🛐Grande Mestre🛐'}
           
 //_TIPO DE USUÁRIO
-if (groupAdmins) {prema = 'Admi 🤓'}if (isPremium) {prema = 'Premium😎'} if (isOwner) {prema = 'Eres mi Rey 👑'} if (isUser) {prema = 'Registrado 🥳'} else {var prema = 'Eres mi esclavo🗿'}
+if (groupAdmins) {prema = 'Admin🤓'}if (isPremium) {prema = 'Premium😎'} if (isOwner) {prema = 'CryBaby🕴🏽'} if (isUser) {prema = 'Registrado 🥳'} else {var prema = 'Miembro Común🗿'}
 
 //_XP COM LEVELING ATIVO
 if (isGroup && isLevelingOn) {
@@ -807,7 +768,7 @@ if (requiredXp <= getLevelingXp(sender)) {
 addLevelingLevel(sender, 1)
 const lvup = {
 text:
-`    ════❖SUBISTE DE NIVEL❖════
+`    ════❖LEVEL UP❖════
 
   ╭╼╾╼╾╼╾╼╾╼╾╼╾╼
   │‣ Nombre: @${namelv.split('@')[0]}
@@ -821,8 +782,8 @@ text:
   
    ════❖LEVEL UP❖════`,
 contextInfo: {mentionedJid: [namelv]}}
-FxBot.sendMessage(from, lvup, text, {quoted: mek})
-//FxBot.sendMessage(from, lvup, text, {quoted: mek, contextInfo: {mentionedJid: [sender]}}
+CryBaby.sendMessage(from, lvup, text, {quoted: mek})
+//CryBaby.sendMessage(from, lvup, text, {quoted: mek, contextInfo: {mentionedJid: [sender]}}
 }
 } catch (err) {
 console.error(err)
@@ -845,14 +806,14 @@ if (budy.includes("://chat.whatsapp.com/")){
 if (!isGroup) return
 if (!isAntilink) return
 if (isGroupAdmins) return('🧐')
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-reply(`Link Detectado 😤 ${sender.split("@")[0]}`)
+reply(`Adios ${sender.split("@")[0]} 🤡🚫🏳️‍🌈`)
 setTimeout( () => {
-FxBot.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
+CryBaby.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
 }, 1000)
 setTimeout( () => {
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 reply("adios")
 }, 0)
 }
@@ -867,12 +828,12 @@ addLevelingXp(tttset.player, randomEndTTTXP)
 const checkTTTIdEnd = getTTTId(tttset.player)
 if (checkTTTIdEnd === undefined) addTTTId(tttset.player)
 addTTTpoints(tttset.player, randomEndTTTXP)
-FxBot.sendMessage(tttset.local,`❌ O TEMPO DE JOGO EXPIROU ❌\n\n➣  PUNIÇÃO: ${randomEndTTTXP} XP 🔮`, text, {quoted: tttset.mentionPlayer})
+CryBaby.sendMessage(tttset.local,`❌ O TEMPO DE JOGO EXPIROU ❌\n\n➣  PUNIÇÃO: ${randomEndTTTXP} XP 🔮`, text, {quoted: tttset.mentionPlayer})
 } else {
-FxBot.sendMessage(tttset.local,`❌ O TEMPO DE JOGO EXPIROU ❌`, text, {quoted: tttset.mentionPlayer})
+CryBaby.sendMessage(tttset.local,`❌ O TEMPO DE JOGO EXPIROU ❌`, text, {quoted: tttset.mentionPlayer})
 }
 esp.a1 = "🔲"; esp.a2 = "🔲"; esp.a3 = "🔲"
-esp.b1 = "🔲"; esp.b2 = "🔲"; esp.b3 = "🔲"
+esp.b1 = "??"; esp.b2 = "🔲"; esp.b3 = "🔲"
 esp.c1 = "🔲"; esp.c2 = "🔲"; esp.c3 = "🔲"
 tttset.tttstatus = "off"
 tttset.autoEndTime = "off"
@@ -890,19 +851,19 @@ const isQuotedSticker = type === 'extendedTextMessage' && content.includes('stic
 colors = ['red','white','black','blue','yellow','green','aqua','magenta','orange']
 
 //_VISUALIZA AS MENSAGENS 
-FxBot.chatRead(from)
+CryBaby.chatRead(from)
 
 //if (isCmd && isMute && !isGroupAdmins && !isOwner && !isPremium) return
 
-//ANTI-SPAM BY Felixcrack
+//ANTI-SPAM BY ITALU
 if (isCmd && msgFilter.isFiltered(from)) {
-FxBot.sendMessage(from, `Sem flood @${sender.split('@')[0]}...\n\nAguarde 5 segundos antes de usar outro comando✅`, text, {quoted: mek, contextInfo: {mentionedJid: [sender]}})
+CryBaby.sendMessage(from, `Sem flood @${sender.split('@')[0]}...\n\nAguarde 5 segundos antes de usar outro comando✅`, text, {quoted: mek, contextInfo: {mentionedJid: [sender]}})
 return console.log(color('SPAM', 'red'), color(moment.tz('America/Sao_Paulo').format('HH:mm:ss'), 'yellow'), color(`${command}`),'DE:', color(pushname))}
 		
 //_CONTAGEM DE COMANDOS
 if (isCmd) cmdadd()
 		
-//_USUÁRIO BANEADO
+//_USUÁRIO BANIDO
 if (isCmd && isBanned) {
 return console.log(color('[BAN] Ignorando comando', 'blue'), color(moment.tz('America/Sao_Paulo').format('HH:mm:ss'), 'yellow'), color(`${command}`),'DE:', color(pushname))}
           
@@ -911,59 +872,59 @@ if (!isGroup && isCmd) console.log(color('COMANDO DETECTADO', 'magenta'), color(
 if (isCmd && isGroup) console.log(color('COMANDO DETECTADO', 'magenta'), color('HORA:', 'orange'), color(moment.tz('America/Sao_Paulo').format('HH:mm:ss'), 'yellow'), color('COMANDO:'), color(`${command}`),'DE:', color(pushname),'EN:', color(groupName))
 			
 //_MENSAGENS
-if (!isCmd && isGroup) console.log(color('MENSAJE RECIBIDO', 'aqua'), color('HORA:', 'orange'), color(moment.tz('America/Sao_Paulo').format('HH:mm:ss'), 'yellow'), 'DE:', color(pushname),'EN:', color(groupName))
+if (!isCmd && isGroup) console.log(color('MENSAJE RECIBIDO', 'aqua'), color('HORA:', 'orange'), color(moment.tz('America/Sao_Paulo').format('HH:mm:ss'), 'yellow'), 'DE:', color(pushname),'EM:', color(groupName))
 if (!isGroup && !isCmd) console.log(color('MENSAJE RECIBIDO', 'aqua'), color('HORA:', 'orange'), color(moment.tz('America/Sao_Paulo').format('HH:mm:ss'), 'yellow'), 'DE:', color(pushname))
 
 //_RESPONDER AUTOMATICAMENTE
 if ((budy === 'bot') || (budy === 'BOT') || (budy === 'Bot')) {
 buf = fs.readFileSync(`./src/onichan.mp3`)
-FxBot.sendMessage(from, buf, audio, {mimetype: 'audio/mp4', quoted: mek, ptt: true})
+CryBaby.sendMessage(from, buf, audio, {mimetype: 'audio/mp4', quoted: mek, ptt: true})
 }
 if ((budy === "fdp") || (budy === "Fdp") || (budy === "FDP")) {
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 reply("teu pai")
 }
 if ((budy === "oi bot") || (budy === "Oi bot")) {
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 reply("oi")
 }
 if ((budy === "vtnc") || (budy === "Vtnc")) {
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 reply("Tomar no cu é vitamina, como você e suas primas")
 }
 if ((budy === "vsfd") || (budy === "Vsfd")) {
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 reply("Vtnc")
 }
 if ((budy.match("sexo")) || (budy.match("Sexo"))) {
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 reply(`¿Con Ropa? 😏`)
 }
 if (budy === "pnc") {
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 reply(`vsfd ${pushname}`)
 }
 if ((budy === "cleito") || (budy === "Cleito")) {
 cleitu = fs.readFileSync(`./src/edmi.webp`)
-FxBot.sendMessage(from, cleitu, sticker, {quoted: mek})
+CryBaby.sendMessage(from, cleitu, sticker, {quoted: mek})
 }
 if ((budy === "Edmilson") || (budy === "edmilson")) {
 cleitu = fs.readFileSync(`./src/cleito.webp`)
-FxBot.sendMessage(from, cleitu, sticker, {quoted: mek})
+CryBaby.sendMessage(from, cleitu, sticker, {quoted: mek})
 }
 if ((budy.includes('kkkkkkkkkkk')) || (budy.includes('KKKKKKKKKK'))) {
 reply('Qual a graça?🤨')
 }
 
-if (budy.match('FxBot')) {
+if (budy.match('CryBaby')) {
 result = fs.readFileSync(`./src/mask.webp`)
-FxBot.sendMessage(from, result, sticker, {quoted: mek })
-} else if (budy.match('FxBot')) {
+CryBaby.sendMessage(from, result, sticker, {quoted: mek })
+} else if (budy.match('CryBaby')) {
 result = fs.readFileSync(`./src/mask.webp`)
-FxBot.sendMessage(from, result, sticker, {quoted: mek })
-} else if (budy.match('FxBot')) {
+CryBaby.sendMessage(from, result, sticker, {quoted: mek })
+} else if (budy.match('CryBaby')) {
 result = fs.readFileSync(`./src/mask.webp`)
-FxBot.sendMessage(from, result, sticker, {quoted: mek })
+CryBaby.sendMessage(from, result, sticker, {quoted: mek })
 }
 
 switch(testat) {
@@ -1021,7 +982,7 @@ case 'Help':
 case 'menu':
 case 'Menu':
 textmenu = `        ────────────────
-oi ${pushname} use ${prefix}menu caso queira usar meus comandos🧙‍♂️
+Hola ${pushname} Usa ${prefix}menu en caso de que quieras usar mis comandos🧙‍♂️
         ────────────────`
 reply(textmenu)
 break
@@ -1063,7 +1024,7 @@ const chatss = `${totalchat.length}`
 const comandost = totalcmd
 costum(help(pushname, prefix, temporizador, uptime, hr, tanggal, groupName, users, chatss, prema, checATM, useLevel, useXp, requireXp, patt, comandost ), text, tescuk, cr)
 if(useLevel == undefined && useXp == undefined){
-reply('Hola uwu si aparece "undefined" \nUsa el comando ${prefix}registrar')
+reply('Hola UwU si aparece "undefined" \nUsa el comando #registrar')
 }
 break
 
@@ -1075,22 +1036,16 @@ break
 //_TESTES
 case 'mz24':
 if (!isZ24) return reply('Comando exclusivo z24')
-FxBot.sendMessage(from, mz(prefix), text, tescuk, cr)
+CryBaby.sendMessage(from, mz(prefix), text, tescuk, cr)
 break
 
 case 'gc':
 case 'grupo':
-if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(`NO ERES ADMIN JAJAJAJ`)
-					if (!isBotGroupAdmins) return reply(`LU ADMIN?`)
-					if (args[0] === 'abrir') {
-					    reply(`*GRUPO ABIERTO CON ÉXITO ✓*`)
-						FxBot.groupSettingChange(from, GroupSettingChange.messageSend, false)
-					} else if (args[0] === 'cerrar') {
-						reply(`*GRUPO CERRADO CON ÉXITO✓*`)
-						FxBot.groupSettingChange(from, GroupSettingChange.messageSend, true)
-					}				 
-					break  
+if (body.endsWith('cerrar')){
+  CryBaby.groupSettingChange (from, GroupSettingChange.messageSend, true)
+}
+break
+						             
 case 'leaderboard':
 					case 'lb':
 						if (!isGroup) return reply(mess.only.group)
@@ -1111,12 +1066,12 @@ case 'leaderboard':
 							mentions(leaderboard, mentioned_id, true)
 						} catch (err) {
 							console.log(err)
-							FxBot.sendMessage(from, `É necessário que no mínimo 3 pessoas tenham level...`, text, {quoted: mek})
+							CryBaby.sendMessage(from, `É necessário que no mínimo 3 pessoas tenham level...`, text, {quoted: mek})
 						}
 					break
 
 case 'ts':
-FxBot.sendMessage(from, bahasa(prefix, sender), text, {
+CryBaby.sendMessage(from, bahasa(prefix, sender), text, {
 quoted: mek
 })
 break
@@ -1124,27 +1079,27 @@ break
 //_TESTESS
 case 'bugreport':
 const bug = body.slice(10)
- if (args.length > 300) return FxBot.sendMessage(from, 'Máximo 300 caracteres', msgType.text, {quoted: mek})
+ if (args.length > 300) return CryBaby.sendMessage(from, 'Máximo 300 caracteres', msgType.text, {quoted: mek})
 var nomor = mek.participant
 teks1 = `[REPORT]\nDe: @${sender.split("@s.whatsapp.net")[0]}\nError: ${bug}`
 var options = {
  text: teks1, 
 contextInfo: {mentionedJid: [sender]}, 
 }
-FxBot.sendMessage('12603763944@s.whatsapp.net', options, text, {quoted: mek})
+CryBaby.sendMessage('12603763944@s.whatsapp.net', options, text, {quoted: mek})
 reply("Mensaje enviado a mi dueño >///<")
 break
 
 case 'request':
 const pesann = body.slice(8)
-if (args.length > 300) return FxBot.sendMessage(from, 'Máximo 300 caracteres', msgType.text, {quoted: mek})
+if (args.length > 300) return CryBaby.sendMessage(from, 'Máximo 300 caracteres', msgType.text, {quoted: mek})
 var nomor = mek.participant
 const teks2 = `[REQUEST]\nDe: @${sender.split("@s.whatsapp.net")[0]}\nMensagem: ${pesann}`
 var options = {
 text: teks1,
 contextInfo: {mentionedJid: [sender]},
 }
-FxBot.sendMessage('12603763944@s.whatsapp.net', options, text, {quoted: mek})
+CryBaby.sendMessage('12603763944@s.whatsapp.net', options, text, {quoted: mek})
 reply("Mensaje enviado a mi dueño >///<")
 break
 
@@ -1156,7 +1111,7 @@ case 'simih':
 				   if (args.length < 1) return reply('¿Dónde está el texto??')
 					teks = body.slice(5)
 					anu = await simih(teks) //fetchJson(`https://api.simsimi.net/v1/?text=${text}&lang=es`, {method: 'GET'})
-				   FxBot.sendMessage(from, anu, text, {quoted: mek})
+				   CryBaby.sendMessage(from, anu, text, {quoted: mek})
 				   break				  
 
 
@@ -1170,7 +1125,7 @@ break
 case 'clima':
 case 'tempo':
 anu = await getBuffer(`https://api.apiflash.com/v1/urltoimage?access_key=57fcd6384cff4e529b9ca76089f05992&url=https://pt.wttr.in/${args[0]}`)
-FxBot.sendMessage(from, anu, image, {quoted: mek})
+CryBaby.sendMessage(from, anu, image, {quoted: mek})
 break
 
 case 'time':
@@ -1184,7 +1139,7 @@ break
 case 'macumba':
 pedido = body.slice(8)
 buf = fs.readFileSync(`./src/macu.mp4`)
-FxBot.sendMessage(from, buf, video, {quoted: mek})
+CryBaby.sendMessage(from, buf, video, {quoted: mek})
 break
 
 case 'hi':
@@ -1199,8 +1154,8 @@ if (/*horaAtual == '08:42' && */ammOff == "off" && isGroup) {
 const aMimirMp3 = fs.readFileSync('./src/acorda.mp3')
 const aMimirSt = fs.readFileSync('./src/sonic.webp')
 for (let _ of groupMembers) {
-FxBot.sendMessage(_.jid, aMimirMp3, MessageType.audio, {mimetype: 'audio/mp4', ptt:true})
-FxBot.sendMessage(_.jid, aMimirSt, sticker)
+CryBaby.sendMessage(_.jid, aMimirMp3, MessageType.audio, {mimetype: 'audio/mp4', ptt:true})
+CryBaby.sendMessage(_.jid, aMimirSt, sticker)
 }
 ammOff = "on"
 } else if (/*horaAtual != '08:42' && */ammOff == "on") {
@@ -1210,27 +1165,27 @@ break
 case 'take':
 		if (!isQuotedSticker) return reply('Stiker aja om')
             encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-		    media = await FxBot.downloadAndSaveMediaMessage(encmedia)
+		    media = await CryBaby.downloadAndSaveMediaMessage(encmedia)
             anu = args.join(' ').split('|')
             satu = anu[0] !== '' ? anu[0] : `SELF`
             dua = typeof anu[1] !== 'undefined' ? anu[1] : `BOT`
             require('./lib/fetcher.js').createExif(satu, dua)
-			require('./lib/fetcher.js').modStick(media, FxBot, mek, from)
+			require('./lib/fetcher.js').modStick(media, CryBaby, mek, from)
 			break
 //_ENVIA OS ARQUIVOS .JSON By: Resen 
 case 'jsonfiles':
 if (!isOwner) return reply(ptbr.ownerB())
 const daftarfile = fs.readFileSync('./database/json/daftar.json')
-FxBot.sendMessage(from, daftarfile, document, {mimetype: 'json', filename: 'daftar.json'})
+CryBaby.sendMessage(from, daftarfile, document, {mimetype: 'json', filename: 'daftar.json'})
 break
 
-case 'elmas':				
+case 'omais':				
 membr = []
 const mett = groupMembers
 const msdd = groupMembers
 const siapssa = mett[Math.floor(Math.random() * mett.length)]
 const sipssd = pushname[Math.floor(Math.random() * msdd.length)]
-bbebn = `El mas ${body.slice(6)} es : @${siapssa.jid.split('@')[0]}`
+bbebn = `O mais${body.slice(6)} é o(a): @${siapssa.jid.split('@')[0]}`
 membr.push(siapssa.jid)
 mentions(bbebn, membr, true)
 break    
@@ -1323,20 +1278,20 @@ case 'send':
 var pc = body.slice(6)
 var nomor = pc.split("|")[0];
 var pesan = pc.split("|")[1];
-FxBot.sendMessage(nomor+'@s.whatsapp.net', pesan, text)
+CryBaby.sendMessage(nomor+'@s.whatsapp.net', pesan, text)
 break
 
 case 'ttp':
 msgFilter.isFiltered(from)
-if (args.length < 1) return reply(`Ejemplo:\nComando: ${prefix}ttp Felixcrack`)
+if (args.length < 1) return reply(`Use dessa forma:\nComando: ${prefix}ttp Toin gado`)
 attp2 = await getBuffer(`https://api.xteam.xyz/ttp?file&text=${encodeURIComponent(body.slice(4))}`)
-FxBot.sendMessage(from, attp2, sticker, {quoted: mek})
+CryBaby.sendMessage(from, attp2, sticker, {quoted: mek})
 break
 
 case 'attp':
-if (args.length < 1) return reply(`Ejemplo:\nComando: ${prefix}attp Felixcrack`)
+if (args.length < 1) return reply(`Use dessa forma:\nComando: ${prefix}attp Toin gado`)
 attp2 = await getBuffer(`https://api.xteam.xyz/attp?file&text=${encodeURIComponent(body.slice(5))}`)
-FxBot.sendMessage(from, attp2, sticker, {quoted: mek})
+CryBaby.sendMessage(from, attp2, sticker, {quoted: mek})
 break
 
 case 'check':
@@ -1370,38 +1325,38 @@ levela =
 ╰╼╾╼╾╼╾╼╾╼╾╼╾╼
 
   ════❖ LEVEL ❖════`     
-FxBot.sendMessage(from, levela, text, {quoted: mek, contextInfo: {mentionedJid: [sender]}})
+CryBaby.sendMessage(from, levela, text, {quoted: mek, contextInfo: {mentionedJid: [sender]}})
 break
   
 //_ENVIA O VCARD DO DONO
 case 'criador':
 case 'vcard':
 case 'owner':
-case 'Felixcrack':
+case 'italu':
 case 'italo':
-await FxBot.sendMessage(from, {displayname: "Félix🧙‍♂️", vcard: vcard}, MessageType.contact)
+await CryBaby.sendMessage(from, {displayname: "Félix🧙‍♂️", vcard: vcard}, MessageType.contact)
 break
                      
 case 'ownergrup':
 case 'ownergroup':
-FxBot.updatePresence(from, Presence.composing) 
+CryBaby.updatePresence(from, Presence.composing) 
 options = {
 text: `Propietario del grupo: @${from.split("-")[0]}`,
 contextInfo: { mentionedJid: [from]}}
-FxBot.sendMessage(from, options, text, { quoted: mek } )
+CryBaby.sendMessage(from, options, text, { quoted: mek } )
 break
 		
 //const gy =['0','5','10','15','20','25','30','35','40','45','50','55','60','65','70','75','80','85','90','95','100']
 
 case 'testime':
 setTimeout( () => {
-FxBot.sendMessage(from, 'O tempo acabou', text) 
+CryBaby.sendMessage(from, 'O tempo acabou', text) 
 }, 10000)
 setTimeout( () => {
-FxBot.sendMessage(from, '5 segundos restantes', text)
+CryBaby.sendMessage(from, '5 segundos restantes', text)
 }, 5000)
 setTimeout( () => {
-FxBot.sendMessage(from, '10 segundos restantes', text)
+CryBaby.sendMessage(from, '10 segundos restantes', text)
 }, 0)
 break
 
@@ -1423,7 +1378,7 @@ sendFileFromUrl(random, image, {quoted: mek, caption: `Aquí está su investigac
 }
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -1433,11 +1388,11 @@ reply(ptbr.wait())
 try {
 axios.get(`https://nekos.life/api/v2/img/meow`).then((res)=>{
 imageToBase64(res.data.url).then((response) => {var buf = Buffer.from(response, 'base64');
-FxBot.sendMessage(from, buf, image, {quoted: mek,caption: "🐱"})
+CryBaby.sendMessage(from, buf, image, {quoted: mek,caption: "🐱"})
 })})
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -1450,12 +1405,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -1464,9 +1419,9 @@ if (!isOwner) return reply(ptbr.ownerB())
 pm2 = `pm2 kill`
 reply('A mimir...')
 exec(pm2, (err, stdout) => {
-if(err) return FxBot.sendMessage(from, "Erro", text, {quoted: mek})
+if(err) return CryBaby.sendMessage(from, "Erro", text, {quoted: mek})
 if (stdout) {
-FxBot.sendMessage(from, stdout, text, {quoted: mek})
+CryBaby.sendMessage(from, stdout, text, {quoted: mek})
 } 
 })
 break
@@ -1476,21 +1431,21 @@ if (!isOwner) return reply(ptbr.ownerB())
 npm = `npm start`
 reply('Reiniciando en unos segundos...')       
 exec(npm, (err, stdout) => {
-if(err) return FxBot.sendMessage(from, "Erro", text, {quoted: mek})
+if(err) return CryBaby.sendMessage(from, "Erro", text, {quoted: mek})
 if (stdout) {
-FxBot.sendMessage(from, stdout, text, {quoted: mek})
+CryBaby.sendMessage(from, stdout, text, {quoted: mek})
 } 
 })
 break
 
 case 'exe':
-FxBot.updatePresence(from, Presence.composing) 
+CryBaby.updatePresence(from, Presence.composing) 
 if (!isOwner) return reply(ptbr.ownerB())
 const cmd = body.slice(4)
 exec(cmd, (err, stdout) => {
-if(err) return FxBot.sendMessage(from, "Comando inexistente", text, {quoted: mek})
+if(err) return CryBaby.sendMessage(from, "Comando inexistente", text, {quoted: mek})
 if (stdout) {
-FxBot.sendMessage(from, stdout, text, {quoted: mek})
+CryBaby.sendMessage(from, stdout, text, {quoted: mek})
 }
 })
 break
@@ -1529,14 +1484,14 @@ Fecha de carga: ${anu.upload_date}
 Tipo de archivo : ${anu.file_type}
 Enlace de descarga: ${anu.download}
 Descripción : ${anu.description}`
-FxBot.sendMessage(from, teks, text, {quoted: mek})
+CryBaby.sendMessage(from, teks, text, {quoted: mek})
 costum(buffer, MessageType.document)
 break
 
 case 'playstore': 
 anu = await fetchJson(`https://api.zeks.xyz/api/sgplay?apikey=FELIXCRACKAPI409&q=${body.slice(11)}`, {method: 'get'})
 buffer = await getBuffer(`https://i.ibb.co/znvZ20B/9b667c9d4b1b.jpg`)
-FxBot.sendMessage(from, buffer, image, {quoted: mek})
+CryBaby.sendMessage(from, buffer, image, {quoted: mek})
 teks = '𝗣𝗹𝗮𝘆 𝘀𝘁𝗼𝗿𝗲\n'
 for (let i of anu.result) {
 teks = `Nombre de apk : ${i.title}
@@ -1559,7 +1514,7 @@ anu = await fetchJson(`https://api.zeks.xyz/api/searchsticker?apikey=FELIXCRACKA
 buffer = await getBuffer(anu.thumb)
 teks = `Nombre : ${anu.title}`
 dung = (anu.sticker)
-FxBot.sendMessage(from, buffer, image, {quoted: mek, caption: teks})
+CryBaby.sendMessage(from, buffer, image, {quoted: mek, caption: teks})
 var tes2 =  dung[Math.floor(Math.random() * dung.length)];
 exec(`wget ${tes2} -O ${ranp} && ffmpeg -i ${ranp} -vcodec adminwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
 if (err) return reply('Error cok')
@@ -1582,7 +1537,7 @@ Negocios : ${anu.is_bussiness}
 Privado : ${anu.is_private}
 Link : https://www.instagram.com/${anu.username}
 Bio : ${anu.bio}`
-FxBot.sendMessage(from, buffer, image, {quoted: mek, caption: teks})
+CryBaby.sendMessage(from, buffer, image, {quoted: mek, caption: teks})
 break
 
 case 'shopee': 
@@ -1601,7 +1556,7 @@ Url : ${i.url}
 Descripción : ${i.desc}\n\n𝗦𝗛𝗢𝗣𝗘𝗘
 `
 }
-FxBot.sendMessage(from, buffer, image, {quoted: mek, caption: teks.trim()})
+CryBaby.sendMessage(from, buffer, image, {quoted: mek, caption: teks.trim()})
 break
 
 case 'ytsearch': 
@@ -1622,7 +1577,7 @@ Fecha de carga: ${i.video.upload_date}
 Vistas: ${i.video.views}\n\n𝗬𝗼𝘂𝘁𝘂𝗯𝗲 𝘀𝗲𝗮𝗿𝗰𝗵
 `
 }
-FxBot.sendMessage(from, buffer, image, {quoted: mek, caption: teks.trim()})
+CryBaby.sendMessage(from, buffer, image, {quoted: mek, caption: teks.trim()})
 break
 
 case 'neonime': 
@@ -1680,11 +1635,11 @@ break
 case 'togif': // by lindow
 if ((isMedia && !mek.message.videoMessage || isQuotedSticker) && args.length == 0) {
 const encmediaaa = isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-const mediaaa = await FxBot.downloadAndSaveMediaMessage(encmediaaa)
+const mediaaa = await CryBaby.downloadAndSaveMediaMessage(encmediaaa)
 reply(ptbr.wait())
 a = await webp2gifFile(mediaaa)
 mp4 = await getBuffer(a.result)
-FxBot.sendMessage(from, mp4, MessageType.video, {mimetype: 'video/gif', filename: `stick.gif`, quoted: mek, caption: '✅'})
+CryBaby.sendMessage(from, mp4, MessageType.video, {mimetype: 'video/gif', filename: `stick.gif`, quoted: mek, caption: '✅'})
 fs.unlinkSync(mediaaa)
 }
 break
@@ -1693,7 +1648,7 @@ case 'shutdown':
 if (!isOwner) return reply(ptbr.ownerB())
 reply('Desligando en 3 segundos .....') 
 setTimeout( () => {
-FxBot.close() }, 3000)
+CryBaby.close() }, 3000)
 break
 
 //_NULIS
@@ -1704,7 +1659,7 @@ reply(ptbr.wait())
 anu = await fetchJson(`https://tools.zone-xsec.com/api/nulis.php?q=${teks}`, {method: 'get'})
 if (anu.error) return reply(anu.error)
 buff = await getBuffer(anu.image)
-FxBot.sendMessage(from, buff, image, {quoted: mek, caption: '✏📕'})
+CryBaby.sendMessage(from, buff, image, {quoted: mek, caption: '✏📕'})
 break
 
 //_INFORMAÇÕES DO USUÁRIO
@@ -1719,7 +1674,7 @@ const idad = getRegisterAge(sender)
 const regin = getRegisterName(sender)
 const requirXp = 500 * (Math.pow(2, usLevel) - 1)
 try {
-ppimg = await FxBot.getProfilePicture(`${sender.split('@')[0]}@c.us`)
+ppimg = await CryBaby.getProfilePicture(`${sender.split('@')[0]}@c.us`)
 } catch {
 ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 }
@@ -1730,16 +1685,16 @@ const pf =
   ‣ Edad: ${idad}
   ‣ Nombre de registro: ${regin}
   ‣ Registrado desde: ${usTime}
-  ‣ Level: ${usLevel}
+  ‣ Nivel: ${usLevel}
   ‣ XP: ${usXp}/${requirXp}
-  ‣ Patentes: ${patt}
-  ‣ link: wa.me/${sender.split("@")[0]}
+  ‣ Rango: ${patt}
+  ‣ Link: wa.me/${sender.split("@")[0]}
   ‣ Código: ${serh}
 `
 its = await getBuffer (ppimg)
-FxBot.sendMessage(from, its, image, {quoted: mek, caption: pf, contextInfo: {mentionedJid: [sender]}})
+CryBaby.sendMessage(from, its, image, {quoted: mek, caption: pf, contextInfo: {mentionedJid: [sender]}})
 if(usLevel == undefined && usXp == undefined && usTime == undefined && serh == undefined) {
-reply('Información con "undefined" Significa que aún no te vas registrado >\\\< \nUsa este comando onichan =registrar')
+reply('Información con "undefined" indica que aún no te has registrado \nUsa el comando =registrar')
 }
 break
 
@@ -1747,60 +1702,60 @@ break
 case 'reversevid':
 if (!isQuotedVideo) return reply('Marcar un video ')
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
-media = await FxBot.downloadAndSaveMediaMessage(encmedia)
+media = await CryBaby.downloadAndSaveMediaMessage(encmedia)
 ran = getRandom('.mp4')
 exec(`ffmpeg -i ${media} -vf reverse -af areverse ${ran}`, (err) => {
 fs.unlinkSync(media)
 if (err) return reply(`Err: ${err}`)
 buffer453 = fs.readFileSync(ran)
-FxBot.sendMessage(from, buffer453, video, { mimetype: 'video/mp4', quoted: mek })
+CryBaby.sendMessage(from, buffer453, video, { mimetype: 'video/mp4', quoted: mek })
 fs.unlinkSync(ran)
 })
 break
 		
 //_EFEITO FAST PARA VIDEO  
 case 'fastvid':
-if (!isQuotedVideo) return reply('Menciona un vídeo')
+if (!isQuotedVideo) return reply('Marque un vídeo')
 reply(ptbr.wait())
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
-media = await FxBot.downloadAndSaveMediaMessage(encmedia)
+media = await CryBaby.downloadAndSaveMediaMessage(encmedia)
 ran = getRandom('.mp4')
 exec(`ffmpeg -i ${media} -filter_complex "[0:v]setpts=0.5*PTS[v];[0:a]atempo=2[a]" -map "[v]" -map "[a]" ${ran}`, (err) => {
 fs.unlinkSync(media)
 if (err) return reply(`Err: ${err}`)
 buffer453 = fs.readFileSync(ran)
-FxBot.sendMessage(from, buffer453, video, { mimetype: 'video/mp4', quoted: mek })
+CryBaby.sendMessage(from, buffer453, video, { mimetype: 'video/mp4', quoted: mek })
 fs.unlinkSync(ran)
 })		
 break
 		
 //_EFEITO SLOW PARA VIDEO  
 case 'slowvid':
-if (!isQuotedVideo) return fakegroup('Menciona un vídeo')
+if (!isQuotedVideo) return fakegroup('Marque un vídeo')
 reply(ptbr.wait())
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
-media = await FxBot.downloadAndSaveMediaMessage(encmedia)
+media = await CryBaby.downloadAndSaveMediaMessage(encmedia)
 ran = getRandom('.mp4')
 exec(`ffmpeg -i ${media} -filter_complex "[0:v]setpts=2*PTS[v];[0:a]atempo=0.5[a]" -map "[v]" -map "[a]" ${ran}`, (err) => {
 fs.unlinkSync(media)
 if (err) return fakegroup(`Err: ${err}`)
 buffer453 = fs.readFileSync(ran)
-FxBot.sendMessage(from, buffer453, video, { mimetype: 'video/mp4', quoted: mek })
+CryBaby.sendMessage(from, buffer453, video, { mimetype: 'video/mp4', quoted: mek })
 fs.unlinkSync(ran)
 })
 break
 
 //_EFEITO NIGHTCORE PARA AUDIO         
 case 'nightcore':
-if (!isQuotedAudio) return reply('Menciona un audio')
+if (!isQuotedAudio) return reply('Marque un áudio')
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-media = await FxBot.downloadAndSaveMediaMessage(encmedia)
+media = await CryBaby.downloadAndSaveMediaMessage(encmedia)
 ran = getRandom('.mp3')
 exec(`ffmpeg -i ${media} -filter:a atempo=1.06,asetrate=44100*1.25 ${ran}`, (err, stderr, stdout) => {
 fs.unlinkSync(media)
 if (err) return reply('Error!')
 hah = fs.readFileSync(ran)
-FxBot.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
+CryBaby.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
 fs.unlinkSync(ran)
 })
 break   
@@ -1808,15 +1763,15 @@ break
 //_EFEITO SLOW PARA AUDIO
 case 'slow':
 msgFilter.isFiltered(from)
-if (!isQuotedAudio) return reply('Menciona un audio')
+if (!isQuotedAudio) return reply('Marque un áudio')
 low = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-slo = await FxBot.downloadAndSaveMediaMessage(low)
+slo = await CryBaby.downloadAndSaveMediaMessage(low)
 ran = getRandom('.mp3')
 exec(`ffmpeg -i ${slo} -filter:a "atempo=0.9,asetrate=44100" ${ran}`, (err, stderr, stdout) => {
 fs.unlinkSync(slo)
 if (err) return reply('Error!')
 hah = fs.readFileSync(ran)
-FxBot.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
+CryBaby.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
 fs.unlinkSync(ran)
 })
 break
@@ -1824,15 +1779,15 @@ break
 //_EFEITO ESQUILO PARA AUDIO
 case 'esquilo':
 msgFilter.isFiltered(from)
-if (!isQuotedAudio) return reply('Menciona un audio')
+if (!isQuotedAudio) return reply('Marque un áudio')
 pai = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-tup = await FxBot.downloadAndSaveMediaMessage(pai)
+tup = await CryBaby.downloadAndSaveMediaMessage(pai)
 ran = getRandom('.mp3')
 exec(`ffmpeg -i ${tup} -filter:a "atempo=0.7,asetrate=65100" ${ran}`, (err, stderr, stdout) => {
 fs.unlinkSync(tup)
 if (err) return reply('Error!')
 hah = fs.readFileSync(ran)
-FxBot.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
+CryBaby.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
 fs.unlinkSync(ran)
 })
 break
@@ -1840,30 +1795,30 @@ break
 //_EFDEITO GIGANTE PARA AUDIO	
 case 'gemuk':
 msgFilter.isFiltered(from)
-if (!isQuotedAudio) return reply('Menciona un audio')
+if (!isQuotedAudio) return reply('Marque un áudio')
 muk = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-gem = await FxBot.downloadAndSaveMediaMessage(muk)
+gem = await CryBaby.downloadAndSaveMediaMessage(muk)
 ran = getRandom('.mp3')
 exec(`ffmpeg -i ${gem} -filter:a "atempo=1.6,asetrate=22100" ${ran}`, (err, stderr, stdout) => {
 fs.unlinkSync(gem)
 if (err) return reply('Error!')
 hah = fs.readFileSync(ran)
-FxBot.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
+CryBaby.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
 fs.unlinkSync(ran)
 })
 break
 
 //_DEIXA O AUDIO RÁPIDO
 case 'fast':
-if (!isQuotedAudio) return reply('Menciona un audio')
+if (!isQuotedAudio) return reply('Marque un áudio')
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-media = await FxBot.downloadAndSaveMediaMessage(encmedia)
+media = await CryBaby.downloadAndSaveMediaMessage(encmedia)
 ran = getRandom('.mp3')
 exec(`ffmpeg -i ${media} -filter:a "atempo=0.9,asetrate=95100" ${ran}`, (err, stderr, stdout) => {
 fs.unlinkSync(media)
 if (err) return reply('Erro')
 hah = fs.readFileSync(ran)
-FxBot.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
+CryBaby.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
 fs.unlinkSync(ran)
 })
 break
@@ -1871,15 +1826,15 @@ break
 //_AUMENTA O BASS DE UM AUDIO	
 case 'bass':                 
 msgFilter.isFiltered(from)
-if (!isQuotedAudio) return reply('Menciona un audio')
+if (!isQuotedAudio) return reply('Marque un áudio')
 ass = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-bas = await FxBot.downloadAndSaveMediaMessage(ass)
+bas = await CryBaby.downloadAndSaveMediaMessage(ass)
 ran = getRandom('.mp3')
 exec(`ffmpeg -i ${bas} -af equalizer=f=20:width_type=o:width=2:g=15 ${ran}`, (err, stderr, stdout) => {
 fs.unlinkSync(bas)
 if (err) return reply('Error!')
 hah = fs.readFileSync(ran)
-FxBot.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
+CryBaby.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
 fs.unlinkSync(ran)
 })
 break
@@ -1888,15 +1843,15 @@ break
 case 'earrape':         
 case 'estourar':       
 msgFilter.isFiltered(from)
-if (!isQuotedAudio) return reply('Menciona un audio')
+if (!isQuotedAudio) return reply('Marque un áudio')
 ass = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-bas = await FxBot.downloadAndSaveMediaMessage(ass)
+bas = await CryBaby.downloadAndSaveMediaMessage(ass)
 ran = getRandom('.mp3')
 exec(`ffmpeg -i ${bas} -af equalizer=f=90:width_type=o:width=2:g=30 ${ran}`, (err, stderr, stdout) => {
 fs.unlinkSync(bas)
 if (err) return reply('Error!')
 hah = fs.readFileSync(ran)
-FxBot.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
+CryBaby.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
 fs.unlinkSync(ran)
 })
 break
@@ -1910,10 +1865,10 @@ case 'add':
 					if (args[0].startsWith('08')) return reply('Utiliza el código de país')
 					try {
 					num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
-					FxBot.groupAdd(from, [num])
+					CryBaby.groupAdd(from, [num])
 					} catch (e) {
 					console.log('Error :', e)
-					reply('No se pudo agregar el destino, tal vez porque es privado')
+					reply('No se pudo agregar, tal vez porque es privado')
 					}  
 					break 
 					case 'kick':  
@@ -1930,25 +1885,40 @@ case 'add':
 					teks += `@_.split('@')[0]`
 					}
 					mentions(teks, mentioned, true)
-					FxBot.groupRemove(from, mentioned)
+					CryBaby.groupRemove(from, mentioned)
 					} else {
-					mentions(`Se eliminara a @${mentioned[0].split('@')[0]} UvU`, mentioned, true)
-					FxBot.groupRemove(from, mentioned)
+					mentions(`Se Eliminará A @${mentioned[0].split('@')[0]} 🥵`, mentioned, true)
+					CryBaby.groupRemove(from, mentioned)
 					}					
 					break 
+					case 'play':  
+				reply(ptbr.wait())
+				play = body.slice(5)
+				anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=FELIXCRACKAPI409`)
+				if (anu.error) return reply(anu.error)
+				infomp3 = `*Canción Encontrada 🎶*\n\nTítulo : ${anu.result.title}\nFuente : ${anu.result.source}\nTamaño : ${anu.result.size}`				
+				buffer = await getBuffer(anu.result.thumbnail)
+				CryBaby.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
+				lagu = await getBuffer(anu.result.url_audio)
+				reply(`「❗」 Descargando Y Enviando Archivo, No Spames La Concha De Tu Madre`)             
+				CryBaby.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', duration :-999999999999999999, filename: `${anu.result.title}.mp3`, quoted: mek, sendEphemeral: true})          
+				
+				break
 //_INFORMAÇÕES DO BOT		
 case 'info':
 msgFilter.isFiltered(from)
+me = CryBaby.user
 uptime = process.uptime()
 inf =
- `‣ Nombre del bot: Felixcrack-BOT-70
+ `‣ Nombre del bot: ${me.name}
+  ‣ Número del bot: @${me.jid.split('@')[0]}
   ‣ Dueño: Felixcrack 409
   ‣ Prefijo: [ ${prefix} ]
   ‣ El bot ha estado activo durante: ${temporizador(uptime)}
   ‣ Total de usuários: ${_registered.length} usuários
   ‣ Total chats: ${totalchat.length}`
 buffer = await getBuffer(me.imgUrl)
-FxBot.sendMessage(from, buffer, image, {caption: inf, contextInfo: {mentionedJid: [me]}})
+CryBaby.sendMessage(from, buffer, image, {caption: inf, contextInfo: {mentionedJid: [me]}})
 break
 
 //_INFORMAÇÕES DO GRUPO
@@ -1958,12 +1928,12 @@ case 'groupinfo':
 case 'infogrup':
 case 'grupinfo':
 msgFilter.isFiltered(from)
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(ptbr.group())
 let { owner, creation, participants, desc } = groupMetadata;
 const creationTime = moment.unix(creation);
 try {
-ppUrl = await FxBot.getProfilePicture(from)
+ppUrl = await CryBaby.getProfilePicture(from)
 } catch {
 ppUrl = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 }
@@ -1977,7 +1947,7 @@ infogp =
   ‣Miembros totales: ${participants.length} membros
   ‣Descripción:
   ${desc ? desc : ''}`
-await FxBot.sendMessage(from, buffer, image, {quoted: mek, caption: infogp, contextInfo: {mentionedJid: [owner.split]}})
+await CryBaby.sendMessage(from, buffer, image, {quoted: mek, caption: infogp, contextInfo: {mentionedJid: [owner.split]}})
 break
 
 //_TEMPO DE RESPOSTA DO BOT		
@@ -1986,9 +1956,9 @@ case 'speed':
 msgFilter.isFiltered(from)
 const timestamp = speed();
 const latensi = speed() - timestamp
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 uptime = process.uptime()
-FxBot.sendMessage(from, `Speed!\nTiempo de respuesta: ${latensi.toFixed(4)} segundos\n`, text, {quoted: mek})
+CryBaby.sendMessage(from, `Speed!\nTiempo de respuesta: ${latensi.toFixed(4)} segundos\n`, text, {quoted: mek})
 break
 
 //_BUSCA IMAGEM NO PINTEREST		
@@ -1997,14 +1967,14 @@ case 'image':
 case 'imagem':
 msgFilter.isFiltered(from)
 if (args.length < 1) return reply('Ingrese el comando junto con lo que desea buscar ')
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 reply(ptbr.wait())
 try {
 data = await fetchJson(`https://api.fdci.se/sosmed/rep.php?gambar=${args}`, {method: 'get'})
 n = JSON.parse(JSON.stringify(data));
 nimek = n[Math.floor(Math.random() * n.length)];
 pok = await getBuffer(nimek)
-FxBot.sendMessage(from, pok, image, {quoted: mek, caption: `Achei isso sobre: ${args}`})
+CryBaby.sendMessage(from, pok, image, {quoted: mek, caption: `Achei isso sobre: ${args}`})
 } catch {
 reply(`Não econtrei nada sobre ${agrs}...`)
 }
@@ -2014,8 +1984,8 @@ break
 case 'online':
 msgFilter.isFiltered(from)
 let ido = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : from
-let online = [...Object.keys(FxBot.chats.get(ido).presences), FxBot.user.jid]
-FxBot.sendMessage(from, 'Lista de usuários online UwU:\n' + online.map(v => '- @' + v.replace(/@.+/, '')).join`\n`, text, { quoted: mek,
+let online = [...Object.keys(CryBaby.chats.get(ido).presences), CryBaby.user.jid]
+CryBaby.sendMessage(from, 'Lista de usuários online:\n' + online.map(v => '- @' + v.replace(/@.+/, '')).join`\n`, text, { quoted: mek,
 contextInfo: { mentionedJid: online }
 })
 break
@@ -2023,7 +1993,7 @@ break
 //_NEKOS PINTEREST
 case 'neko':
 msgFilter.isFiltered(from)
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 uk = ["anime neko"]
 nk = uk[Math.floor(Math.random() * uk.length)]
 try {
@@ -2034,7 +2004,7 @@ reply(ptbr.wait())
 n = JSON.parse(JSON.stringify(data));
 nimek = n[Math.floor(Math.random() * n.length)];
 pok = await getBuffer(nimek)
-FxBot.sendMessage(from, pok, image, {
+CryBaby.sendMessage(from, pok, image, {
 quoted: mek, caption: `🥰`
 })
 } catch {
@@ -2045,7 +2015,7 @@ break
 //_LOLIS PINTEREST
 case 'loli':
 msgFilter.isFiltered(from)
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 uk = ["anime loli"]
 nk = uk[Math.floor(Math.random() * uk.length)]
 try {
@@ -2056,7 +2026,7 @@ reply(ptbr.wait())
 n = JSON.parse(JSON.stringify(data));
 nimek = n[Math.floor(Math.random() * n.length)];
 pok = await getBuffer(nimek)
-FxBot.sendMessage(from, pok, image, {
+CryBaby.sendMessage(from, pok, image, {
 quoted: mek, caption: `👀?`
 })
 } catch {
@@ -2068,7 +2038,7 @@ break
 case 'shitpost':
 case 'shit':
 msgFilter.isFiltered(from)
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 uk = ["shitpost br"]
 nk = uk[Math.floor(Math.random() * uk.length)]
 try {
@@ -2079,7 +2049,7 @@ reply(ptbr.wait())
 n = JSON.parse(JSON.stringify(data));
 nimek = n[Math.floor(Math.random() * n.length)];
 pok = await getBuffer(nimek)
-FxBot.sendMessage(from, pok, image, {
+CryBaby.sendMessage(from, pok, image, {
 quoted: mek, caption: `إذا قمت بترجمة هذا فأنت سارق🤣👆`
 })
 } catch {
@@ -2090,7 +2060,7 @@ break
 //_ANIME PINTEREST
 case 'anime':
 msgFilter.isFiltered(from)
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 am = ["anime tumblr",
 "wallpaper anime hd",
 "anime aestethic",
@@ -2103,7 +2073,7 @@ reply(ptbr.wait())
 n = JSON.parse(JSON.stringify(data));
 nimek = n[Math.floor(Math.random() * n.length)];
 pok = await getBuffer(nimek)
-FxBot.sendMessage(from, pok, image, {
+CryBaby.sendMessage(from, pok, image, {
 quoted: mek, caption: `💮`
 })
 break
@@ -2112,7 +2082,7 @@ break
 case 'wp':
 case 'wallpaper':
 msgFilter.isFiltered(from)
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 pw = ["wallpaper aestethic",
 "wallpaper tumblr",
 "wallpaper lucu",
@@ -2126,8 +2096,8 @@ reply(ptbr.wait())
 n = JSON.parse(JSON.stringify(data));
 nimek = n[Math.floor(Math.random() * n.length)];
 pok = await getBuffer(nimek)
-FxBot.sendMessage(from, pok, image, {
-quoted: mek, caption: `Te gustó lo que elegí 👉🏻👈🏻?`
+CryBaby.sendMessage(from, pok, image, {
+quoted: mek, caption: `Gostou do que escolhi?`
 })
 } catch {
 reply(ptbr.erro())
@@ -2137,7 +2107,7 @@ break
 case 'nombreninja':
 msgFilter.isFiltered(from)
   if (args.length < 1) return reply('escreva seu Nombre')
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 Nombre = body.slice(10)
 try {
 data = await fetchJson(`https://api.terhambar.com/ninja?nama=${Nombre}`)
@@ -2170,7 +2140,7 @@ break
 case 'leveis':
 if (!isGroup) return reply(ptbr.group())
 if (!isGroupAdmins) return reply(ptbr.admin())
-if (args.length < 1) return reply(`Digite da forma correta:\nComando: ${prefix}leveis 1, para ativar e 0 para desativar`)
+if (args.length < 1) return reply(`Ejemplo\nComando: ${prefix}leveis 1, para ativar e 0 para desativar`)
 if (Number(args[0]) === 1) {
 if (isLevelingOn) return reply('❎la función NIVELES ya está activada en el grupo❎')
 _leveling.push(from)
@@ -2181,7 +2151,7 @@ _leveling.splice(from, 1)
 fs.writeFileSync('./datauser/leveling.json', JSON.stringify(_leveling))
 reply('❌la función NIVELES ha sido desactivada❌')
 } else {
-reply(`Digite da forma correta:\nComando: ${prefix}leveis 1, para ativar e 0 para desativar`)
+reply(`Ejemplo\nComando: ${prefix}leveis 1, para ativar e 0 para desativar`)
 }
 break
 
@@ -2190,8 +2160,8 @@ if (!isGroup) return reply(ptbr.group())
 if (!isGroupAdmins) return reply(ptbr.admin())
 if (!isBotGroupAdmins) return reply(ptbr.Badmin())
 const ftgp = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo: mek
-const medipp = await FxBot.downloadAndSaveMediaMessage(ftgp)
-await FxBot.updateProfilePicture (from, medipp)
+const medipp = await CryBaby.downloadAndSaveMediaMessage(ftgp)
+await CryBaby.updateProfilePicture (from, medipp)
 reply('✅foto de grupo cambiada✅')
 break
 
@@ -2202,7 +2172,7 @@ var imgbb = require('imgbb-uploader')
 if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 reply(ptbr.waitimg())
-owgi = await FxBot.downloadAndSaveMediaMessage(ger)
+owgi = await CryBaby.downloadAndSaveMediaMessage(ger)
 anu = await imgbb("0c419be2e8bfc27eff00147b0c763418", owgi)
 imgtrg = `${anu.display_url}`
 ranp = getRandom('.gif')
@@ -2212,7 +2182,7 @@ exec(`wget ${anu1} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps
 fs.unlinkSync(ranp)
 if (err) return reply(ptbr.stick())
 nobg = fs.readFileSync(rano)
-FxBot.sendMessage(from, nobg, sticker, {quoted: mek})
+CryBaby.sendMessage(from, nobg, sticker, {quoted: mek})
 fs.unlinkSync(rano)
 })                               
 } else {
@@ -2225,7 +2195,7 @@ var imgbb = require('imgbb-uploader')
 if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 reply(ptbr.wait())
-owgi = await FxBot.downloadAndSaveMediaMessage(ger)
+owgi = await CryBaby.downloadAndSaveMediaMessage(ger)
 anu = await imgbb("0c419be2e8bfc27eff00147b0c763418", owgi)
 imurl = `${anu.display_url}`
 reply(imurl)
@@ -2237,11 +2207,11 @@ var imgbb = require('imgbb-uploader')
 if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo: mek
 reply(ptbr.waitimg())
-owgi = await FxBot.downloadAndSaveMediaMessage(ger)
+owgi = await CryBaby.downloadAndSaveMediaMessage(ger)
 anu = await imgbb("0c419be2e8bfc27eff00147b0c763418", owgi)
 imgwas = `${anu.display_url}`
 haha = await getBuffer(`https://some-random-api.ml/canvas/wasted?avatar=${imgwas}`)
-FxBot.sendMessage(from, haha, image, {quoted:mek})
+CryBaby.sendMessage(from, haha, image, {quoted:mek})
 } else {
 reply('Necesitas etiquetar o subir una imagen ')
 }
@@ -2252,11 +2222,11 @@ var imgbb = require('imgbb-uploader')
 if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 ted = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo: mek
 reply(ptbr.waitimg())
-owgi = await FxBot.downloadAndSaveMediaMessage(ted)
+owgi = await CryBaby.downloadAndSaveMediaMessage(ted)
 tels = body.slice(7)
 anu = await imgbb("0c419be2e8bfc27eff00147b0c763418", owgi)
 haha = await getBuffer(`https://videfikri.com/api/textmaker/pencil/?urlgbr=${anu.display_url}`)
-FxBot.sendMessage(from, haha, image, {quoted:mek})
+CryBaby.sendMessage(from, haha, image, {quoted:mek})
 } else {
 reply('Necesitas etiquetar o enviar una imagen')
 }
@@ -2266,13 +2236,13 @@ case 'wanted':
 var imgbb = require('imgbb-uploader')
 if ((isMedia && !mek.message.videoMessage || isQuotedImage)) {
 ted = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo: mek
-if (args.length < 1) return reply(`Digite algum texto para isso`)
+if (args.length < 1) return reply(`¿Y El Texto? >\\\<`)
 wtext = body.slice(7)
 reply(ptbr.waitimg())
-owgi = await FxBot.downloadAndSaveMediaMessage(ted)
+owgi = await CryBaby.downloadAndSaveMediaMessage(ted)
 anu = await imgbb("0c419be2e8bfc27eff00147b0c763418", owgi)
 haha = await getBuffer(`https://videfikri.com/api/textmaker/wanted/?urlgbr=${anu.display_url}&text1=${wtext}&text2=10000`)
-FxBot.sendMessage(from, haha, image, {quoted:mek})
+CryBaby.sendMessage(from, haha, image, {quoted:mek})
 } else {
 reply('Necesitas etiquetar o enviar una imagen')
 }
@@ -2280,192 +2250,192 @@ break
 
 case '8bit':
 msgFilter.isFiltered(from)
-if (!q.includes('|')) return reply(`Digite da forma correta:\nComando: ${prefix}8bit texto1|texto2`)
+if (!q.includes('|')) return reply(`Ejemplo\nComando: ${prefix}8bit texto1|texto2`)
 reply(ptbr.waitimg())
 pc = body.slice(5)
 tx1 = pc.split("|")[0];
 tx2 = pc.split("|")[1];
 haha = await getBuffer(`https://videfikri.com/api/textmaker/8bit/?text1=${tx1}&text2=${tx2}`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 
 case 'bneon':
 msgFilter.isFiltered(from)
-if (args.length < 1) return reply('digite algum texto para isso')
+if (args.length < 1) return reply('¿Y El Texto? >\\\<')
 pc = body.slice(6)
 reply(ptbr.waitimg())
 haha = await getBuffer(`https://api.zeks.xyz/api/bneon?apikey=FELIXCRACKAPI409&text=${pc}`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 		
 case 'luzneon':
 msgFilter.isFiltered(from)
-if (args.length < 1) return reply('digite algum texto para isso')
+if (args.length < 1) return reply('¿Y El Texto? >\\\<')
 pc = body.slice(8)
 reply(ptbr.waitimg())
 haha = await getBuffer(`https://docs-jojo.herokuapp.com/api/neon_light?text=${pc}`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 
 case 'matrix':
 msgFilter.isFiltered(from)
-if (args.length < 1) return reply('digite algum texto para isso')
+if (args.length < 1) return reply('¿Y El Texto? >\\\<')
 pc = body.slice(7)
 reply(ptbr.waitimg())
 haha = await getBuffer(`https://api.zeks.xyz/api/matrix?apikey=FELIXCRACKAPI409&text=${pc}`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 
 case 'breakwall':
 msgFilter.isFiltered(from)
-if (args.length < 1) return reply('digite algum texto para isso')
+if (args.length < 1) return reply('¿Y El Texto? >\\\<')
 pc = body.slice(10)
 reply(ptbr.waitimg())
 haha = await getBuffer(`https://api.zeks.xyz/api/breakwall?apikey=FELIXCRACKAPI409&text=${pc}`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 
 case 'dropwater':
-if (args.length < 1) return reply('digite algum texto para isso')
+if (args.length < 1) return reply('¿Y El Texto? >\\\<')
 pc = body.slice(10)
 reply(ptbr.waitimg())
 haha = await getBuffer(`https://api.zeks.xyz/api/dropwater?apikey=FELIXCRACKAPI409&text=${pc}`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 
 case 'wolflogo':
-if (args.length < 1) return reply(`Digite da forma correta:\nComando: ${prefix}wolflogo texto1|texto2`)
-if (!q.includes('|')) return reply(`Digite da forma correta:\nComando: ${prefix}wolflogo texto1|texto2\nNão esqueça do: | `)
+if (args.length < 1) return reply(`Ejemplo\nComando: ${prefix}wolflogo texto1|texto2`)
+if (!q.includes('|')) return reply(`Ejemplo\nComando: ${prefix}wolflogo texto1|texto2\nNão esqueça do: | `)
 pc = body.slice(9)
 tx1 = pc.split("|")[0];
 tx2 = pc.split("|")[1];
 reply(ptbr.waitimg())
 haha = await getBuffer(`https://api.zeks.xyz/api/wolflogo?apikey=FELIXCRACKAPI409&text1=${tx1}&text2=${tx2}`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 		
 ///_photoOXY
 case 'flowertext':
-if (args.length < 1) return reply('digite algum texto para isso')
+if (args.length < 1) return reply('¿Y El Texto? >\\\<')
 pc = body.slice(11)
 reply(ptbr.waitimg())
 haha = fetchJson(`https://api.zeks.xyz/api/flowertext?apikey=FELIXCRACKAPI409&text=${pc}`)
 heh = await getBuffer(haha.result)
-FxBot.sendMessage(from, heh, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, heh, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 ///_photoOXY
 
 case 'lovepaper':
-if (args.length < 1) return reply('digite algum texto para isso')
+if (args.length < 1) return reply('¿Y El Texto? >\\\<')
 pc = body.slice(10)
 reply(ptbr.waitimg())
 haha = await getBuffer(`https://videfikri.com/api/textmaker/lovemek/?text=${pc}`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 
 case 'tfire':
-if (args.length < 1) return reply('digite algum texto para isso')
+if (args.length < 1) return reply('¿Y El Texto? >\\\<')
 pc = body.slice(6)
 reply(ptbr.waitimg())
 haha = await getBuffer(`https://api.zeks.xyz/api/tfire?text=${pc}&apikey=FELIXCRACKAPI409`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 
 case 'sandw':
-if (args.length < 1) return reply('digite algum texto para isso')
+if (args.length < 1) return reply('¿Y El Texto? >\\\<')
 pc = body.slice(6)
 reply(ptbr.waitimg())
 haha = await getBuffer(`https://api.zeks.xyz/api/sandw?apikey=FELIXCRACKAPI409&text=${pc}`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 
 case 'firofiro':
-if (args.length < 1) return reply('digite algum texto para isso')
+if (args.length < 1) return reply('¿Y El Texto? >\\\<')
 pc = body.slice(9)
 reply(ptbr.waitimg())
 haha = await getBuffer(`https://api.zeks.xyz/api/epep?text=${pc}&apikey=FELIXCRACKAPI409`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 
 case 'text3d2':
-if (args.length < 1) return reply('digite algum texto para isso')
+if (args.length < 1) return reply('¿Y El Texto? >\\\<')
 pc = body.slice(8)
 reply(ptbr.waitimg())
 haha = await getBuffer(`https://api.zeks.xyz/api/text3dbox?apikey=FELIXCRACKAPI409&text=${pc}`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 
 case 'text3d':
-if (args.length < 1) return reply('digite algum texto para isso')
+if (args.length < 1) return reply('¿Y El Texto? >\\\<')
 pc = body.slice(7)
 reply(ptbr.waitimg())
 haha = await getBuffer(`https://api.zeks.xyz/api/text3d?text=${pc}&apikey=FELIXCRACKAPI409`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 
 case 'phlogo':
-if (args.length < 1) return reply('digite algum texto para isso')
-if (!q.includes('|')) return reply(`Digite da forma correta:\nComando: ${prefix}phlogo texto1|texto2\nNão esqueça do: | `)
+if (args.length < 1) return reply('¿Y El Texto? >\\\<')
+if (!q.includes('|')) return reply(`Ejemplo\nComando: ${prefix}phlogo texto1|texto2\nNão esqueça do: | `)
 pc = body.slice(7)
 tx1 = pc.split("|")[0];
 tx2 = pc.split("|")[1];
 reply(ptbr.waitimg())
 haha = await getBuffer(`https://api.zeks.xyz/api/phlogo?text1=${tx1}&text2=${tx2}&apikey=FELIXCRACKAPI409`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 
 case 'phub':
-if (args.length < 1) return reply('digite algum texto para isso')
+if (args.length < 1) return reply('¿Y El Texto? >\\\<')
 pc = body.slice(6)
 reply(ptbr.waitimg())
 haha = await getBuffer(`https://api.zeks.xyz/api/phub?apikey=FELIXCRACKAPI409&img=https://1.bp.blogspot.com/-x8KhcOBG-yw/XiU4pi1yWVI/AAAAAAAADBA/gK8tsLyc1lQ808A348IKzDCjf6fUBKONwCLcBGAsYHQ/s1600/cara+buat+foto+profil+di+whatsapp+menjadi+unik.jpg&username=sksksksksk&msg=#{pc}`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 
 case 'leavest':
-if (args.length < 1) return reply('digite algum texto para isso')
+if (args.length < 1) return reply('¿Y El Texto? >\\\<')
 pc = body.slice(7)
 reply(ptbr.waitimg())
 haha = await getBuffer(`https://api.zeks.xyz/api/leavest?apikey=FELIXCRACKAPI409&text=${pc}`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 
 case 'tlight':
-if (args.length < 1) return reply('digite algum texto para isso')
+if (args.length < 1) return reply('¿Y El Texto? >\\\<')
 pc = body.slice(7)
 reply(ptbr.waitimg())
 haha = await getBuffer(`https://api.zeks.xyz/api/tlight?text=${pc}&apikey=FELIXCRACKAPI409`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 
 
 case 'narutobanner':
-if (args.length < 1) return reply('digite algum texto para isso')
+if (args.length < 1) return reply('¿Y El Texto? >\\\<')
 pc = body.slice(14)
 reply(ptbr.waitimg())
 haha = await getBuffer(`https://videfikri.com/api/textmaker/narutobanner/?text=${pc}`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 
 case 'romancetext':
-if (args.length < 1) return reply('digite algum texto para isso')
+if (args.length < 1) return reply('¿Y El Texto? >\\\<')
 pc = body.slice(12)
 reply(ptbr.waitimg())
 haha = await getBuffer(`https://videfikri.com/api/textmaker/romancetext/?text=${pc}`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 
 case 'shadowtext':
-if (args.length < 1) return reply('digite algum texto para isso')
+if (args.length < 1) return reply('¿Y El Texto? >\\\<')
 pc = body.slice(11)
 reply(ptbr.waitimg())
 haha = await getBuffer(`https://videfikri.com/api/textmaker/shadowtext/?text=${pc}`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 
 case 'tiktokeffect':
-if (args.length < 1) return reply(`Digite da forma correta:\nComando: ${prefix}tiktokeffect texto1|texto2`)
-if (!q.includes('|')) return reply(`Digite da forma correta:\nComando: ${prefix}tiktokeffect texto1|texto2`)
+if (args.length < 1) return reply(`Ejemplo\nComando: ${prefix}tiktokeffect texto1|texto2`)
+if (!q.includes('|')) return reply(`Ejemplo\nComando: ${prefix}tiktokeffect texto1|texto2`)
 pc = body.slice(13)
 nomor = pc.split("|")[0];
 pesan = pc.split("|")[1];
@@ -2473,24 +2443,24 @@ if (nomor.length >= 9 ) return reply(`Texto 1 máximo 9 carateres`)
 if (pesan.length >= 35 ) return reply(`Texto 2 máximo 35 carateres`)
 reply(ptbr.waitimg())
 haha = await getBuffer(`https://videfikri.com/api/textmaker/tiktokeffect/?text1=${nomor}&text2=${pesan}`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 
 case 'neon':
-if (args.length < 1) return reply('digite algum texto para isso')
+if (args.length < 1) return reply('¿Y El Texto? >\\\<')
 pc = body.slice(5)
 if (pc.length >= 80 ) return reply(`Máximo 80 carateres`)
 reply(ptbr.waitimg())
 haha = await getBuffer(`https://videfikri.com/api/textmaker/glowingneon/?text=${pc}`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 
 case 'hpotter':
-if (args.length < 1) return reply('digite algum texto para isso')
+if (args.length < 1) return reply('¿Y El Texto? >\\\<')
 pc = body.slice(8)
 reply(ptbr.waitimg())
 haha = await getBuffer(`https://videfikri.com/api/textmaker/hpotter/?text=${pc}`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 
 case 'cep':
@@ -2503,7 +2473,7 @@ ccg =
   ‣ Cep: ${haha.cep}
   ‣ Estado: ${haha.state}
   ‣ Cidade: ${haha.city}`
-FxBot.sendMessage(from, ccg, text, {quoted:mek})
+CryBaby.sendMessage(from, ccg, text, {quoted:mek})
 break
 
 case 'ddd':
@@ -2516,7 +2486,7 @@ ccg =
   ‣ Estado: ${haha.state}
   ‣ Cidades: 
     ${haha.cities}\n`
-FxBot.sendMessage(from, ccg, text, {quoted:mek})
+CryBaby.sendMessage(from, ccg, text, {quoted:mek})
 break
 
 case 'cartão':
@@ -2531,20 +2501,20 @@ ccg =
    ‣ Pin: ${haha.result.card.pin}
    ‣ Balanço: ${haha.result.card.balance}
    ‣ Validade: ${haha.result.card.expiration_month}/${haha.result.card.expiration_year}`
-FxBot.sendMessage(from, ccg, text, {quoted:mek})
+CryBaby.sendMessage(from, ccg, text, {quoted:mek})
 break
 
 case 'neve':
 try {  
-if (args.length < 1) return reply(`Digite da forma correta:\nComando: ${prefix}neve texto1|texto2`)
-if (!q.includes('|')) return reply(`Digite da forma correta:\nComando: ${prefix}neve texto1|texto2`)
+if (args.length < 1) return reply(`Ejemplo\nComando: ${prefix}neve texto1|texto2`)
+if (!q.includes('|')) return reply(`Ejemplo\nComando: ${prefix}neve texto1|texto2`)
 pc = body.slice(5)
   tx1 = pc.split("|")[0];
   tx2 = pc.split("|")[1];
 reply(ptbr.waitimg())
 haha = await fetchJson(`https://api.zeks.xyz/api/snowwrite?text1=${tx1}&text2=${tx2}&apikey=FELIXCRACKAPI409`)
 haha = await getBuffer(haha.result)
-FxBot.sendMessage(from, haha, image, {quoted:mek})
+CryBaby.sendMessage(from, haha, image, {quoted:mek})
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
 reply('❌Ocurrió Un Error❌')
@@ -2553,12 +2523,12 @@ break
 
 case 'crismes':
 try {  
-if (args.length < 1) return reply(`Digite da forma correta:\nComando: ${prefix}crismes texto`)
+if (args.length < 1) return reply(`Ejemplo\nComando: ${prefix}crismes texto`)
 pc = body.slice(8)
 reply(ptbr.waitimg())
 haha = await fetchJson(`https://api.zeks.xyz/api/crismes?text=${pc}&apikey=FELIXCRACKAPI409`)
 haha = await getBuffer(haha.result)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
 reply('❌Ocurrió Un Error❌')
@@ -2567,14 +2537,14 @@ break
 
 case 'pubglogo':
 try {  
-if (args.length < 1) return reply(`Digite da forma correta:\nComando: ${prefix}retro texto1|texto2|texto3`)
+if (args.length < 1) return reply(`Ejemplo\nComando: ${prefix}retro texto1|texto2|texto3`)
 pc = body.slice(9)
 tx1 = pc.split("|")[0];
 tx2 = pc.split("|")[1];
 reply(ptbr.waitimg())
 haha = await fetchJson(`https://api.zeks.xyz/api/pubglogo?text1=${tx1}&text2=${tx2}&apikey=FELIXCRACKAPI409`)
 haha = await getBuffer(haha.result)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
 reply('❌Ocurrió Un Error❌')
@@ -2583,13 +2553,13 @@ break
 
 case 'bf4':
 try {  
-if (args.length < 1) return reply(`Digite da forma correta:\nComando: ${prefix}retro texto1|texto2|texto3`)
+if (args.length < 1) return reply(`Ejemplo\nComando: ${prefix}retro texto1|texto2|texto3`)
 pc = body.slice(4)
 tx1 = pc.split("|")[0];
 tx2 = pc.split("|")[1];
 reply(ptbr.waitimg())
 haha = await getBuffer(`https://videfikri.com/api/textmaker/bf4/?text1=${tx1}&text2=${tx2}`)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
 reply('❌Ocurrió Un Error❌')
@@ -2601,7 +2571,7 @@ msgFilter.isFiltered(from)
 try {
 hah = await fetchJson(`https://kagchi-api.glitch.me//waifu/nezuko`)
 haha = await getBuffer(hah.url)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
 reply('❌Ocurrió Un Error❌')
@@ -2610,12 +2580,12 @@ break
 
 case 'cslogo':
 try {  
-if (args.length < 1) return reply(`Digite da forma correta:\nComando: ${prefix}cslogo texto`)
+if (args.length < 1) return reply(`Ejemplo\nComando: ${prefix}cslogo texto`)
 pc = body.slice(6)
 reply(ptbr.waitimg())
 haha = await fetchJson(`https://api.zeks.xyz/api/cslogo?text=${pc}&apikey=FELIXCRACKAPI409`)
 haha = await getBuffer(haha.result)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
 reply('❌Ocurrió Un Error❌')
@@ -2624,12 +2594,12 @@ break
 
 case 'lithgtext':
 try {  
-if (args.length < 1) return reply(`Digite da forma correta:\nComando: ${prefix}lithgtext texto`)
+if (args.length < 1) return reply(`Ejemplo\nComando: ${prefix}lithgtext texto`)
 pc = body.slice(10)
 reply(ptbr.waitimg())
 haha = await fetchJson(`https://api.zeks.xyz/api/lithgtext?text=${pc}&apikey=FELIXCRACKAPI409`)
 haha = await getBuffer(haha.result)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
 reply('❌Ocurrió Un Error❌')
@@ -2638,12 +2608,12 @@ break
 
 case 'silktext':
 try {  
-if (args.length < 1) return reply(`Digite da forma correta:\nComando: ${prefix}silktext texto`)
+if (args.length < 1) return reply(`Ejemplo\nComando: ${prefix}silktext texto`)
 pc = body.slice(9)
 reply(ptbr.waitimg())
 haha = await fetchJson(`https://api.zeks.xyz/api/silktext?text=${pc}&apikey=FELIXCRACKAPI409`)
 haha = await getBuffer(haha.result)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
 reply('❌Ocurrió Un Error❌')
@@ -2652,12 +2622,12 @@ break
 
 case 'flametext':
 try {  
-if (args.length < 1) return reply(`Digite da forma correta:\nComando: ${prefix}flametext texto`)
+if (args.length < 1) return reply(`Ejemplo\nComando: ${prefix}flametext texto`)
 pc = body.slice(10)
 reply(ptbr.waitimg())
 haha = await fetchJson(`https://api.zeks.xyz/api/flametext?text=${pc}&apikey=FELIXCRACKAPI409`)
 haha = await getBuffer(haha.result)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
 reply('❌Ocurrió Un Error❌')
@@ -2665,27 +2635,27 @@ reply('❌Ocurrió Un Error❌')
 break
 
 case 'glowtext':
-if (args.length < 1) return reply(`Digite da forma correta:\nComando: ${prefix}glowtext texto`)
+if (args.length < 1) return reply(`Ejemplo\nComando: ${prefix}glowtext texto`)
 pc = body.slice(9)
 reply(ptbr.waitimg())
 haha = await fetchJson(`https://api.zeks.xyz/api/glowtext?text=${pc}&apikey=FELIXCRACKAPI409`)
 haha = await getBuffer(haha.result)
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 break
 
 case 'crosslogo':
 try {  
-if (args.length < 1) return reply(`Digite da forma correta:\nComando: ${prefix}crosslogo texto`)
+if (args.length < 1) return reply(`Ejemplo\nComando: ${prefix}crosslogo texto`)
 pc = body.slice(10)
 reply(ptbr.waitimg())
 haha = await fetchJson(`https://api.zeks.xyz/api/crosslogo?text=${pc}&apikey=FELIXCRACKAPI409`)
 haha = await getBuffer(haha.result)
 setTimeout( () => {
-FxBot.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
+CryBaby.sendMessage(from, haha, image, {caption: `𝐹𝑒𝑙𝑖𝑥𝑐𝑟𝑎𝑐𝑘 𝐵𝑂𝑇`, quoted: mek})
 }, 10000)
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -2694,11 +2664,11 @@ var imgbb = require('imgbb-uploader')
 if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 ted = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo: mek
 reply(ptbr.wait())
-owgi = await FxBot.downloadAndSaveMediaMessage(ted)
+owgi = await CryBaby.downloadAndSaveMediaMessage(ted)
 tels = body.slice(7)
 anu = await imgbb("0c419be2e8bfc27eff00147b0c763418", owgi)
 haha = await getBuffer(`https://videfikri.com/api/textmaker/gtavposter/?urlgbr=${anu.display_url}`)
-FxBot.sendMessage(from, haha, image, {quoted:mek})
+CryBaby.sendMessage(from, haha, image, {quoted:mek})
 } else {
 reply('Necesitas etiquetar o enviar una imagen')
 }
@@ -2706,25 +2676,25 @@ break
 
 case 'wa.me':
 case 'wame':
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 options = {
 text: `Su enlace wa.me: wa.me/${sender.split("@s.whatsapp.net")[0]}\nO: \napi.whatsapp.com/send?phone=${sender.split("@")[0]}`,
 contextInfo: {
 mentionedJid: [sender]
 }
 }
-FxBot.sendMessage(from, options, text, {
+CryBaby.sendMessage(from, options, text, {
 quoted: mek
 })
 break
 
 case 'notif':
 if (!isGroupAdmins) return reply(ptbr.admin())
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(ptbr.group())
-if(args.length < 1) return FxBot.reply('escribe algo como una advertencia ')
+if(args.length < 1) return CryBaby.reply('escribe algo como una advertencia ')
 aviso  = `Aviso de: @${sender.split("@")[0]}\n\nAviso: ${body.slice(7)}`
-group = await FxBot.groupMetadata(from);
+group = await CryBaby.groupMetadata(from);
 member = group['participants']
 jids = [];
 member.map(async adm => {
@@ -2737,7 +2707,7 @@ mentionedJid: jids
 },
 quoted: mek
 }
-await FxBot.sendMessage(from, options, text)
+await CryBaby.sendMessage(from, options, text)
 break
 
 //_TE MENCIONA
@@ -2747,11 +2717,35 @@ text: `@${sender.split("@")[0]} 🧙‍♂️`,
 contextInfo: {mentionedJid: [sender]
 }
 }
-FxBot.sendMessage(from, tagme, text)
+CryBaby.sendMessage(from, tagme, text)
 break
 
 
-
+case 'ytsearch':
+if (args.length < 1) return reply('Escriba lo que desea buscar')
+reply('buscando...')
+play = body.slice(9)
+try {
+anu = await fetchJson(`https://videfikri.com/api/ytplay/?query=${play}`)
+if (anu.error) return reply(anu.error)
+infomp3 = 
+`    MÚSICA ENCONTRADA
+   ‣ Título: ${anu.result.title}
+   ‣ Fuente: ${anu.result.source}
+   ‣ Canal: ${anu.result.channel}
+   ‣ link: ${anu.result.url} 
+   ‣ Duración: ${anu.result.duration}
+   ‣ Tamaño: ${anu.result.size}
+`
+buffer = await getBuffer(anu.result.thumbnail)
+lagu = await getBuffer(anu.result.url)
+CryBaby.sendMessage(from, buffer, image, {
+quoted: mek, caption: infomp3
+})
+} catch {
+reply(ptbr.erro())
+}
+break
 
 case 'dadosfake':
 anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/fake_identity`)
@@ -2765,7 +2759,7 @@ dadosf =
    ‣ E-mail: ${anu.email}
    ‣ Contraseña: ${anu.password}
    ‣ CEP: ${anu.zip_code}`
-FxBot.sendMessage(from, dadosf, text, {quoted: mek})
+CryBaby.sendMessage(from, dadosf, text, {quoted: mek})
 break
 
 
@@ -2774,7 +2768,7 @@ break
 case 'ocr':
 if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 const ocrt = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-const com = await FxBot.downloadAndSaveMediaMessage(ocrt)
+const com = await CryBaby.downloadAndSaveMediaMessage(ocrt)
 reply(ptbr.wait())
 await recognize(com, {lang: 'eng+ind', oem: 1, psm: 3})
 .then(oc => {
@@ -2793,12 +2787,9 @@ break
 
 
 case 'st':
-case 'sticker':
-case 's':
-case 'stiker':
 if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-const media = await FxBot.downloadAndSaveMediaMessage(encmedia)                                     
+const media = await CryBaby.downloadAndSaveMediaMessage(encmedia)                                     
 rano = getRandom('.webp')
 await ffmpeg(`./${media}`)
 .input(media)
@@ -2807,7 +2798,7 @@ console.log(`Started : ${cmd}`)
 })
 .on('error', function (err) {
 console.log(`Error : ${err}`)
-exec(`webpmux -set exif ${addMetadata('FxBot-BOT', 'Fx')} ${rano} -o ${rano}`, async (error) => {
+exec(`webpmux -set exif ${addMetadata('CryBaby-BOT', 'Italu')} ${rano} -o ${rano}`, async (error) => {
 fs.unlinkSync(media)
 reply(ptbr.stick())
 })
@@ -2815,12 +2806,12 @@ reply(ptbr.stick())
 exec(`ffmpeg -i ${media} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 800:800 ${rano}`, (err) => {
 fs.unlinkSync(media)
 buffer = fs.readFileSync(rano)
-FxBot.sendMessage(from, buffer, sticker, {quoted: mek})
+CryBaby.sendMessage(from, buffer, sticker, {quoted: mek})
 fs.unlinkSync(rano)
 })
 } else if ((isMedia && mek.message.videoMessage.seconds < 11 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11) && args.length == 0) {
 const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-const media = await FxBot.downloadAndSaveMediaMessage(encmedia)
+const media = await CryBaby.downloadAndSaveMediaMessage(encmedia)
 rano = getRandom('.webp')
 reply(ptbr.waitgif())
 await ffmpeg(`./${media}`)
@@ -2830,7 +2821,7 @@ console.log(`Started : ${cmd}`)
 })
 .on('error', function (err) {
 console.log(`Error : ${err}`)
-exec(`webpmux -set exif ${addMetadata('FxBot-BOT', 'Fx')} ${rano} -o ${rano}`, async (error) => {
+exec(`webpmux -set exif ${addMetadata('CryBaby-BOT', 'Italu')} ${rano} -o ${rano}`, async (error) => {
 fs.unlinkSync(media)
 tipe = media.endsWith('.mp4') ? 'video' : 'gif'
 reply(`La conversión falló ${tipe} para sticker`)
@@ -2839,7 +2830,7 @@ reply(`La conversión falló ${tipe} para sticker`)
 exec(`ffmpeg -i ${media} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 200:200 ${rano}`, (err) => {
 fs.unlinkSync(media)
 buffer = fs.readFileSync(rano)
-FxBot.sendMessage(from, buffer, sticker, {quoted: mek})
+CryBaby.sendMessage(from, buffer, sticker, {quoted: mek})
 fs.unlinkSync(rano)
 })
 } else {
@@ -2849,18 +2840,18 @@ break
 
 //_CONVERTE VÍDEO EM ÁUDIO
 case 'tomp3':
-FxBot.updatePresence(from,
+CryBaby.updatePresence(from,
 Presence.composing)
 if (!isQuotedVideo) return reply(`Etiquetar un video con ${prefix}tomp3`)
 reply(ptbr.wait())
 mitri = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
-duh = await FxBot.downloadAndSaveMediaMessage(mitri)
+duh = await CryBaby.downloadAndSaveMediaMessage(mitri)
 ran = getRandom('.mp4')
 exec(`ffmpeg -i ${duh} ${ran}`, (err) => {
 fs.unlinkSync(duh)
 if (err) return reply('❌no se pudo convertir el video a mp3❌')
 buffer = fs.readFileSync(ran)
-FxBot.sendMessage(from, buffer, audio, {
+CryBaby.sendMessage(from, buffer, audio, {
 mimetype: 'audio/mp4', quoted: mek
 })
 fs.unlinkSync(ran)
@@ -2868,7 +2859,19 @@ fs.unlinkSync(ran)
 break
 
 //_VOZ DO GOOGLE
-
+case 'tts':
+if (args.length < 1) return CryBaby.sendMessage(from, `Debes usar el comando correctamente:\n${prefix}tts (lengua) (texto)\nEjemplo: ${prefix}tts Buen dia abortos\n\nUse: ${prefix}ts para enumerar todos los idiomas`, text, {quoted: mek})
+const gtts = require('./lib/gtts')(args[0])
+if (args.length < 2) return CryBaby.sendMessage(from, 'Y El Texto?', text, {quoted: mek})
+dtt = body.slice(8)
+ranm = getRandom('.mp3')
+dtt.length > 800
+? reply('¿Quieres Escribir La Biblia?')
+: gtts.save(ranm, dtt, function() {
+CryBaby.sendMessage(from, fs.readFileSync(ranm), audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+fs.unlinkSync(ranm)
+})
+break
 
 //_ALTERA O PREFIX
 case 'setprefix':
@@ -2882,11 +2885,11 @@ break
 
 //_BLOQUEIA O USUÁRIO
 case 'block':
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(ptbr.group())
 if (!isOwner) return reply(ptbr.ownerB())
-FxBot.blockUser (`${body.slice(8)}@c.us`, "add")
-FxBot.sendMessage(from, `Número de bloqueado, comando recibido`, text, {
+CryBaby.blockUser (`${body.slice(8)}@c.us`, "add")
+CryBaby.sendMessage(from, `Número de bloqueado, comando recibido`, text, {
 quoted: mek
 })
 break
@@ -2895,16 +2898,17 @@ break
 case 'unblock':
 if (!isGroup) return reply(ptbr.group())
 if (!isOwner) return reply(ptbr.ownerB())
-FxBot.blockUser (`${body.slice(9)}@c.us`, "remove")
-FxBot.sendMessage(from, `Desbloquear, Orden aceptada`, text)
+CryBaby.blockUser (`${body.slice(9)}@c.us`, "remove")
+CryBaby.sendMessage(from, `Desbloquear, Orden aceptada`, text)
 break
 
 //_MENCIONA TODOS OS MEMBROS DO GRUPO
 case 'tagall':
 msgFilter.isFiltered(from)
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 //reply('comando desativado para evitar flood')
 if (!isGroup) return reply(ptbr.group())
+if (!isPremium) return reply('No eres un usuario premium...')
 if (!isGroupAdmins) return reply(ptbr.admin())
 members_id = []
 todos = (args.length > 1) ? body.slice(8).trim(): ''
@@ -2919,10 +2923,10 @@ break
 //_LIMPA TODOS OS CHATS
 case 'clearall':
 if (!isOwner) return reply('Solo Felixcrack 409 Puede usar ese COMANDO')
-anu = await FxBot.chats.all()
-FxBot.setMaxListeners(25)
+anu = await CryBaby.chats.all()
+CryBaby.setMaxListeners(25)
 for (let _ of anu) {
-FxBot.deleteChat(_.jid)
+CryBaby.deleteChat(_.jid)
 }
 reply('todos los chats han sido eliminados :)')
 break
@@ -2940,10 +2944,10 @@ for (let _ of mentioned) {
 pro += `@${_.split('@')[0]}\n`
 }
 mentions(from, mentioned, true)
-FxBot.groupRemove(from, mentioned)
+CryBaby.groupRemove(from, mentioned)
 } else {
 mentions(`O usuário: @${mentioned[0].split('@')[0]} foi promovido para o cargo de administrador do grupo`, mentioned, true)
-FxBot.groupMakeAdmin(from, mentioned)
+CryBaby.groupMakeAdmin(from, mentioned)
 }
 break
 
@@ -2953,8 +2957,8 @@ if (!isGroup) return reply(ptbr.group())
 if (!isGroupAdmins) return reply(ptbr.admin())
 if (!isBotGroupAdmins) return reply(ptbr.Badmin())
 idgrup = `${from.split("@s.whatsapp.net")[0]}`;
-FxBot.groupUpdateSubject(idgrup, `${body.slice(9)}`)
-FxBot.sendMessage(from, 'Nombre del grupo alterado ', text, {
+CryBaby.groupUpdateSubject(idgrup, `${body.slice(9)}`)
+CryBaby.sendMessage(from, 'Nombre del grupo alterado ', text, {
 quoted: mek
 })
 break
@@ -2964,8 +2968,8 @@ case 'setdesc':
 if (!isGroup) return reply(ptbr.group())
 if (!isGroupAdmins) return reply(ptbr.admin())
 if (!isBotGroupAdmins) return reply(ptbr.Badmin())
-FxBot.groupUpdateDescription(from, `${body.slice(9)}`)
-FxBot.sendMessage(from, 'descripción del grupo alterada', text, {
+CryBaby.groupUpdateDescription(from, `${body.slice(9)}`)
+CryBaby.sendMessage(from, 'descripción del grupo alterada', text, {
 quoted: mek
 })
 break
@@ -2983,10 +2987,10 @@ for (let _ of mentioned) {
 reb += `@${_.split('@')[0]}\n`
 }
 mentions(reb, mentioned, true)
-FxBot.groupRemove(from, mentioned)
+CryBaby.groupRemove(from, mentioned)
 } else {
 mentions(`Oh usuário @${mentioned[0].split('@')[0]} Ya no eres admin 🤣`, mentioned, true)
-FxBot.groupDemoteAdmin(from, mentioned)
+CryBaby.groupDemoteAdmin(from, mentioned)
 }
 break
 
@@ -2995,7 +2999,7 @@ case 'listadmins':
 case 'listadmin':
 case 'adminlist':
 if (!isGroup) return reply(ptbr.group())
-adl = `Lista de administradores del grupo >\\\< : ${groupMetadata.subject}\nTotal: ${groupAdmins.length}\n\n`
+adl = `Lista de administradores de grupo: ${groupMetadata.subject}\nTotal: ${groupAdmins.length}\n\n`
 no = 0
 for (let admon of groupAdmins) {
 no += 1
@@ -3006,11 +3010,11 @@ break
 
 //_ALTERA A FOTO DE PERFIL DO BOT
 case 'setppbot':
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 if (!isOwner) return reply(ptbr.ownerB())
 const botpp = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contxtInfo: mek
-const cuk = await FxBot.downloadAndSaveMediaMessage(botpp)
-await FxBot.updateProfilePicture(botNumber, cuk)
+const cuk = await CryBaby.downloadAndSaveMediaMessage(botpp)
+await CryBaby.updateProfilePicture(botNumber, cuk)
 reply('Gracias por la nueva foto de perfil')
 break
 
@@ -3020,7 +3024,7 @@ case 'linkgc':
 if (!isGroup) return reply(ptbr.group())
 if (!isGroupAdmins) return reply(ptbr.admin())
 if (!isBotGroupAdmins) return reply(ptbr.Badmin())
-linkgc = await FxBot.groupInviteCode(from)
+linkgc = await CryBaby.groupInviteCode(from)
 reply('El enlace de invitación del grupo es: https://chat.whatsapp.com/'+linkgc)
 break
 
@@ -3028,7 +3032,7 @@ break
 case 'leave':
 if (!isGroup) return reply(ptbr.group())
 if (isGroupAdmins || isOwner) {
-FxBot.groupLeave(from)
+CryBaby.groupLeave(from)
 } else {
 reply(ptbr.admin())
 }
@@ -3036,11 +3040,11 @@ break
 
 //_MENCIONA TODOS OS MEMBROS DO GRUPO 
 case 'hidetag':
-FxBot.updatePresence(from, Presence.composing) 
+CryBaby.updatePresence(from, Presence.composing) 
 if (!isOwner) return reply(ptbr.ownerB())
 if (!isGroup) return reply(ptbr.group())
 htg = body.slice(9)
-group = await FxBot.groupMetadata(from);
+group = await CryBaby.groupMetadata(from);
 member = group['participants']
 jids = [];
 member.map( async adm => {
@@ -3051,22 +3055,22 @@ text: htg,
 contextInfo: {mentionedJid: jids},
 quoted: mek
 }
-await FxBot.sendMessage(from, options, text)
+await CryBaby.sendMessage(from, options, text)
 break
 
 //_CONVERTE STICKER EM IMAGEM
 case 'toimg':
-FxBot.updatePresence(from, Presence.composing)                       
+CryBaby.updatePresence(from, Presence.composing)                       
 if (!isQuotedSticker) return reply('Debes etiquetar una pegatina no animada para esto.')
 reply(ptbr.wait())
 tomg = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-medtmg = await FxBot.downloadAndSaveMediaMessage(tomg)
+medtmg = await CryBaby.downloadAndSaveMediaMessage(tomg)
 ran = getRandom('.png')
 exec(`ffmpeg -i ${medtmg} ${ran}`, (err) => {
 fs.unlinkSync(medtmg)
 if (err) return reply('❌falha ao converter sticker em imagem❌')
 buffer = fs.readFileSync(ran)
-FxBot.sendMessage(from, buffer, image, {quoted: mek, caption: 'conversão sucedida'})
+CryBaby.sendMessage(from, buffer, image, {quoted: mek, caption: 'conversão sucedida'})
 fs.unlinkSync(ran)
 })
 break
@@ -3079,17 +3083,17 @@ case 'rg':
 case 'registrar':
 if (isUser) return  reply('*❇️ Tu ya te has registrado  😑*')
 if (!q.includes('|')) return reply(`Escriba correctamente:\nComando: ${prefix}registrar Nombre|edad\nEjemplo: ${prefix}registrar Felix|16`)
-// if (args.length < 1) return reply(`Como se registrar:\nComando: ${prefix}registrar Nombre|idade\nExemplo: ${prefix}registrar Felixcrack|18`)
+// if (args.length < 1) return reply(`Como se registrar:\nComando: ${prefix}registrar Nombre|idade\nExemplo: ${prefix}registrar Italu|18`)
 const namaUser = q.substring(0, q.indexOf('|') - 0)
 const umurUser = q.substring(q.lastIndexOf('|') + 1)
 const serialUser = createSerial(20)
-if(isNaN(umurUser)) return reply(`Digite da forma correta:\nComando: ${prefix}registrar Nombre|edad\nEjemplo: ${prefix}registrar Félix|16`)
+if(isNaN(umurUser)) return reply(`Ejemplo\nComando: ${prefix}registrar Nombre|edad\nEjemplo: ${prefix}registrar Félix|16`)
 if (namaUser.length >= 60) return reply(`Seu Nombre é muito longo`)
 if (umurUser > 40) return reply(`La edad máxima es de 40 años.`)
 if (umurUser < 12) return reply(`La edad mínima es de 12 años.`)
 veri = sender
 try {
-ppimg = await FxBot.getProfilePicture(`${sender.split('@')[0]}@s.whatsapp.net`)
+ppimg = await CryBaby.getProfilePicture(`${sender.split('@')[0]}@s.whatsapp.net`)
 } catch {
 ppimg = 'https://i.ibb.co/rxPtZS8/foto.jpg'
 }
@@ -3105,15 +3109,15 @@ captionnya =
 ╠≽️ Tu link wame: wa.me/${sender.split("@")[0]}
 ╠≽️ Número: ${sender.split("@")[0]}
 ╚════════════════
-te registraste, escribe ${prefix}menú para listar mis comandos`
+Te registraste, escribe ${prefix}menú para listar mis comandos`
 daftarimg = await getBuffer(ppimg)
 addRegisteredUser(sender, namaUser, umurUser, time, serialUser)
-FxBot.sendMessage(from, daftarimg, image, {quoted: mek, caption: captionnya, contextInfo: {mentionedJid: [sender]}})                    
+CryBaby.sendMessage(from, daftarimg, image, {quoted: mek, caption: captionnya, contextInfo: {mentionedJid: [sender]}})                    
 break
 
 //_FECHA O GRUPO
 case 'closegp':
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(ptbr.group())
 if (!isGroupAdmins) return reply(ptbr.admin())
 if (!isBotGroupAdmins) return reply(ptbr.Badmin())
@@ -3124,7 +3128,7 @@ contextInfo: {
 mentionedJid: [nomor]
 }
 }
-FxBot.groupSettingChange (from, GroupSettingChange.messageSend, true);
+CryBaby.groupSettingChange (from, GroupSettingChange.messageSend, true);
 reply(close)
 break
 
@@ -3134,13 +3138,13 @@ cp2 = `${Math.floor(Math.random() * 300) +600}`
 cp3 = `${Math.floor(Math.random() * 300) +600}`
 cp4 = `${Math.floor(Math.random() * 30) +60}`
 cpf = `${cp1}.${cp2}.${cp3}-${cp4}`
-FxBot.sendMessage(from, `CPF gerado: ${cpf}`, text, {quoted: mek})
+CryBaby.sendMessage(from, `CPF gerado: ${cpf}`, text, {quoted: mek})
 break
 
 //_ABRE O GRUPO
 case 'opengp':
   case 'abrirg':
-FxBot.updatePresence(from, Presence.composing)
+CryBaby.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(ptbr.group())
 if (!isGroupAdmins) return reply(ptbr.admin())
 if (!isBotGroupAdmins) return reply(ptbr.Badmin())
@@ -3150,8 +3154,8 @@ open = {
 mentionedJid: [sender]
   }
 }
-FxBot.groupSettingChange (from, GroupSettingChange.messageSend, false)
-FxBot.sendMessage(from, open, text, {
+CryBaby.groupSettingChange (from, GroupSettingChange.messageSend, false)
+CryBaby.sendMessage(from, open, text, {
   quoted: mek
 })
 break
@@ -3163,7 +3167,7 @@ case 'apagar':
 if (!isGroup)return reply(ptbr.group())
 if (!isGroupAdmins)return reply(ptbr.admin())
 try {
-FxBot.deleteMessage(from, {
+CryBaby.deleteMessage(from, {
   id: mek.message.extendedTextMessage.contextInfo.stanzaId, remoteJid: from, fromMe: true
 })
 } catch {
@@ -3185,7 +3189,7 @@ welkom.splice(from, disable)
 fs.writeFileSync('./data/welkom.json', JSON.stringify(welkom))
 reply('La función de bienvenida ha sido deshabilitada ')
 } else {
-reply(`digite ${prefix}welcome 1 para activar, y 0 para deshabilitar la función`)
+reply(`Digite ${prefix}welcome 1 para activar, y 0 para deshabilitar la función`)
 }
 break
 
@@ -3197,64 +3201,22 @@ if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMes
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 let { jid, id, notify } = groupMembers.find(x => x.jid === mentioned)
 try {
-pp = await FxBot.getProfilePicture(id)
+pp = await CryBaby.getProfilePicture(id)
 buffer = await getBuffer(pp)
-FxBot.updateProfilePicture(botNumber, buffer)
+CryBaby.updateProfilePicture(botNumber, buffer)
 mentions(`Robé la foto de perfil: @${id.split('@')[0]}`, [jid], true)
 } catch (e) {
 reply('ocurrio un error')
 }
 break
-			//DESCARGAS BY FELIXCRACK
-case 'ytmp4':  
-                     
-                    if (args.length < 1) return reply('¿Y el link :3?')
-					if (!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link Invalido Weon 😑🔪')
-                    reply('Ahh como shin... Espera sempai~ Deja que encuentre tu audio :3')
-					anu = await fetchJson(`https://api.xteam.xyz/dl/ytmp4?url=${args[0]}&APIKEY=10b9f9398549cb23`)
-					
-					anu1 = `DESCARGADOR MP4 BY FELIXCRACK\n\n`
-                    anu1 += `✨ Titulo: ${anu.judul}\n`
-                    anu1 += `⚖️Tamaño: ${anu.size}\n`                    
-					anu2 = await getBuffer(anu.thumbnail)
-					FxBot.sendMessage(from, anu2, image, { quoted: mek, caption: anu1 })
-					anu3 = await getBuffer(anu.url)
-					FxBot.sendMessage(from, anu3, video, { mimetype: 'video/mp4', duration :-999999999999999999, quoted: mek })
-					break                  
-					case 'ytmp3':
-		             
-                    if (args.length < 1) return reply('¿Y el link :3?')
-					if (!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link Invalido Weon 😑🔪')
-                    reply('Ahh como shin... Espera sempai~ Deja que encuentre tu audio :3')
-					anu = await fetchJson(`https://api.xteam.xyz/dl/ytmp3?url=${args[0]}&APIKEY=10b9f9398549cb23`)
-					anu1 = `DESCARGADOR DE AUDIO DE YT BY FELIXCRACK\n\n`
-                    anu1 += `✨ Titulo: ${anu.judul}\n`
-                    anu1 += `⚖️ Tamaño: ${anu.size}\n`
-					anu2 = await getBuffer(anu.thumbnail)
-					anu3 = await getBuffer(anu.url)
-					FxBot.sendMessage(from, anu2, image, { quoted: mek, caption: anu1 })
-					FxBot.sendMessage(from, anu3, audio, { mimetype: 'audio/mp4', duration :-999999999999999999, quoted: mek })
-					break
-case 'play':
-
-                    if (args.length < 1) return reply('¿Onichan, que musica quieres? no soy adivina')
-                    reply('Ahh como shin... Espera sempai~ Deja que encuentre tu audio :3')
-                play = body.slice(5)
-                anu = await fetchJson(`https://api.xteam.xyz/dl/play?lagu=${play}&APIKEY=10b9f9398549cb23`)
-               if (anu.error) return reply(anu.error)
-                 infomp3 = `*Canción encontrada!!!*\nTítulo : ${anu.result.title}\nFuente : ${anu.result.source}\nTamaño : ${anu.result.size}\n\n*ESPERE ENVIANDO ARCHIVO, NO SPAMES LA CONCHA DE TU MADRE*`
-                buffer = await getBuffer(anu.result.thumbnail)
-                lagu = await getBuffer(anu.result.url_audio)
-                FxBot.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
-                FxBot.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', duration :-999999999999999999, filename: `${anu.title}.mp3`, quoted: mek})
-                break
+			
 //mini games, rate, random
 case 'dado':
 msgFilter.isFiltered(from)
 const dadus = ["⚀","⚁","⚂","⚃","⚄","⚅"]
 dadu = dadus[Math.floor(Math.random() * dadus.length)]
 dador = fs.readFileSync('./database/dados/'+dadu+'.webp')
-FxBot.sendMessage(from, dador, sticker, {quoted: mek})
+CryBaby.sendMessage(from, dador, sticker, {quoted: mek})
 break
 
 case 'caracoroa':
@@ -3266,7 +3228,7 @@ fej = cararo[Math.floor(Math.random() * cararo.length)]
 gg = fej
 reply(`você conseguiu: ${fej}`)
 cararoa = fs.readFileSync('./database/cara/'+fej+'.webp')
-FxBot.sendMessage(from, cararoa, sticker, {quoted: mek})
+CryBaby.sendMessage(from, cararoa, sticker, {quoted: mek})
 break
                 
 case 'morte':
@@ -3280,7 +3242,7 @@ break
 case 'sn':
 const sn = ['Si', 'No']
 gosto = body.slice(3)
-if (args.length < 1) return FxBot.sendMessage(from, `Você deve fazer uma pergunta...\nExemplo: ${prefix}sn O Felixcrack é um baiano preguiçoso?`, text, {quoted: mek})
+if (args.length < 1) return CryBaby.sendMessage(from, `Você deve fazer uma pergunta...\nExemplo: ${prefix}sn O Italu é um baiano preguiçoso?`, text, {quoted: mek})
 const jawab = sn[Math.floor(Math.random() * (sn.length))]
 hasil = `${gosto}\n\nSegún mis cálculos, creo que .... ${jawab}`
 reply(hasil)
@@ -3291,7 +3253,7 @@ case 'gado':
 var chifre = ["ultra extreme gado", "Gado-Master", "Gado-Rei", "Gado", "Escravo-ceta", "Escravo-ceta Maximo", "Gacorno?", "Jogador De Forno Livre<3", "Mestre Do Frifai<3<3", "Gado-Manso", "Gado-Conformado", "Gado-Incubado", "Gado Deus", "Mestre dos Gados", "Topa tudo por buceta", "Gado Comum", "Mini Gadinho", "Gado Iniciante", "Gado Basico", "Gado Intermediario", "Gado Avançado", "Gado Profisional", "Gado Mestre", "Gado Chifrudo", "Corno Conformado", "Corno HiperChifrudo", "Chifrudo Deus", "Mestre dos Chifrudos"]
 var gado = chifre[Math.floor(Math.random() * chifre.length)]
 gadop = `${Math.floor(Math.random() * 100)}`
-hisil = `Você é:\n\n${gado}`
+hisil = `Tu eres:\n\n${gado}`
 reply(hisil)
 break
 
@@ -3322,17 +3284,16 @@ if (vit == "vitoria") {
 var tes = "🎉🎉 VICTORIA DEL JUGADOR 🎉🎉"
 }
 if (vit == "derrota" ) {
-var tes = "A VICTORIA é do FxBot-BOT"
+var tes = "LA VICTORIA ES DE CryBaby-BOT"
 }
 if (vit == "empate" ) {
-var tes = "O jogo terminou em empate"
+var tes = "El juego terminó en empate"
 }
-reply(`FxBot-BOT jogou: ${pptb}\nO jogador jogou: ${args}\n\n${tes}`)
+reply(`CryBaby-BOT jogou: ${pptb}\nO jogador jogou: ${args}\n\n${tes}`)
 if (tes == "Jugador gana") {
 reply(pph)
 }
 break
-//_CRIAÇÃO DE STICKERS
 
 case 'top5':
 try{
@@ -3355,11 +3316,11 @@ break
 
 case 'ship':
 if (!isGroup) return reply(ptbr.group())
-const ag = await FxBot.getgroupMetadata.participants(from)
+const ag = await CryBaby.getgroupMetadata.participants(from)
 const mem2 = ag[Math.floor(Math.random() * (ag.length))]
 const mem1 = ag[Math.floor(Math.random() * (ag.length))]
 casal = `@${mem1.jid.split('@')[0]}  teste @${mem2.jid.split('@')[0]}`
-FxBot.sendMessage(from, casal, text, {quoted: mek, contextInfo: {"mentionedJid": [ag]}})
+CryBaby.sendMessage(from, casal, text, {quoted: mek, contextInfo: {"mentionedJid": [ag]}})
 break
 			
 case 'slot':
@@ -3390,16 +3351,16 @@ setTimeout( () => {
 reply(`Ganaste ${ppg} en xp!!!`)
 }, 1100)
 }
-FxBot.sendMessage(from, slott, text, {quoted: mek})
+CryBaby.sendMessage(from, slott, text, {quoted: mek})
 break
 
 case 'chance':
-FxBot.updatePresence(from, Presence.composing) 
+CryBaby.updatePresence(from, Presence.composing) 
 var avb = body.slice(7)
-if (args.length < 1) return FxBot.sendMessage(from, `Escribelo bien:3!!\nEjemplo: ${prefix}chance de Felixcrack ser wapo pdst si sale que cero ctm bot xD`, text, {quoted: mek})
+if (args.length < 1) return CryBaby.sendMessage(from, `Você precisa digitar da forma correta\nExemplo: ${prefix}chance do Italu ser um trouxa`, text, {quoted: mek})
 random = `${Math.floor(Math.random() * 100)}`
 hasil = `A chance ${body.slice(7)}\n\né de... ${random}%`
-FxBot.sendMessage(from, hasil, text, {quoted: mek, contextInfo: {mentionedJid: [sender]}})
+CryBaby.sendMessage(from, hasil, text, {quoted: mek, contextInfo: {mentionedJid: [sender]}})
 break
      
 case 'rola':
@@ -3414,7 +3375,7 @@ reply(hasil)
 break
    
 case 'gay':
-FxBot.updatePresence(from, Presence.composing) 
+CryBaby.updatePresence(from, Presence.composing) 
 random = `${Math.floor(Math.random() * 100)}`
 boiola = random
 if (boiola < 20 ) {bo = 'Hmm... Eres hetero😔'} else if (boiola == 21 ) {bo = '+/- Eri Gei?'} else if (boiola == 23 ) {bo = '+/- Eri Gei?'} else if (boiola == 24 ) {bo = '+/- Gei'} else if (boiola == 25 ) {bo = '+/- boiola'} else if (boiola == 26 ) {bo = '+/- boiola'} else if (boiola == 27 ) {bo = '+/- boiola'} else if (boiola == 28 ) {bo = '+/- boiola'} else if (boiola == 29 ) {bo = '+/- boiola'} else if (boiola == 30 ) {bo = '+/- boiola'} else if (boiola == 31 ) {bo = 'Tengo mi desconfianza...😑'} else if (boiola == 32 ) {bo = 'Tengo mi desconfianza...😑'} else if (boiola == 33 ) {bo = 'Tengo mi desconfianza...😑'} else if (boiola == 34 ) {bo = 'Tengo mi desconfianza...😑'} else if (boiola == 35 ) {bo = 'Tengo mi desconfianza...😑'} else if (boiola == 36 ) {bo = 'Tengo mi desconfianza...😑'} else if (boiola == 37 ) {bo = 'Tengo mi desconfianza...😑'} else if (boiola == 38 ) {bo = 'Tengo mi desconfianza...😑'} else if (boiola == 39 ) {bo = 'Tengo mi desconfianza...😑'} else if (boiola == 40 ) {bo = 'Tengo mi desconfianza...😑'} else if (boiola == 41 ) {bo = 'Tienes razón?😏'} else if (boiola == 42 ) {bo = 'Tienes razón?😏'} else if (boiola == 43 ) {bo = 'Tienes razón?😏'} else if (boiola == 44 ) {bo = 'Tienes razón?😏'} else if (boiola == 45 ) {bo = 'Tienes razón?😏'} else if (boiola == 46 ) {bo = 'Tienes razón?😏'} else if (boiola == 47 ) {bo = 'Tienes razón?😏'} else if (boiola == 48 ) {bo = 'Tienes razón?😏'} else if (boiola == 49 ) {bo = 'Tienes razón?😏'} else if (boiola == 50 ) {bo = 'Eres O No?🧐'} else if (boiola > 51) {bo = 'Eres Gay :o🙈'
@@ -3436,11 +3397,11 @@ var morte = "Hubo una bala en el tambor POW!"
 }
 if (morte == "Hubo una bala en el tambor POW!") {
 setTimeout( () => {
-FxBot.sendMessage(from, figb, sticker, {quoted: mek})
+CryBaby.sendMessage(from, figb, sticker, {quoted: mek})
 }, 2100)
 }
 setTimeout( () => {
-FxBot.sendMessage(from, morte, text, {quoted: mek})
+CryBaby.sendMessage(from, morte, text, {quoted: mek})
 }, 2300)
 break
 
@@ -3479,8 +3440,8 @@ IA()
 tttset.reActivate1 = "on"	
 }
 costum(`El juego empezó!!!\nModo: ${tttset.tttdifficulty}`, text, tescuk, crtt)
-FxBot.sendMessage(from, `🌀1️⃣2️⃣3️⃣\n🅰️${esp.a1}${esp.a2}${esp.a3}\n🅱️${esp.b1}${esp.b2}${esp.b3}\n©️${esp.c1}${esp.c2}${esp.c3}`,text )
-FxBot.sendMessage(from,`Si no sabe cómo jugar, escriba: ${prefix}ttthelp`, text) 
+CryBaby.sendMessage(from, `🌀1️⃣2️⃣3️⃣\n🅰️${esp.a1}${esp.a2}${esp.a3}\n🅱️${esp.b1}${esp.b2}${esp.b3}\n©️${esp.c1}${esp.c2}${esp.c3}`,text )
+CryBaby.sendMessage(from,`Si no sabe cómo jugar, escriba: ${prefix}ttthelp`, text) 
 setTimeout( () => {
 tttset.waitingTime = "off"
 tttset.autoEndTime = "on"
@@ -3489,15 +3450,15 @@ addLimit(sender, daily)
 }
 break
 
-case 'ttthelp':
-FxBot.sendMessage(from, ttthelp(prefix), text)
+case 'ttthelp':a
+CryBaby.sendMessage(from, ttthelp(prefix), text)
 break
 
 case 'tttme':
 if (!isGroup) return reply(ptbr.group())
 const checkTTTIdMe = getTTTId(sender)
 if (checkTTTIdMe === undefined) addTTTId(sender)
-FxBot.sendMessage(from, tttme(pushname, getTTTwins(sender), getTTTdefeats(sender), getTTTties(sender), getTTTpoints(sender)), text, {quoted:mek})
+CryBaby.sendMessage(from, tttme(pushname, getTTTwins(sender), getTTTdefeats(sender), getTTTties(sender), getTTTpoints(sender)), text, {quoted:mek})
 break
 
 case 'tttrank':
@@ -3517,7 +3478,7 @@ mentioned_jid.push(tictactoe[i].jid)
 mentions(board, mentioned_jid, true)
 } catch (err) {
 console.log(err)
-await FxBot.sendMessage(from, `Hmm, es necesario que hayan jugado al menos 3 personas...`, text, {quoted: mek})
+await CryBaby.sendMessage(from, `Hmm, es necesario que hayan jugado al menos 3 personas...`, text, {quoted: mek})
 }
 break
 
@@ -3655,9 +3616,9 @@ randomTTTXP = Math.floor(Math.random() * 1000) + 1000
 addLevelingXp(tttset.player, randomTTTXP)
 break
 }
-FxBot.sendMessage(from, `🎉🎉 🎉🎉 VICTORIA DEL JUGADOR 🎉🎉 🎉🎉\n\n➣  RECOMPENSA: +${randomTTTXP} XP 🔮`, text)
+CryBaby.sendMessage(from, `🎉🎉 🎉🎉 VICTORIA DEL JUGADOR 🎉🎉 🎉🎉\n\n➣  RECOMPENSA: +${randomTTTXP} XP 🔮`, text)
 } else {
-FxBot.sendMessage(from, `🎉🎉 🎉🎉 VICTORIA DEL JUGADOR 🎉🎉 🎉🎉`, text)
+CryBaby.sendMessage(from, `🎉🎉 🎉🎉 VICTORIA DEL JUGADOR 🎉🎉 🎉🎉`, text)
 }
 const currentTTTwins = getTTTwins(tttset.player)
 const checkTTTIdWin = getTTTId(tttset.player)
@@ -3689,9 +3650,9 @@ randomTTTXP = 0
 addLevelingXp(tttset.player, randomTTTXP)
 break
 }	
-FxBot.sendMessage(from, `🎉🎉 VICTORIA DE FxBot🎉🎉\n\n➣  CASTIGO: ${randomTTTXP} XP 🔮`, text)
+CryBaby.sendMessage(from, `🎉🎉 VICTORIA DE CryBaby🎉🎉\n\n➣  CASTIGO: ${randomTTTXP} XP 🔮`, text)
 } else {
-FxBot.sendMessage(from, `🎉🎉 VICTORIA DE FxBot 🎉🎉`, text)
+CryBaby.sendMessage(from, `🎉🎉 VICTORIA DE CryBaby 🎉🎉`, text)
 }
 const currentTTTdefeats = getTTTdefeats(tttset.player)
 const checkTTTIdDefeat = getTTTId(tttset.player)
@@ -3705,9 +3666,9 @@ tttset.tttstatus = "off"
 tttset.waitingTime = "on"
 } else if (Tie()) {
 if (isLevelingOn) {
-FxBot.sendMessage(from, `🎉🎉 EMPATE 🎉🎉\n\n➣  SIN GANANCIAS NI PÉRDIDAS`, text)
+CryBaby.sendMessage(from, `🎉🎉 EMPATE 🎉🎉\n\n➣  SIN GANANCIAS NI PÉRDIDAS`, text)
 } else {
-FxBot.sendMessage(from, `🎉🎉 EMPATE 🎉🎉`, text)
+CryBaby.sendMessage(from, `🎉🎉 EMPATE 🎉🎉`, text)
 }
 const currentTTTties = getTTTties(tttset.player)
 const checkTTTIdTie = getTTTId(tttset.player)
@@ -3742,7 +3703,7 @@ sus =
                   1 impostor remain   。　.
 　 　　。　　 　　　　ﾟ　　　.　      　　　.
 ,　　　　.                  .`
-// FxBot.groupRemove(from, mentioned)
+//  CryBaby.groupRemove(from, mentioned)
 mentions(`${sus}`, mentioned, true)
 break
 
@@ -3755,7 +3716,7 @@ pro = '.\n'
 for (let _ of mentioned) {
 pro += `@${_.split('@')[0]}\n`
 }
-yhb = `Que Tierno 🥺... @${sender.split("@")[0]} abrazo a @${mentioned[0].split('@')[0]}🥺🥰`
+yhb = `Que lindo... @${sender.split("@")[0]} abrazo a @${mentioned[0].split('@')[0]}`
 mentions(yhb, yhb, true)
 break
 
@@ -3769,7 +3730,7 @@ for (let _ of mentioned) {
 pro += `@${_.split('@')[0]}\n`
 }
 porc = `${Math.floor(Math.random() * 100)}`
-yhb =  `@${mentioned[0].split('@')[0]} Tiene una posibilidad de ${porc}% de enamorarse de @${mentioned[1].split('@')[0]}`,
+yhb =  `@${mentioned[0].split('@')[0]} tem uma chance de ${porc}% de namorar com @${mentioned[1].split('@')[0]}`,
 mentions(`${yhb}`, mentioned, true, {quoted: mek})
 break
 //mini games, rate, random
@@ -3786,7 +3747,7 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
@@ -3805,7 +3766,7 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
@@ -3824,7 +3785,7 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
@@ -3843,12 +3804,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌ocurrio un error❌\n\nIntenta Nuevamente. ')
+reply('❌ocurrio un error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -3862,12 +3823,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -3881,12 +3842,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -3900,12 +3861,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -3919,12 +3880,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -3938,12 +3899,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -3957,12 +3918,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 case 'foxg':
@@ -3975,12 +3936,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 case 'pat':
@@ -3993,12 +3954,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 case 'poke':
@@ -4011,12 +3972,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 case 'waifukawai':
@@ -4024,7 +3985,7 @@ try {
 reply(ptbr.wait())
 axios.get(`https://nekos.life/api/v2/img/kemonomimi`).then((res)=>{
 imageToBase64(res.data.url).then((response) => {var buf = Buffer.from(response, 'base64');
-FxBot.sendMessage(from, buf, image, {quoted: mek,caption: "KAWAII!!"})
+CryBaby.sendMessage(from, buf, image, {quoted: mek,caption: "KAWAII!!"})
 })})
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
@@ -4037,7 +3998,7 @@ try {
 reply(ptbr.wait())
 axios.get(`https://nekos.life/api/v2/img/kemonomimi`).then((res)=>{
 imageToBase64(res.data.url).then((response) => {var buf = Buffer.from(response, 'base64');
-FxBot.sendMessage(from, buf, image, {quoted: mek})
+CryBaby.sendMessage(from, buf, image, {quoted: mek})
 })})
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
@@ -4050,7 +4011,7 @@ try {
 reply(ptbr.wait())
 axios.get(`https://nekos.life/api/v2/img/kuni`).then((res)=>{
 imageToBase64(res.data.url).then((response) => {var buf = Buffer.from(response, 'base64');
-FxBot.sendMessage(from, buf, image, {quoted: mek})
+CryBaby.sendMessage(from, buf, image, {quoted: mek})
 })})
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
@@ -4067,12 +4028,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 case 'random':
@@ -4082,10 +4043,10 @@ reply(ptbr.waitsfw())
 try {  
 hah = await fetchJson(`https://freerestapi.herokuapp.com/api/v1/randomp`)
 haha = await getBuffer(hah.url)
-FxBot.sendMessage(from, haha, image, {quoted:mek})
+CryBaby.sendMessage(from, haha, image, {quoted:mek})
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
     case 'waifu':
@@ -4096,12 +4057,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4113,12 +4074,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
                       
@@ -4130,12 +4091,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
                 
@@ -4147,12 +4108,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break   
 
@@ -4167,12 +4128,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4187,12 +4148,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4206,12 +4167,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4225,12 +4186,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4244,12 +4205,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4263,12 +4224,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4282,12 +4243,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4301,12 +4262,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4320,12 +4281,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4339,12 +4300,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4358,12 +4319,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4377,12 +4338,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4396,12 +4357,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4415,12 +4376,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4434,12 +4395,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4453,12 +4414,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4472,12 +4433,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4491,12 +4452,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4511,12 +4472,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4530,12 +4491,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4549,12 +4510,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4568,12 +4529,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4587,12 +4548,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4606,12 +4567,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4625,12 +4586,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4644,12 +4605,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4663,12 +4624,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4682,12 +4643,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4701,12 +4662,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4720,12 +4681,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4739,12 +4700,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4758,12 +4719,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
 if(console.log == "marker was not found")
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 
@@ -4773,17 +4734,19 @@ msgFilter.isFiltered(from)
 if (!isNsfw) return reply(ptbr.nsfw())
 reply(ptbr.waitsfw())
 loli.getNSFWLoli(async (err, res) => {
-if (err) return reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+if (err) return reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 buffer = await getBuffer(res.url)
-FxBot.sendMessage(from, buffer, image, {quoted: mek, caption: 'Seu lolicon safado😔'})
+CryBaby.sendMessage(from, buffer, image, {quoted: mek, caption: 'Seu lolicon safado😔'})
 })
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
                   
 case 'pussy':
+try {
+msgFilter.isFiltered(from)
 if (!isNsfw) return reply(ptbr.nsfw())
 reply(ptbr.waitsfw())
 axios.get('https://nekos.life/api/v2/img/pussy_jpg').then(res => {
@@ -4791,7 +4754,7 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } catch (e) {
@@ -4815,12 +4778,12 @@ imageToBase64(res.data.url)
 var buf = Buffer.from(ress, 'base64')
 a = webp2gifFile(buf)
 mp4 = getBuffer(a.result)
-FxBot.sendMessage(from, mp4, MessageType.video, {mimetype: 'video/gif', filename: `stick.gif`, quoted: mek, caption: '✅'})
+CryBaby.sendMessage(from, mp4, MessageType.video, {mimetype: 'video/gif', filename: `stick.gif`, quoted: mek, caption: '✅'})
 })
 })
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
               
@@ -4842,12 +4805,12 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.video, {mimetype: 'video/gif', filename: `stick.gif`, quoted: mek, caption: '✅'})
+CryBaby.sendMessage(from, buf, MessageType.video, {mimetype: 'video/gif', filename: `stick.gif`, quoted: mek, caption: '✅'})
 })
 })
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
                 
@@ -4858,7 +4821,7 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 break
@@ -4870,7 +4833,7 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 break
@@ -4886,7 +4849,7 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } else if(args[0] === "2") {
@@ -4895,7 +4858,7 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } else if(args[0] === "3") {
@@ -4904,7 +4867,7 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } else if(args[0] === "4") {
@@ -4913,7 +4876,7 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } else if(args[0] === "6") {
@@ -4922,7 +4885,7 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } else if(args[0] === "7") {
@@ -4931,7 +4894,7 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } else if(args[0] === "8") {
@@ -4940,7 +4903,7 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } else if(args[0] === "9") {
@@ -4949,7 +4912,7 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } else {
@@ -4958,21 +4921,21 @@ imageToBase64(res.data.url)
 .then(
 (ress) => {
 var buf = Buffer.from(ress, 'base64')
-FxBot.sendMessage(from, buf, MessageType.image, {quoted: mek})
+CryBaby.sendMessage(from, buf, MessageType.image, {quoted: mek})
 })
 })
 } 
 } catch (e) {
 console.log(`Error :`, color(e,'red'))
-reply('❌Ocurrió Un Error❌\n\nIntenta Nuevamente. ')
+reply('❌Ocurrió Un Error❌\n\nIntenta De Nuevo. ')
 }
 break
 //_ FIM DOS COMANDOS NSFW
 
 default:
 if (body == `${prefix}${command}`) {
-hsl = `        ────────────────\nHola @${sender.split("@")[0]}!!\nEse comando: ${prefix}${command} No esta en mi menu\nLos escribiste bien?🧙‍♂️\nUse ${prefix}Menu para ver mis comandos\n        ────────────────`
-tiringa.sendMessage(from, hsl, text, {quoted: mek, contextInfo: {mentionedJid: [sender]}})
+hsl = `        ────────────────\nHola 👋 @${sender.split("@")[0]}!!\nEl Comando: ${prefix}${command} No Esta En Mi Menu\n\nTal Ves Lo Escribiste Mal?🧙‍♂️\nUse ${prefix}Menu ver el menu\n        ────────────────`
+CryBaby.sendMessage(from, hsl, text, {quoted: mek, contextInfo: {mentionedJid: [sender]}})
 }
 }
 } catch (e) {
