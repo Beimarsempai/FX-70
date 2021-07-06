@@ -4,59 +4,63 @@ const infos = JSON.parse(fs.readFileSync('./data/settings.json'))
 const { prefix, ownerName, ownerNumber, cdd, ammOff, cr, crfig, crlv, crtt, crh } = infos
  
 exports.wait = () => {
-	return`❗Espera un poco~ Onichan~..⏳\n\nCaso não funcione, use o comando novamente.`
+	return`⏳Espera Unos Momentos...⏳\n\nSi no funciona, use el comando nuevamente.`
 }
 
 exports.tterro = () => {
-	return `Hazlo Bien ${prefix}ppt pedra, ${prefix}ppt papel o ${prefix}ppt tesoura`
+	return `Debes Escribir ${prefix}ppt piedra, ${prefix}ppt papel o ${prefix}ppt tijera`
+}
+
+exports.waitmusic = () => {
+	return`⏳Espera Un Momento...⏳\n\nTu música se enviará en 2 minutos.\nSi no es así, intente especificar el nombre de la canción.`
 }
 
 exports.waitfig = () => {
-	return`❗Espera un poco~ Onichan~..⏳\n\nA criação de stickers demora alguns segundos.`
+	return`⏳Espera Un Momento...⏳\n\nLa creación de pegatinas lleva unos segundos.`
 }
 
 exports.waitgif = () => {
-	return`❗Espera un poco~ Onichan~..⏳\n\nA criação de stickers demora alguns segundos\nA criação de stickergif leva de 10 segundos á 1 minuto dependendo do tamanho do gif\nLimite de 10 segundos por gif.`
+	return`⏳Espera Un Momento...⏳\n\nLa creación de pegatinas lleva unos segundos\nLa creación de stickergif toma de 10 segundos a 1 minuto dependiendo del tamaño del gif\nLímite de 10 segundos por gif.`
 }
 
 exports.waitsfw = () => {
-	return`❗Espera un poco~ Onichan~..⏳\n\nO bot irá enviar o hentai em até 2 minutos\nTente novamente caso não envie.`
+	return`⏳Espera Un Momento...⏳\n\nEl bot enviará el hentai en 2 minutos.\nInténtelo de nuevo si no envía.`
 }
 
 exports.waitpor = () => {
-	return`❗Espera un poco~ Onichan~..⏳\n\nO bot irá enviar a img\nTente novamente caso não envie.`
+	return`⏳Espera Un Momento...⏳\n\nEl bot enviará la imagen\nInténtelo de nuevo si no envía.`
 }
 
 exports.waitimg= () => {
-	return`❗Espera un poco~ Onichan~..⏳\n\nO bot irá enviar criar e enviar a imagem\nO processo dura no mínimo 10 segundos\nTente novamente caso não envie.`
+	return`⏳Espera Un Momento...⏳\n\nO bot irá enviar criar e enviar a imagem\nO processo dura no mínimo 10 segundos\nInténtelo de nuevo si no envía.`
 }
 
 exports.success = () => {
-	return`✅Sucesso✅`
+	return`✅Éxito✅`
 }
 
 exports.levelon = () => {
-	return`✅Se ha activado la función de niveles✅`
+	return`✅Se Ha Activado La Función De Niveles✅`
 }
 
 exports.leveloff = () => {
-	return`❌la función de nivel fue deshabilitada❌`
+	return`❌La Función De Nivel Fue Deshabilitada❌`
 }
 
 exports.levelnoton = () => {
-	return`🚫La función de nivel está desactivada🚫`
+	return`🚫La Función De Nivel Está Desactivada🚫`
 }
 
 exports.levelnol = () => {
-	return`Eres nivel 0... \nYa te registraste para comenzar a ganar XP?`
+	return`Estas en el nivel 0... \njá se registrou para começar ganhar XP?`
 }
 
 exports.ban = () => {
-	return`🛂Estas baneado🛂`
+	return`🛂Estás Baneado Del Bot🛂`
 }
 
 exports.stick = () => {
-	return`❌Se produjo un error al crear la calcomanía.❌`
+	return`❌Se produjo un error al crear el sticker.❌`
 }
 
 exports.Lv = () => {
@@ -64,11 +68,15 @@ exports.Lv = () => {
 }
 
 exports.group = () => {
-	return`❌El comando solo se puede usar en el grupos >\\\<❌`
+	return`❌El comando solo se puede usar en grupos.❌`
 }
 
 exports.ownerG = (ownerName) => {
-	return`El comando solo puede ser utilizado por Felixcrack🕴`
+	return`El comando solo puede ser utilizado por ${ownerName}🕴`
+}
+
+exports.lia = () => {
+	return`Solo Felixcrack puede usar este comando😳👌`
 }
 
 exports.ownerB = (ownerName) => {
@@ -76,15 +84,15 @@ exports.ownerB = (ownerName) => {
 }
 
 exports.admin = () => {
-	return`❌No eres admin 💩`
+	return`❌El comando solo puede ser utilizado por administradores de grupo❌`
 }
 
 exports.Badmin = () => {
-	return`❌El comando solo se puede usar cuando el bot es un adm del grupo 😑👑❌'`
+	return`❌El comando solo se puede usar cuando el bot es un administrador de grupo❌'`
 }
 
 exports.registrarB = (pushname, prefix) => {
-	return`Holaa ${pushname}\n\nNo te has regustrado:(\n\nRegistraste para poder usar el bot:3:\n\nComando: ${prefix}registrar tu nombre|tu edad\nPor ejemplo: ${prefix}registrar Félix|16`
+	return`Hola ${pushname}\n\nAún no te has registrado....\n\nPara registrarse y poder utilizar todos los comandos del bot, utilice:\n\nComando: ${prefix}registrar Tu Nombre|Tu Edad\nPor ejemplo: ${prefix}registrar Felix|16`
 }
 
 exports.nsfw = () => {
@@ -92,7 +100,7 @@ exports.nsfw = () => {
 }
 
 exports.erro = () => {
-	return`❌Ocurrio Un Error❌\n\nInténtalo De Nuevo.`
+	return`❌Ocurrio Un Error❌\n\nInténtalo de nuevo.`
 }
 
 
