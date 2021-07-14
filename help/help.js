@@ -1,11 +1,11 @@
 const help = (pushname, prefix, temporizader, uptime, hr, tanggal, groupName, users, chatss, prema, checATM, useLevel, useXp, requireXp, patt, comandest ) => {
     return `
      ༻▬࣭ ▭࣭ ▬ ▭࣭ ★ ▬࣭ ▭࣭ ▬ ▭࣭༺
-      Hola UwU Como Estás ${pushname}🌚
+      Hola Como Estás ${pushname}🌚
      ༻▬࣭ ▭࣭ ▬ ▭࣭ ★ ▭࣭ ▬ ▭࣭ ▬࣭༺
 
-🌚 Yo Soy ${xd}
-≫ Mi Prefijo Es:「 ${prefix} 」
+🔥  Yo Soy ${xd}
+≫ Mi Prefijo Es:「 ${prefix} 
 ≫ Versión: 70.0
 ≫ Mi tiempo viva: ${temporizader(uptime)}
 ≫ Estade: ON✅
@@ -16,20 +16,21 @@ const help = (pushname, prefix, temporizader, uptime, hr, tanggal, groupName, us
 ≫ Total de chats: ${chatss} chats
 ≫ Total de comandos: 1502
 ≫ Total de comandos utilizades: ${comandest}
+≫  Grupo De WhatsAp: https://bit.ly/Felixcrack-GRUPO-OFC
 ═══════════════
 
-👨‍💻USUÁRIO >///<👨‍💻
+👨‍💻USUÁRIO 👨‍💻
 ≫ 🌚 Tu Nombre Es: ${pushname}
 ≫ 🧐 Tu tipo de usuário es: ${prema}
 ≫ 💰 Dinero ${checATM}
 ≫ ⬆️ Nivel: ${useLevel}
 ≫ ✨ XP: ${useXp}/${requireXp}
 ═══════════════
-════ 🥰 INFORMACIÓN 🥰
+════ 👺 INFORMACIÓN 👺
 ╭╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 │•  ${prefix}info
 │[  Información del bot  ]
-│•  ${prefix}creador
+│•  ${prefix}criader
 │[  Mi número de creader  ]
 │•  ${prefix}ping
 │[  Muestra mi tiempo de respuesta  ]
@@ -62,10 +63,6 @@ const help = (pushname, prefix, temporizader, uptime, hr, tanggal, groupName, us
 │[  Lista de todes los miembros en línea  ]
 │•  ${prefix}closegp
 │[  Cierra el grupo  ]
-│•  ${prefix}add
-│[  Añade a alguien ]
-│•  ${prefix}kick
-│[  Elimina a alguien    ]
 │•  ${prefix}abrirgp
 │[  Abre o grupo  ]
 │•  ${prefix} promote
@@ -81,7 +78,7 @@ const help = (pushname, prefix, temporizader, uptime, hr, tanggal, groupName, us
 │•  ${prefix}linkgc
 │[  enlace de grupo  ]
 │•  ${prefix}leave
-│[  El bot abandona el grupo  ]
+│[  El bot abandena el grupo  ]
 │•  ${prefix}notif
 │[  Notificar a todes los miembros  ]
 │•  ${prefix}welcome
@@ -92,14 +89,14 @@ const help = (pushname, prefix, temporizader, uptime, hr, tanggal, groupName, us
 ═════ ≪ •❈• ≫ ═════╝
 
 ═══════════════
-════ 🎥  MÍDIA 🎥
+════ 🎥  MEDIA 🎥
 ╭╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 │•  ${prefix}esquilo (Marca Un Audio)
-│[  Efecto de áudio esquilo  ]
+│[  Efeito de áudio esquilo  ]
 │•  ${prefix}slow (Marca Un Audio)
-│[  Efecto de áudio lento  ]
+│[  Efeito de áudio lento  ]
 │•  ${prefix}gemuk (Marca Un Audio)
-│[  Efecto de áudio gigante  ]
+│[  Efeito de áudio gigante  ]
 │•  ${prefix}bass (Marca Un Audio)
 │[  Aumenta el bajo de una canción.  ]
 │•  ${prefix}earrape
@@ -110,90 +107,90 @@ const help = (pushname, prefix, temporizader, uptime, hr, tanggal, groupName, us
 ═════ ≪ •❈• ≫ ═════╝
 
 ═══════════════
-════ 🏖 IMAGEM 🏖
+════ 🏖 IMAGEN🏖
 ╭╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 │•  ${prefix}gtav (Foto)
-│[  Crea um banner de GTA V  ]
+│[  Crea un banner de GTA V  ]
 │•  ${prefix}wanted (Foto)
-│[  Crea um banner estilo "WANTED"  ]
+│[  Crea un banner estilo "WANTED"  ]
 │•  ${prefix}drawing (Foto)
-│[  Crea una imagem estilo desenho  ]
+│[  Crea una Imagen estilo desenho  ]
 │•  ${prefix}8bit (Texto)
-│[  Crea una imagem con efecto 8bit  ]
+│[  Crea una Imagen con efecto 8bit  ]
 │•  ${prefix}lovepaper (Texto)
-│[  Crea una imagem con efecto lovepaper  ]
+│[  Crea una Imagen con efecto lovepaper  ]
 │•  ${prefix}narutobanner (Texto)
-│[  Crea um banner de Naruto  ]
+│[  Crea un banner de Naruto  ]
 │•  ${prefix}romancetext (Texto)
-│[  Crea una imagem con efecto romancetext  ]
+│[  Crea una Imagen con efecto romancetext  ]
 │•  ${prefix}shadewtext (Texto)
-│[  Crea una imagem con efecto shadewtext  ]
+│[  Crea una Imagen con efecto shadewtext  ]
 │•  ${prefix}tiktokeffect (Texto)
-│[  Crea una imagem con efecto Tik Tok  ]
+│[  Crea una Imagen con efecto Tik Tok  ]
 │•  ${prefix}neon (Texto)
-│[  Crea una imagem con efecto neon  ]
+│[  Crea una Imagen con efecto neon  ]
 │•  ${prefix}hpotter (Texto)
-│[  Crea una imagem con efecto Harry Potter  ]
+│[  Crea una Imagen con efecto Harry Potter  ]
 │•  ${prefix}gaming (Texto)
-│[  Crea una imagem con efecto gaming  ]
+│[  Crea una Imagen con efecto gaming  ]
 │•  ${prefix}bneon (Texto)
-│[  Crea una imagem con efecto neon  ]
+│[  Crea una Imagen con efecto neon  ]
 │•  ${prefix}matrix (Texto)
-│[  Crea una imagem con efecto Matrix  ]
+│[  Crea una Imagen con efecto Matrix  ]
 │•  ${prefix}breakwall (Texto)
-│[  Crea una imagem con efecto breakwall  ]
+│[  Crea una Imagen con efecto breakwall  ]
 │•  ${prefix}dropwater (Texto)
-│[  Crea una imagem con efecto dropwater  ]
+│[  Crea una Imagen con efecto dropwater  ]
 │•  ${prefix}wolflogo (Texto)
-│[  Crea una imagem con efecto wolflogo  ]
+│[  Crea una Imagen con efecto wolflogo  ]
 │•  ${prefix}tfire (Texto)
-│[  Crea una imagem con efecto tfire  ]
+│[  Crea una Imagen con efecto tfire  ]
 │•  ${prefix}sandw (Texto)
-│[  Crea una imagem con efecto sandw  ]
+│[  Crea una Imagen con efecto sandw  ]
 │•  ${prefix}firofiro (Texto)
-│[  Crea una imagem con efecto free fire  ]
+│[  Crea una Imagen con efecto free fire  ]
 │•  ${prefix}text3d (Texto)
-│[  Crea una imagem con efecto text3d  ]
+│[  Crea una Imagen con efecto text3d  ]
 │•  ${prefix}text3d2 (Texto)
-│[  Crea una imagem con efecto text3d2  ]
+│[  Crea una Imagen con efecto text3d2  ]
 │•  ${prefix}phlogo (Texto)
-│[  Crea una imagem con efecto PornHub  ]
+│[  Crea una Imagen con efecto PornHub  ]
 │•  ${prefix}bpmek (Texto)
-│[  Crea una imagem con efecto BlackPmek  ]
+│[  Crea una Imagen con efecto BlackPmek  ]
 │•  ${prefix}folhas (Texto)
-│[  Crea una imagem com texto entre folhas  ]
+│[  Crea una Imagen com texto entre folhas  ]
 │•  ${prefix}tlight (Texto)
-│[  Crea una imagem con efecto tlight  ]
+│[  Crea una Imagen con efecto tlight  ]
 │•  ${prefix}sparkling (Texto)
-│[  Crea una imagem con efecto sparkling  ]
+│[  Crea una Imagen con efecto sparkling  ]
 │•  ${prefix}neve (Texto)
-│[  Crea una imagem com texto na neve  ]
+│[  Crea una Imagen com texto na neve  ]
 │•  ${prefix}crismes (Texto)
-│[  Crea una imagem con efecto crismes  ]
+│[  Crea una Imagen con efecto crismes  ]
 │•  ${prefix}retro (Texto)
-│[  Crea una imagem con efecto retro  ]
+│[  Crea una Imagen con efecto retro  ]
 │•  ${prefix}watercolor
-│[  Crea una imagem con efecto watercolor  ]
+│[  Crea una Imagen con efecto watercolor  ]
 │•  ${prefix}pubglogo (Texto)
-│[  Crea una imagem con efecto pubg  ]
+│[  Crea una Imagen con efecto pubg  ]
 │•  ${prefix}bf4 (Texto)
-│[  Crea una imagem con efecto bf4  ]
+│[  Crea una Imagen con efecto bf4  ]
 │•  ${prefix}cslogo (Texto)
-│[  Crea una imagem con efecto CS  ]
+│[  Crea una Imagen con efecto CS  ]
 │•  ${prefix}lithgtext (Texto)
-│[  Crea una imagem con efecto lithgtext  ]
+│[  Crea una Imagen con efecto lithgtext  ]
 │•  ${prefix}silktext (Texto)
-│[  Crea una imagem con efecto silktext  ]
+│[  Crea una Imagen con efecto silktext  ]
 │•  ${prefix}flametext (Texto)
-│[  Crea una imagem con efecto flametext  ]
+│[  Crea una Imagen con efecto flametext  ]
 │•  ${prefix}crosslogo (Texto)
-│[  Crea una imagem con efecto crosslogo  ]
+│[  Crea una Imagen con efecto crosslogo  ]
 │•  ${prefix}glowtext (Texto)
-│[  Crea una imagem con efecto glowtext  ]
+│[  Crea una Imagen con efecto glowtext  ]
 │•  ${prefix}triggered
-│[  Crea um sticker con efecto triggered  ]
+│[  Crea un sticker con efecto triggered  ]
 │•  ${prefix}wasted
-│[  Crea imagem con efecto wasted  ]
+│[  Cria Imagen con efecto wasted  ]
 ╰╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 ═════ ≪ •❈• ≫ ═════╝
 
@@ -203,13 +200,13 @@ const help = (pushname, prefix, temporizader, uptime, hr, tanggal, groupName, us
 │•  ${prefix}simi
 │[  I.A  ]
 │•  ${prefix}shitpost
-│[  Imagem aleatória shitpost br  ]
+│[  Imagen aleatória shitpost br  ]
 │•  ${prefix}nomeninja (texto)
 │[  Crea un nombre de ninja  ]
 │•  ${prefix}tagme
 │[  Te menciona  ]
 │•  ${prefix}dade
-│[  Pegatina Dade aleatorio  ]
+│[  Sticker de un dado  ]
 │•  ${prefix}ppt (pedra, papel ou tesoura)
 │[  Lanza piedra, papel y tijeras con el bot  ]
 │•  ${prefix}sn
@@ -234,7 +231,7 @@ const help = (pushname, prefix, temporizader, uptime, hr, tanggal, groupName, us
 │[  "Expulsa" a alguien de ka nave  ]
 │•  ${prefix}ttt
 │[  Tic-tac-toe por: Felixcrack  ]
-│•  ${prefix}elmas
+│•  ${prefix}omais
 │[  Alguien afortunado por "o mais"  ]
 │•  ${prefix}top5
 │[  Mencione 5 miembros del grupo  ]
@@ -245,25 +242,25 @@ const help = (pushname, prefix, temporizader, uptime, hr, tanggal, groupName, us
 ════ 💮 ANIME 💮
 ╭╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 │•  ${prefix}anime
-│[  Imagem de anime aleatória  ]
+│[  Imagen de anime aleatória  ]
 │•  ${prefix}loli
-│[  Imagem de loli aleatória  ]
+│[  Imagen de loli aleatória  ]
 │•  ${prefix}neko
-│[  Imagem de neko aleatória  ]
+│[  Imagen de neko aleatória  ]
 │•  ${prefix}nezuko
-│[  Imagem aleatória da Nezuko  ]
+│[  Imagen aleatória de Nezuko  ]
 ╰╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 ═════ ≪ •❈• ≫ ═════╝
 
 ═══════════════
-════ 🔧 FERRAMENTAS 🔧
+════ 🔧 HERRAMIENTAS 🔧
 ╭╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 │•  ${prefix}st 
-│[  Crea una pegatina en 512x512  ]
+│[  Crea un sticker en 512x512  ]
 │•  ${prefix}sticker
 │[  Crea una calcomanía  ]
 │•  ${prefix}toimg
-│[  Convierte sticker en imagem  ]
+│[  Convierte sticker en Imagen  ]
 │•  ${prefix}tomp3
 │[  Convierte video a audio  ]
 │•  ${prefix}Img (Texto)
@@ -298,8 +295,8 @@ const help = (pushname, prefix, temporizader, uptime, hr, tanggal, groupName, us
 ╭╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 │•  ${prefix}ytmp3 (link)
 │[  Descargar audio de youtube  ]
-│•  ${prefix}ytmp4 (link)
-│[  Descargar video de youtube  ]
+│•  ${prefix}play 
+│[  Descargar musica de youtube  ]
 ╰╼╾╼╾╼╾╼╾╼╾╼╾╼╾
 ═════ ≪ •❈• ≫ ═════╝
 
