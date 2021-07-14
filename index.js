@@ -1087,7 +1087,7 @@ var options = {
 contextInfo: {mentionedJid: [sender]}, 
 }
 FxBot.sendMessage('12603763944@s.whatsapp.net', options, text, {quoted: mek})
-reply("Mensaje enviado a mi dueño >///<")
+reply("Mensaje enviado a mi dueño")
 break
 
 case 'request':
@@ -1100,7 +1100,7 @@ text: teks1,
 contextInfo: {mentionedJid: [sender]},
 }
 FxBot.sendMessage('12603763944@s.whatsapp.net', options, text, {quoted: mek})
-reply("Mensaje enviado a mi dueño >///<")
+reply("Mensaje enviado a mi dueño ")
 break
 
 case 'oye':  
